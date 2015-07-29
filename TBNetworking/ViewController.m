@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "SiteAPIManager.h"
 
 @interface ViewController ()
 
@@ -17,7 +18,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    SiteAPIManager *api = [[SiteAPIManager alloc] init];
+    api.delegate = api;
+    [api loadData];
+    
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

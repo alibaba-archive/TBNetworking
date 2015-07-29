@@ -10,4 +10,26 @@
 
 @implementation SiteAPIManager
 
+
+- (void)managerCallAPIDidSuccess:(TBAPIBaseManager *)manager {
+
+    NSLog(@"fff");
+}
+
+- (void)managerCallAPIDidFailed:(TBAPIBaseManager *)manager {
+
+    
+}
+
+- (void)manager:(TBAPIBaseManager *)manager willPerformSuccessResponse:(TBURLResponse *)response {
+
+    
+}
+
+- (NSDictionary *)reformParameters:(NSDictionary *)parameters {
+    
+    
+    return nil;
+}
+
 @end
