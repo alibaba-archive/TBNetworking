@@ -8,6 +8,6 @@
 
 #import "TBAPIBaseManager.h"
 
-@interface SiteAPIManager : TBAPIBaseManager<TBAPIManagerInterceptor, TBAPIBaseManagerDelegate>
+@interface SiteAPIManager : TBAPIBaseManager<TBAPIManagerInterceptor, TBAPIBaseManagerDelegate, TBAPIManager>
 
 @end

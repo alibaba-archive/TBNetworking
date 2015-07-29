@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <AFNetworking.h>
 #import "TBURLResponse.h"
+#import "TBAPIBaseRequest.h"
 
 typedef void(^TBCallBack) (TBURLResponse *response);
 
@@ -16,6 +17,6 @@ typedef void(^TBCallBack) (TBURLResponse *response);
 
 + (instancetype)sharedInstance;
 
-- (NSInteger)GETWithParameters:(NSDictionary *)parameters success:(TBCallBack)success;
+- (void)addRequest:(TBAPIBaseRequest *)request;
 
 @end

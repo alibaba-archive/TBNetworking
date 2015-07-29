@@ -8,7 +8,11 @@
 
 #import "TBAPIProxy.h"
 
-@implementation TBAPIProxy
+@implementation TBAPIProxy {
+
+    AFHTTPRequestOperationManager *_manager;
+    
+}
 
 
 + (instancetype)sharedInstance {
@@ -21,17 +25,17 @@
     return sharedInstance;
 }
 
-- (NSInteger)GETWithParameters:(NSDictionary *)parameters success:(TBCallBack)success {
+- (instancetype)init {
 
-    NSNumber *requestID = [self request:nil success:success fail:success];
-    return [requestID integerValue];
+    self = [super init];
+    if (self) {
+        _manager = [AFHTTPRequestOperationManager manager];
+    }
+    return self;
 }
 
+- (void)addRequest:(TBAPIBaseRequest *)request {
 
-#pragma mark - private methods
-
-- (NSNumber *)request:(NSURLRequest *)request success:(TBCallBack )success fail:(TBCallBack)fail {
-
-    return @1;
+    
 }
 @end

@@ -6,35 +6,42 @@
 //  Copyright (c) 2015 Teambition. All rights reserved.
 //
 
-#import "TBAPIBaseManager.h"
-#import <AFNetworking.h>
+#import "TBAPIBaseRequest.h"
+#import "TBAPIProxy.h"
 
-@implementation TBAPIBaseManager
+@implementation TBAPIBaseRequest
 
 
+- (instancetype)init {
 
-- (NSInteger)loadData {
-    NSDictionary *parameters = [self.parametersDelegate parametersForAPI:self];
-    return [self loadDataFromParameters:parameters];
+    self = [super init];
+    if (self) {
+        
+        self.delegate = nil;
+        if ([self conformsToProtocol:@protocol(TBAPIManager)]) {
+            self.child = (id<TBAPIManager>)self;
+        }
+    }
+    return self;
 }
 
-- (NSInteger)loadDataFromParameters:(NSDictionary *)parameters {
-
-    NSInteger requestID = 0;
-    NSDictionary *APIParameters = [self reformParameters:parameters];
-    
-    [self willPerformSuccessResponse:nil];
-    [self.delegate managerCallAPIDidSuccess:self];
-    
-    
-    return 1;
+- (NSString *)baseUrl {
+    return @"https://www.v2ex.com/api/";
 }
+
+- (void)start {
+
+    [[TBAPIProxy sharedInstance] addRequest:self];
+}
+
 
 
 - (void)cancelAllRequest {
 
     
 }
+
+
 
 #pragma mark - method interceptor
 

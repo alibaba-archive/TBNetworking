@@ -8,10 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		DB301F93FBF3F46A8C69F7BF /* libPods-TBNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA745D11C6699982B5EF1E79 /* libPods-TBNetworking.a */; };
-		E5DF9DAA1B68CC7B00B45857 /* TBAPIBaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E5DF9DA91B68CC7B00B45857 /* TBAPIBaseManager.m */; };
+		E5DF9DAA1B68CC7B00B45857 /* TBAPIBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E5DF9DA91B68CC7B00B45857 /* TBAPIBaseRequest.m */; };
 		E5DF9DAD1B68D10300B45857 /* TBURLResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = E5DF9DAC1B68D10300B45857 /* TBURLResponse.m */; };
 		E5DF9DB11B68D29900B45857 /* SiteAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E5DF9DB01B68D29900B45857 /* SiteAPIManager.m */; };
 		E5DF9DB41B68EE5C00B45857 /* TBAPIProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = E5DF9DB31B68EE5C00B45857 /* TBAPIProxy.m */; };
+		E5DF9DB71B68FC4200B45857 /* TBBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E5DF9DB61B68FC4200B45857 /* TBBaseRequest.m */; };
 		EBC264E91B68C2E800C07B74 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC264E81B68C2E800C07B74 /* main.m */; };
 		EBC264EC1B68C2E800C07B74 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC264EB1B68C2E800C07B74 /* AppDelegate.m */; };
 		EBC264EF1B68C2E800C07B74 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC264EE1B68C2E800C07B74 /* ViewController.m */; };
@@ -34,14 +35,16 @@
 /* Begin PBXFileReference section */
 		55482E735C5C9EB3197EF6C2 /* Pods-TBNetworking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TBNetworking.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TBNetworking/Pods-TBNetworking.debug.xcconfig"; sourceTree = "<group>"; };
 		C6E7F51099E21135FCCF06AD /* Pods-TBNetworking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TBNetworking.release.xcconfig"; path = "Pods/Target Support Files/Pods-TBNetworking/Pods-TBNetworking.release.xcconfig"; sourceTree = "<group>"; };
-		E5DF9DA81B68CC7B00B45857 /* TBAPIBaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBAPIBaseManager.h; sourceTree = "<group>"; };
-		E5DF9DA91B68CC7B00B45857 /* TBAPIBaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBAPIBaseManager.m; sourceTree = "<group>"; };
+		E5DF9DA81B68CC7B00B45857 /* TBAPIBaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBAPIBaseRequest.h; sourceTree = "<group>"; };
+		E5DF9DA91B68CC7B00B45857 /* TBAPIBaseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBAPIBaseRequest.m; sourceTree = "<group>"; };
 		E5DF9DAB1B68D10300B45857 /* TBURLResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBURLResponse.h; sourceTree = "<group>"; };
 		E5DF9DAC1B68D10300B45857 /* TBURLResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBURLResponse.m; sourceTree = "<group>"; };
 		E5DF9DAF1B68D29900B45857 /* SiteAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SiteAPIManager.h; sourceTree = "<group>"; };
 		E5DF9DB01B68D29900B45857 /* SiteAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SiteAPIManager.m; sourceTree = "<group>"; };
 		E5DF9DB21B68EE5C00B45857 /* TBAPIProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBAPIProxy.h; sourceTree = "<group>"; };
 		E5DF9DB31B68EE5C00B45857 /* TBAPIProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBAPIProxy.m; sourceTree = "<group>"; };
+		E5DF9DB51B68FC4200B45857 /* TBBaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBBaseRequest.h; sourceTree = "<group>"; };
+		E5DF9DB61B68FC4200B45857 /* TBBaseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBBaseRequest.m; sourceTree = "<group>"; };
 		EA745D11C6699982B5EF1E79 /* libPods-TBNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TBNetworking.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBC264E31B68C2E800C07B74 /* TBNetworking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TBNetworking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBC264E71B68C2E800C07B74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -80,12 +83,14 @@
 		E5DF9DA71B68C5AC00B45857 /* TBNetworking */ = {
 			isa = PBXGroup;
 			children = (
-				E5DF9DA81B68CC7B00B45857 /* TBAPIBaseManager.h */,
-				E5DF9DA91B68CC7B00B45857 /* TBAPIBaseManager.m */,
+				E5DF9DA81B68CC7B00B45857 /* TBAPIBaseRequest.h */,
+				E5DF9DA91B68CC7B00B45857 /* TBAPIBaseRequest.m */,
 				E5DF9DAB1B68D10300B45857 /* TBURLResponse.h */,
 				E5DF9DAC1B68D10300B45857 /* TBURLResponse.m */,
 				E5DF9DB21B68EE5C00B45857 /* TBAPIProxy.h */,
 				E5DF9DB31B68EE5C00B45857 /* TBAPIProxy.m */,
+				E5DF9DB51B68FC4200B45857 /* TBBaseRequest.h */,
+				E5DF9DB61B68FC4200B45857 /* TBBaseRequest.m */,
 			);
 			name = TBNetworking;
 			sourceTree = "<group>";
@@ -318,7 +323,8 @@
 				EBC264EF1B68C2E800C07B74 /* ViewController.m in Sources */,
 				EBC264EC1B68C2E800C07B74 /* AppDelegate.m in Sources */,
 				EBC264E91B68C2E800C07B74 /* main.m in Sources */,
-				E5DF9DAA1B68CC7B00B45857 /* TBAPIBaseManager.m in Sources */,
+				E5DF9DB71B68FC4200B45857 /* TBBaseRequest.m in Sources */,
+				E5DF9DAA1B68CC7B00B45857 /* TBAPIBaseRequest.m in Sources */,
 				E5DF9DAD1B68D10300B45857 /* TBURLResponse.m in Sources */,
 				E5DF9DB11B68D29900B45857 /* SiteAPIManager.m in Sources */,
 			);

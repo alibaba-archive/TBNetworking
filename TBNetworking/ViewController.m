@@ -9,7 +9,9 @@
 #import "ViewController.h"
 #import "SiteAPIManager.h"
 
-@interface ViewController ()
+@interface ViewController ()<TBAPIBaseManagerDelegate>
+
+@property (nonatomic, strong) SiteAPIManager *siteManager;
 
 @end
 
@@ -19,12 +21,28 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    SiteAPIManager *api = [[SiteAPIManager alloc] init];
-    api.delegate = api;
-    [api loadData];
+    [self.siteManager loadData];
     
 }
 
+- (void)managerCallAPIDidFailed:(TBAPIBaseManager *)manager {
+ 
+    NSLog(@"fail");
+}
+
+- (void)managerCallAPIDidSuccess:(TBAPIBaseManager *)manager {
+
+    NSLog(@"success");
+}
+
+#pragma makr gettter
+- (SiteAPIManager *)siteManager {
+    if (!_siteManager) {
+        _siteManager = [[SiteAPIManager alloc] init];
+        _siteManager.delegate = self;
+    }
+    return _siteManager;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

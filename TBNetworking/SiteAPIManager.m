@@ -10,15 +10,12 @@
 
 @implementation SiteAPIManager
 
-
-- (void)managerCallAPIDidSuccess:(TBAPIBaseManager *)manager {
-
-    NSLog(@"fff");
+- (NSString *)requestUrl {
+    return @"site/info.json";
 }
 
-- (void)managerCallAPIDidFailed:(TBAPIBaseManager *)manager {
-
-    
+- (TBAPIManagerRequestType )requestType {
+    return TBAPIManagerRequestTypeGET;
 }
 
 - (void)manager:(TBAPIBaseManager *)manager willPerformSuccessResponse:(TBURLResponse *)response {
