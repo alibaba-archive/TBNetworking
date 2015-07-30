@@ -7,6 +7,14 @@
 //
 
 #import "TBAPIProxy.h"
+#import "TBLogger.h"
+
+
+@interface TBAPIProxy ()
+
+@property (nonatomic, strong) AFHTTPSessionManager *sessionManager;
+
+@end
 
 @implementation TBAPIProxy {
 
@@ -31,6 +39,10 @@
     self = [super init];
     if (self) {
         _manager = [AFHTTPRequestOperationManager manager];
+
+        _sessionManager = [AFHTTPSessionManager manager];
+        _sessionManager.operationQueue.maxConcurrentOperationCount = 4;
+
         _requestsTable = [[NSMutableDictionary alloc] init];
     }
     return self;
@@ -47,17 +59,18 @@
     
     switch (requestMethod) {
         case TBAPIManagerRequestTypeGET: {
-            NSLog(@"%@",[self buildRequestUrl:request]);
-            request.requestOperation = [_manager GET:[self buildRequestUrl:request] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                [self handleOperate:operation];
-            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                [self handleOperate:operation];
-                
+            
+           
+            request.dataTask = [self.sessionManager GET:[self buildRequestUrl:request] parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+                [self handleOperate:task];
+            } failure:^(NSURLSessionDataTask *task, NSError *error) {
+                 [self handleOperate:task];
             }];
+
         }
             break;
         case TBAPIManagerRequestTypePOST: {
-        
+            
             
         }
             break;
@@ -76,11 +89,13 @@
     return YES;
 }
 
-- (void)handleOperate:(AFHTTPRequestOperation *)operate {
-    NSString *hashKey = [self requestHashKey:operate];
+- (void)handleOperate:(NSURLSessionDataTask  *)dataTask {
+    NSString *hashKey = [self requestHashKey:dataTask];
     
     TBAPIBaseRequest *request = _requestsTable[hashKey];
+    
     if (request) {
+        [TBLogger loggerWithRequest:request];
         BOOL success = [self checkResult:request];
         if (success) {
             
@@ -116,15 +131,15 @@
     
 }
 
-- (NSString *)requestHashKey :(AFHTTPRequestOperation *)operation {
-    NSString *hashKey = [NSString stringWithFormat:@"%lu",(unsigned long)[operation hash]];
+- (NSString *)requestHashKey :(NSURLSessionDataTask  *)dataTsk {
+    NSString *hashKey = [NSString stringWithFormat:@"%lu",(unsigned long)[dataTsk hash]];
     return hashKey;
 }
 
 - (void)addOperation:(TBAPIBaseRequest *)request {
 
     if (request.requestOperation!=nil) {
-        NSString *hashKey = [self requestHashKey:request.requestOperation];
+        NSString *hashKey = [self requestHashKey:request.dataTask];
         @synchronized(self) {
             _requestsTable[hashKey] = request;
         }
