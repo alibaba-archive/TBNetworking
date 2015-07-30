@@ -13,6 +13,7 @@
 		E5DF9DB41B68EE5C00B45857 /* TBAPIProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = E5DF9DB31B68EE5C00B45857 /* TBAPIProxy.m */; };
 		E5DF9DBA1B6A064300B45857 /* TBLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = E5DF9DB91B6A064300B45857 /* TBLogger.m */; };
 		E5DF9DBD1B6A0AEE00B45857 /* TBAPIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E5DF9DBC1B6A0AEE00B45857 /* TBAPIRequest.m */; };
+		E5DF9DC01B6A1FFC00B45857 /* StateAPIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E5DF9DBF1B6A1FFC00B45857 /* StateAPIRequest.m */; };
 		EBC264E91B68C2E800C07B74 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC264E81B68C2E800C07B74 /* main.m */; };
 		EBC264EC1B68C2E800C07B74 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC264EB1B68C2E800C07B74 /* AppDelegate.m */; };
 		EBC264EF1B68C2E800C07B74 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC264EE1B68C2E800C07B74 /* ViewController.m */; };
@@ -45,6 +46,8 @@
 		E5DF9DB91B6A064300B45857 /* TBLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBLogger.m; sourceTree = "<group>"; };
 		E5DF9DBB1B6A0AEE00B45857 /* TBAPIRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBAPIRequest.h; sourceTree = "<group>"; };
 		E5DF9DBC1B6A0AEE00B45857 /* TBAPIRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBAPIRequest.m; sourceTree = "<group>"; };
+		E5DF9DBE1B6A1FFC00B45857 /* StateAPIRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StateAPIRequest.h; sourceTree = "<group>"; };
+		E5DF9DBF1B6A1FFC00B45857 /* StateAPIRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StateAPIRequest.m; sourceTree = "<group>"; };
 		EA745D11C6699982B5EF1E79 /* libPods-TBNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TBNetworking.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBC264E31B68C2E800C07B74 /* TBNetworking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TBNetworking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBC264E71B68C2E800C07B74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -83,8 +86,8 @@
 		E5DF9DA71B68C5AC00B45857 /* TBNetworking */ = {
 			isa = PBXGroup;
 			children = (
-				E5DF9DB81B6A064300B45857 /* TBLogger.h */,
-				E5DF9DB91B6A064300B45857 /* TBLogger.m */,
+				E5DF9DC21B6A25F100B45857 /* VaildatorComponents */,
+				E5DF9DC11B6A25CB00B45857 /* LoggerComponents */,
 				E5DF9DA81B68CC7B00B45857 /* TBAPIBaseRequest.h */,
 				E5DF9DA91B68CC7B00B45857 /* TBAPIBaseRequest.m */,
 				E5DF9DBB1B6A0AEE00B45857 /* TBAPIRequest.h */,
@@ -100,8 +103,26 @@
 			children = (
 				E5DF9DAF1B68D29900B45857 /* SiteAPIManager.h */,
 				E5DF9DB01B68D29900B45857 /* SiteAPIManager.m */,
+				E5DF9DBE1B6A1FFC00B45857 /* StateAPIRequest.h */,
+				E5DF9DBF1B6A1FFC00B45857 /* StateAPIRequest.m */,
 			);
 			name = API;
+			sourceTree = "<group>";
+		};
+		E5DF9DC11B6A25CB00B45857 /* LoggerComponents */ = {
+			isa = PBXGroup;
+			children = (
+				E5DF9DB81B6A064300B45857 /* TBLogger.h */,
+				E5DF9DB91B6A064300B45857 /* TBLogger.m */,
+			);
+			name = LoggerComponents;
+			sourceTree = "<group>";
+		};
+		E5DF9DC21B6A25F100B45857 /* VaildatorComponents */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = VaildatorComponents;
 			sourceTree = "<group>";
 		};
 		EBC264DA1B68C2E800C07B74 = {
@@ -326,6 +347,7 @@
 				E5DF9DBA1B6A064300B45857 /* TBLogger.m in Sources */,
 				EBC264E91B68C2E800C07B74 /* main.m in Sources */,
 				E5DF9DAA1B68CC7B00B45857 /* TBAPIBaseRequest.m in Sources */,
+				E5DF9DC01B6A1FFC00B45857 /* StateAPIRequest.m in Sources */,
 				E5DF9DB11B68D29900B45857 /* SiteAPIManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

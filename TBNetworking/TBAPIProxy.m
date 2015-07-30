@@ -45,7 +45,7 @@
 }
 
 - (NSString *)buildRequestUrl:(TBAPIBaseRequest *)request {
-    NSString *url = [request requestUrl];
+    NSString *url = [request.child requestUrl];
     return [NSString stringWithFormat:@"%@%@",request.baseUrl,url];
 }
 
@@ -133,7 +133,7 @@
     NSString *hashKey = [self requestHashKey:dataTask];
     
     TBAPIBaseRequest *request = _requestsTable[hashKey];
-    
+    [request complete];
     if (request) {
         [TBLogger loggerWithRequest:request];
         BOOL success = [self checkResult:request];

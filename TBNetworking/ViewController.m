@@ -8,11 +8,12 @@
 
 #import "ViewController.h"
 #import "SiteAPIManager.h"
+#import "StateAPIRequest.h"
 
 @interface ViewController ()<TBAPIBaseRequestDelegate>
 
 @property (nonatomic, strong) SiteAPIManager *siteManager;
-
+@property (nonatomic, strong) StateAPIRequest *stateRequest;
 @end
 
 @implementation ViewController
@@ -22,8 +23,10 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     for (int i = 0; i<100; i++) {
-        [self.siteManager start];
+        //[self.siteManager start];
     }
+    
+    [self.stateRequest start];
     
 }
 
@@ -40,6 +43,15 @@
         _siteManager.delegate = self;
     }
     return _siteManager;
+}
+
+- (StateAPIRequest *)stateRequest {
+
+    if (!_stateRequest) {
+        _stateRequest = [[StateAPIRequest alloc] init];
+        _siteManager.delegate = self;
+    }
+    return _stateRequest;
 }
 
 - (void)didReceiveMemoryWarning {

@@ -9,9 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "TBAPIBaseRequest.h"
 
-
-
-
 #ifdef DEBUG
 #define TBLog(fmt, ...)  NSLog(fmt, ##__VA_ARGS__)
 #else
