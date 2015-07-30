@@ -36,27 +36,31 @@
     return TBAPIManagerRequestTypeGET;
 }
 
+- (NSInteger)TBResponseStatus {
+    return self.requestOperation.response.statusCode;
+}
+
 - (void)start {
 
     [[TBAPIProxy sharedInstance] addRequest:self];
 }
 
-- (void)cancelAllRequest {
+- (void)startWithParameters:(NSDictionary *)parameters {
 
     
 }
 
-
-#pragma mark - method interceptor
-
-- (void)willPerformSuccessResponse:(TBURLResponse *)response {
-    
-    
-    
-}
-
-- (void)didPerformSuccessReponse:(TBURLResponse *)response {
+- (void)stop {
 
     
 }
+
+- (BOOL)isExcuting {
+    return self.requestOperation.isExecuting;
+}
+
+- (NSTimeInterval )requestTimeOutInterval {
+    return 0;
+}
+
 @end

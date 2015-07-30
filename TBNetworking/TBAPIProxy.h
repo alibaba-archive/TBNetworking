@@ -8,10 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import <AFNetworking.h>
-#import "TBURLResponse.h"
 #import "TBAPIBaseRequest.h"
 
-typedef void(^TBCallBack) (TBURLResponse *response);
+typedef void(^TBCallBack) (NSURLResponse *response);
 
 @interface TBAPIProxy : NSObject
 

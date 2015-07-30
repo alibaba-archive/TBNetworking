@@ -8,6 +8,6 @@
 
 #import "TBAPIBaseRequest.h"
 
-@interface SiteAPIManager : TBAPIBaseRequest<TBAPIBaseRequestDelegate>
+@interface SiteAPIManager : TBAPIBaseRequest
 
 @end

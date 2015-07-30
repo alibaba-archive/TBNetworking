@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "TBURLResponse.h"
 #import <AFNetworking.h>
 
 @class TBAPIBaseRequest;
@@ -19,11 +18,11 @@
 @protocol TBAPIBaseRequestInterceptor <NSObject>
 
 @optional
-//- (void)manager:(TBAPIBaseManager *)manager willPerformSuccessResponse:(TBURLResponse *)response;
-//- (void)manager:(TBAPIBaseManager *)manager didPerformSuccessResponse:(TBURLResponse *)response;
-//
-//- (void)manager:(TBAPIBaseManager *)manager willPerformFailResponse:(TBURLResponse *)response;
-//- (void)manager:(TBAPIBaseManager *)manager didPerformFailResponse:(TBURLResponse *)response;
+- (void)requestWillPerformSuccessResponse:(TBAPIBaseRequest *)request;
+- (void)requestDidPerformSuccessResponse:(TBAPIBaseRequest *)request;
+
+- (void)requestWillPerformFailResponse:(TBAPIBaseRequest *)response;
+- (void)requestDidPerformFailResponse:(TBAPIBaseRequest *)response;
 
 
 @end
@@ -47,17 +46,20 @@ typedef NS_ENUM(NSInteger, TBAPIRequestType) {
 
 @protocol TBAPIBaseRequestDelegate <NSObject>
 
-- (void)managerCallAPIDidSuccess:(TBAPIBaseRequest *)request;
-- (void)managerCallAPIDidFailed:(TBAPIBaseRequest *)request;
+@optional
+- (void)requestAPIDidSuccess:(TBAPIBaseRequest *)request;
+- (void)requestAPIDidFailed:(TBAPIBaseRequest *)request;
 
 @end
 
 @interface TBAPIBaseRequest : NSObject
 
-@property (nonatomic, weak) id<TBAPIBaseRequestDelegate> delegate;
-@property (nonatomic, weak) id<TBAPIBaseRequestInterceptor> interceptor;
+@property (nonatomic, weak)   id<TBAPIBaseRequestDelegate>     delegate;
+@property (nonatomic, weak)   id<TBAPIBaseRequestInterceptor>  interceptor;
 
-@property (nonatomic, strong) AFHTTPRequestOperation *requestOPeration;
+@property (nonatomic, strong) AFHTTPRequestOperation          *requestOperation;
+
+@property (nonatomic, assign) NSInteger                        TBResponseStatus;
 
 - (NSString *)baseUrl;
 
@@ -67,11 +69,15 @@ typedef NS_ENUM(NSInteger, TBAPIRequestType) {
 
 - (void)start;
 
+- (void)startWithParameters:(NSDictionary *)parameters;
 
-- (NSInteger)loadData;
+- (void)stop;
 
-- (NSInteger)loadDataFromParameters:(NSDictionary *)parameters;
+- (BOOL)isExcuting;
 
-- (void)cancelAllRequest;
+- (NSTimeInterval )requestTimeOutInterval;
+
+
+
 
 @end
