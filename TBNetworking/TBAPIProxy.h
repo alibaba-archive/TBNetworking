@@ -9,8 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <AFNetworking.h>
 #import "TBAPIBaseRequest.h"
-
-typedef void(^TBCallBack) (NSURLResponse *response);
+#import "TBLogger.h"
 
 @interface TBAPIProxy : NSObject
 
@@ -18,4 +17,7 @@ typedef void(^TBCallBack) (NSURLResponse *response);
 
 - (void)addRequest:(TBAPIBaseRequest *)request;
 
+- (void)cancelRequest:(TBAPIBaseRequest *)request;
+
+- (void)cancelAllRequest;
 @end

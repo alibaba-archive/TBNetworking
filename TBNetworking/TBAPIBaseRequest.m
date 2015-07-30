@@ -11,12 +11,10 @@
 
 @implementation TBAPIBaseRequest
 
-
 - (instancetype)init {
 
     self = [super init];
     if (self) {
-        
         self.delegate = nil;
     }
     return self;
@@ -36,8 +34,9 @@
     return TBAPIManagerRequestTypeGET;
 }
 
-- (NSInteger)TBResponseStatus {
-    return self.requestOperation.response.statusCode;
+- (NSInteger)responseStatusCode {
+    NSHTTPURLResponse *response = (NSHTTPURLResponse *)self.dataTask.response;
+    return response.statusCode;
 }
 
 - (void)start {
@@ -51,12 +50,14 @@
 }
 
 - (void)stop {
-
+    
+    [self.dataTask cancel];
+    [self setDelegate:nil];
     
 }
 
 - (BOOL)isExcuting {
-    return self.requestOperation.isExecuting;
+    return self.dataTask.state == NSURLSessionTaskStateRunning;
 }
 
 - (NSTimeInterval )requestTimeOutInterval {

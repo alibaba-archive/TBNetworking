@@ -21,7 +21,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    [self.siteManager start];
+    for (int i = 0; i<100; i++) {
+        [self.siteManager start];
+    }
+    
 }
 
 - (void)requestAPIDidSuccess:(TBAPIBaseRequest *)request {

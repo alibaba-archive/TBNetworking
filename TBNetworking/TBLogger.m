@@ -10,6 +10,7 @@
 
 @implementation TBLogger
 
+
 + (void)loggerWithRequest:(TBAPIBaseRequest *)request {
 
 #ifdef DEBUG

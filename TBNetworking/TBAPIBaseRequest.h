@@ -57,7 +57,6 @@ typedef NS_ENUM(NSInteger, TBAPIRequestType) {
 @property (nonatomic, weak)   id<TBAPIBaseRequestDelegate>     delegate;
 @property (nonatomic, weak)   id<TBAPIBaseRequestInterceptor>  interceptor;
 
-@property (nonatomic, strong) AFHTTPRequestOperation           *requestOperation;
 @property (nonatomic, strong) NSURLSessionDataTask             *dataTask;
 
 @property (nonatomic, assign) NSInteger                        responseStatusCode;

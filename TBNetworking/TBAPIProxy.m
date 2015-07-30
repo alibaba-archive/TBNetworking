@@ -7,8 +7,6 @@
 //
 
 #import "TBAPIProxy.h"
-#import "TBLogger.h"
-
 
 @interface TBAPIProxy ()
 
@@ -18,7 +16,6 @@
 
 @implementation TBAPIProxy {
 
-    AFHTTPRequestOperationManager *_manager;
     NSMutableDictionary *_requestsTable;
     
 }
@@ -38,7 +35,6 @@
 
     self = [super init];
     if (self) {
-        _manager = [AFHTTPRequestOperationManager manager];
 
         _sessionManager = [AFHTTPSessionManager manager];
         _sessionManager.operationQueue.maxConcurrentOperationCount = 4;
@@ -60,29 +56,73 @@
     switch (requestMethod) {
         case TBAPIManagerRequestTypeGET: {
             
-           
-            request.dataTask = [self.sessionManager GET:[self buildRequestUrl:request] parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+            request.dataTask = [self.sessionManager
+                                GET:[self buildRequestUrl:request]
+                                parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
                 [self handleOperate:task];
-            } failure:^(NSURLSessionDataTask *task, NSError *error) {
+            }
+                                failure:^(NSURLSessionDataTask *task, NSError *error) {
                  [self handleOperate:task];
             }];
 
         }
             break;
         case TBAPIManagerRequestTypePOST: {
+        
+            request.dataTask = [self.sessionManager
+                                POST:[self buildRequestUrl:request]
+                                parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+                [self handleOperate:task];
+            }
+                                failure:^(NSURLSessionDataTask *task, NSError *error) {
+                [self handleOperate:task];
+            }];
             
             
         }
             break;
-            
+        case TBAPIManagerRequestTypePUT: {
+        
+            request.dataTask = [self.sessionManager
+                                PUT:[self buildRequestUrl:request]
+                                parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+                [self handleOperate:task];
+            }
+                                failure:^(NSURLSessionDataTask *task, NSError *error) {
+                [self handleOperate:task];
+            }];
+        }
+            break;
+        case TBAPIManagerRequestTypeDELETE: {
+        
+            request.dataTask = [self.sessionManager DELETE:[self buildRequestUrl:request] parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+                [self handleOperate:task];
+            } failure:^(NSURLSessionDataTask *task, NSError *error) {
+                [self handleOperate:task];
+            }];
+        }
         default:
             break;
     }
     
-    [self addOperation:request];
+    [self addDataTask:request];
+}
 
+- (void)cancelRequest:(TBAPIBaseRequest *)request {
+    [request stop];
+}
+
+- (void)cancelAllRequest {
+    NSDictionary *copyTable = [_requestsTable copy];
+    for (TBAPIBaseRequest *request in copyTable) {
+        [self cancelRequest:request];
+    }
     
 }
+
+
+
+#pragma mark - private method
 
 - (BOOL)checkResult:(TBAPIBaseRequest *)request {
 
@@ -127,6 +167,7 @@
             
         }
     }
+    [self removeDataTask:dataTask];
    
     
 }
@@ -136,14 +177,23 @@
     return hashKey;
 }
 
-- (void)addOperation:(TBAPIBaseRequest *)request {
-
-    if (request.requestOperation!=nil) {
+- (void)addDataTask:(TBAPIBaseRequest *)request {
+    if (request.dataTask!=nil) {
         NSString *hashKey = [self requestHashKey:request.dataTask];
         @synchronized(self) {
             _requestsTable[hashKey] = request;
         }
     }
-    
+    TBLog(@"requestsTable size is %lu", (unsigned long) [_requestsTable count]);
+    TBLog(@"Operation quene size is %lu", (unsigned long) self.sessionManager.operationQueue.operationCount);
+}
+
+- (void)removeDataTask:(NSURLSessionDataTask *)dataTask {
+    NSString *hashKey = [self requestHashKey:dataTask];
+    @synchronized(self) {
+        [_requestsTable removeObjectForKey:hashKey];
+    }
+    TBLog(@"current quene size is %lu", (unsigned long) [_requestsTable count]);
+    TBLog(@"Operation quene size is %lu", (unsigned long) self.sessionManager.operationQueue.operationCount);
 }
 @end
