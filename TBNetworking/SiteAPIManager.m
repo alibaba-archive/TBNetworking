@@ -14,14 +14,10 @@
     return @"site/info.json";
 }
 
-- (TBAPIManagerRequestType )requestType {
+- (TBAPIRequestType )requestType {
     return TBAPIManagerRequestTypeGET;
 }
 
-- (void)manager:(TBAPIBaseManager *)manager willPerformSuccessResponse:(TBURLResponse *)response {
-
-    
-}
 
 - (NSDictionary *)reformParameters:(NSDictionary *)parameters {
     

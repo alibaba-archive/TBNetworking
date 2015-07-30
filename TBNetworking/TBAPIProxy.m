@@ -36,6 +36,27 @@
 
 - (void)addRequest:(TBAPIBaseRequest *)request {
 
+    TBAPIRequestType requestMethod = [request requestType];
+    
+    switch (requestMethod) {
+        case TBAPIManagerRequestTypeGET: {
+        
+            request.requestOPeration = [_manager GET:[request requestUrl] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                [self handleOperate:operation];
+            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                [self handleOperate:operation];
+            }];
+        }
+            break;
+            
+        default:
+            break;
+    }
+    
+}
+
+- (void)handleOperate:(AFHTTPRequestOperation *)operate {
+
     
 }
 @end

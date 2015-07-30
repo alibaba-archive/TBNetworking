@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "TBURLResponse.h"
+#import <AFNetworking.h>
 
 @class TBAPIBaseRequest;
 
@@ -18,11 +19,11 @@
 @protocol TBAPIBaseRequestInterceptor <NSObject>
 
 @optional
-- (void)manager:(TBAPIBaseManager *)manager willPerformSuccessResponse:(TBURLResponse *)response;
-- (void)manager:(TBAPIBaseManager *)manager didPerformSuccessResponse:(TBURLResponse *)response;
-
-- (void)manager:(TBAPIBaseManager *)manager willPerformFailResponse:(TBURLResponse *)response;
-- (void)manager:(TBAPIBaseManager *)manager didPerformFailResponse:(TBURLResponse *)response;
+//- (void)manager:(TBAPIBaseManager *)manager willPerformSuccessResponse:(TBURLResponse *)response;
+//- (void)manager:(TBAPIBaseManager *)manager didPerformSuccessResponse:(TBURLResponse *)response;
+//
+//- (void)manager:(TBAPIBaseManager *)manager willPerformFailResponse:(TBURLResponse *)response;
+//- (void)manager:(TBAPIBaseManager *)manager didPerformFailResponse:(TBURLResponse *)response;
 
 
 @end
@@ -44,22 +45,7 @@ typedef NS_ENUM(NSInteger, TBAPIRequestType) {
 };
 
 
-
-
-
-@protocol TBAPIManager <NSObject>
-
-@required
-
-//强制子类必须实现的方法
-- (NSString *)requestUrl;
-
-- (TBAPIRequestType)requestType;
-
-@end
-
-
-@protocol TBAPIBaseManagerDelegate <NSObject>
+@protocol TBAPIBaseRequestDelegate <NSObject>
 
 - (void)managerCallAPIDidSuccess:(TBAPIBaseRequest *)request;
 - (void)managerCallAPIDidFailed:(TBAPIBaseRequest *)request;
@@ -68,13 +54,19 @@ typedef NS_ENUM(NSInteger, TBAPIRequestType) {
 
 @interface TBAPIBaseRequest : NSObject
 
-@property (nonatomic, weak) id<TBAPIBaseManagerDelegate> delegate;
+@property (nonatomic, weak) id<TBAPIBaseRequestDelegate> delegate;
 @property (nonatomic, weak) id<TBAPIBaseRequestInterceptor> interceptor;
-@property (nonatomic, weak) NSObject<TBAPIManager> *child;
+
+@property (nonatomic, strong) AFHTTPRequestOperation *requestOPeration;
 
 - (NSString *)baseUrl;
 
+- (NSString *)requestUrl;
+
+- (TBAPIRequestType)requestType;
+
 - (void)start;
+
 
 - (NSInteger)loadData;
 

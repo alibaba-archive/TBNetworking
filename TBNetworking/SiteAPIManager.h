@@ -6,8 +6,8 @@
 //  Copyright (c) 2015 Teambition. All rights reserved.
 //
 
-#import "TBAPIBaseManager.h"
+#import "TBAPIBaseRequest.h"
 
-@interface SiteAPIManager : TBAPIBaseManager<TBAPIManagerInterceptor, TBAPIBaseManagerDelegate, TBAPIManager>
+@interface SiteAPIManager : TBAPIBaseRequest<TBAPIBaseRequestDelegate>
 
 @end
