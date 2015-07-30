@@ -53,16 +53,34 @@
 
     TBAPIRequestType requestMethod = [request requestType];
     
+    
+    if (request.requestSerializerType == TBRequestSerializerTypeHTTP) {
+        _sessionManager.requestSerializer = [AFHTTPRequestSerializer serializer];
+
+    } else {
+        _sessionManager.requestSerializer = [AFJSONRequestSerializer serializer];
+    }
+    
+    if (request.responseSerializerType == TBResponseSerializerTypeHTTP) {
+        _sessionManager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    } else {
+        _sessionManager.responseSerializer = [AFJSONResponseSerializer serializer];
+    }
+    
     switch (requestMethod) {
         case TBAPIManagerRequestTypeGET: {
             
             request.dataTask = [self.sessionManager
                                 GET:[self buildRequestUrl:request]
                                 parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
-                [self handleOperate:task];
+                                    [self handleOperate:task];
+                                    request.responseObject = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:nil];
+                                    [TBLogger loggerWithRequest:request];
+                               
             }
                                 failure:^(NSURLSessionDataTask *task, NSError *error) {
-                 [self handleOperate:task];
+                                    [self handleOperate:task];
+                                    [TBLogger loggerWithRequest:request error:error];
             }];
 
         }
@@ -135,7 +153,7 @@
     TBAPIBaseRequest *request = _requestsTable[hashKey];
     [request complete];
     if (request) {
-        [TBLogger loggerWithRequest:request];
+        
         BOOL success = [self checkResult:request];
         if (success) {
             

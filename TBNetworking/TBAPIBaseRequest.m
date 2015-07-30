@@ -33,7 +33,7 @@
 }
 
 - (NSString *)baseUrl {
-    return @"https://www.v2ex.com/api/";
+    return @"http://apis.baidu.com/apistore/";
 }
 
 - (NSString *)requestUrl {
@@ -44,6 +44,14 @@
 - (TBAPIRequestType )requestType {
 
     return TBAPIManagerRequestTypeGET;
+}
+
+- (TBRequestSerializerType)requestSerializerType {
+    return TBRequestSerializerTypeHTTP;
+}
+
+- (TBResponseSerializerType)responseSerializerType {
+    return TBResponseSerializerTypeHTTP;
 }
 
 - (NSInteger)responseStatusCode {

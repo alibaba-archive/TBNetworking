@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		DB301F93FBF3F46A8C69F7BF /* libPods-TBNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA745D11C6699982B5EF1E79 /* libPods-TBNetworking.a */; };
 		E5DF9DAA1B68CC7B00B45857 /* TBAPIBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E5DF9DA91B68CC7B00B45857 /* TBAPIBaseRequest.m */; };
-		E5DF9DB11B68D29900B45857 /* SiteAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E5DF9DB01B68D29900B45857 /* SiteAPIManager.m */; };
 		E5DF9DB41B68EE5C00B45857 /* TBAPIProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = E5DF9DB31B68EE5C00B45857 /* TBAPIProxy.m */; };
 		E5DF9DBA1B6A064300B45857 /* TBLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = E5DF9DB91B6A064300B45857 /* TBLogger.m */; };
 		E5DF9DBD1B6A0AEE00B45857 /* TBAPIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E5DF9DBC1B6A0AEE00B45857 /* TBAPIRequest.m */; };
@@ -38,8 +37,6 @@
 		C6E7F51099E21135FCCF06AD /* Pods-TBNetworking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TBNetworking.release.xcconfig"; path = "Pods/Target Support Files/Pods-TBNetworking/Pods-TBNetworking.release.xcconfig"; sourceTree = "<group>"; };
 		E5DF9DA81B68CC7B00B45857 /* TBAPIBaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBAPIBaseRequest.h; sourceTree = "<group>"; };
 		E5DF9DA91B68CC7B00B45857 /* TBAPIBaseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBAPIBaseRequest.m; sourceTree = "<group>"; };
-		E5DF9DAF1B68D29900B45857 /* SiteAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SiteAPIManager.h; sourceTree = "<group>"; };
-		E5DF9DB01B68D29900B45857 /* SiteAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SiteAPIManager.m; sourceTree = "<group>"; };
 		E5DF9DB21B68EE5C00B45857 /* TBAPIProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBAPIProxy.h; sourceTree = "<group>"; };
 		E5DF9DB31B68EE5C00B45857 /* TBAPIProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBAPIProxy.m; sourceTree = "<group>"; };
 		E5DF9DB81B6A064300B45857 /* TBLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBLogger.h; sourceTree = "<group>"; };
@@ -101,8 +98,6 @@
 		E5DF9DAE1B68D27600B45857 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				E5DF9DAF1B68D29900B45857 /* SiteAPIManager.h */,
-				E5DF9DB01B68D29900B45857 /* SiteAPIManager.m */,
 				E5DF9DBE1B6A1FFC00B45857 /* StateAPIRequest.h */,
 				E5DF9DBF1B6A1FFC00B45857 /* StateAPIRequest.m */,
 			);
@@ -348,7 +343,6 @@
 				EBC264E91B68C2E800C07B74 /* main.m in Sources */,
 				E5DF9DAA1B68CC7B00B45857 /* TBAPIBaseRequest.m in Sources */,
 				E5DF9DC01B6A1FFC00B45857 /* StateAPIRequest.m in Sources */,
-				E5DF9DB11B68D29900B45857 /* SiteAPIManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

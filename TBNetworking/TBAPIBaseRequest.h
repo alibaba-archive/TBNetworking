@@ -58,6 +58,16 @@ typedef NS_ENUM(NSInteger, TBAPIRequestType){
     TBAPIManagerRequestTypeDELETE
 };
 
+typedef NS_ENUM(NSInteger , TBRequestSerializerType) {
+    TBRequestSerializerTypeHTTP = 0,
+    TBRequestSerializerTypeJSON,
+};
+
+typedef NS_ENUM(NSInteger , TBResponseSerializerType) {
+    TBResponseSerializerTypeHTTP = 0,
+    TBResponseSerializerTypeJSON,
+};
+
 /**
  *  请求回调协议
  */
@@ -89,9 +99,10 @@ typedef NS_ENUM(NSInteger, TBAPIRequestType){
 
 @property (nonatomic, assign, readonly) NSTimeInterval         requestTime;
 
-@property (nonatomic, strong) NSObject<TBAPIRequest>           *child;
+@property (nonatomic, weak)   NSObject<TBAPIRequest>           *child;
 @property (nonatomic, strong) NSURLSessionDataTask             *dataTask;
 
+@property (nonatomic, assign) id                               responseObject;
 @property (nonatomic, assign) NSInteger                        responseStatusCode;
 
 
@@ -105,6 +116,20 @@ typedef NS_ENUM(NSInteger, TBAPIRequestType){
 
 - (void)stop;
 
+
+
+/// 请求的SerializerType
+- (TBRequestSerializerType)requestSerializerType;
+
+/// 返回的的SerializerType
+- (TBResponseSerializerType)responseSerializerType;
+
+/**
+ *  HTTP状态吗
+ *
+ *  @return
+ */
+- (NSInteger)responseStatusCode;
 /**
  *  根据HTTP状态码来判断本次请求是否成功
  *

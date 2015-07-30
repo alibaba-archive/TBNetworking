@@ -7,12 +7,10 @@
 //
 
 #import "ViewController.h"
-#import "SiteAPIManager.h"
 #import "StateAPIRequest.h"
 
 @interface ViewController ()<TBAPIBaseRequestDelegate>
 
-@property (nonatomic, strong) SiteAPIManager *siteManager;
 @property (nonatomic, strong) StateAPIRequest *stateRequest;
 @end
 
@@ -23,9 +21,9 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     for (int i = 0; i<100; i++) {
-        //[self.siteManager start];
+        
     }
-    
+    //[self.siteManager start];
     [self.stateRequest start];
     
 }
@@ -37,19 +35,12 @@
 
 
 #pragma makr gettter
-- (SiteAPIManager *)siteManager {
-    if (!_siteManager) {
-        _siteManager = [[SiteAPIManager alloc] init];
-        _siteManager.delegate = self;
-    }
-    return _siteManager;
-}
 
 - (StateAPIRequest *)stateRequest {
 
     if (!_stateRequest) {
         _stateRequest = [[StateAPIRequest alloc] init];
-        _siteManager.delegate = self;
+        _stateRequest.delegate = self;
     }
     return _stateRequest;
 }

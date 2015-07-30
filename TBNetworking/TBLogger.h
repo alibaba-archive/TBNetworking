@@ -19,4 +19,5 @@
 
 + (void)loggerWithRequest:(TBAPIBaseRequest *)request;
 
++ (void)loggerWithRequest:(TBAPIBaseRequest *)request error:(NSError *)error;
 @end

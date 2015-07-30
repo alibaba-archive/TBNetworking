@@ -11,8 +11,7 @@
 @implementation StateAPIRequest
 
 - (NSString *)requestUrl {
-
-    return @"api/site/stats.json";
+    return @"iplookupservice/iplookup";
 }
 
 @end
