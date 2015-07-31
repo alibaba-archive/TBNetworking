@@ -7,6 +7,7 @@
 //
 
 #import "TBAPIProxy.h"
+#import "TBAPIResponse.h"
 
 @interface TBAPIProxy ()
 
@@ -74,12 +75,23 @@
                                 GET:[self buildRequestUrl:request]
                                 parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
                                     [self handleOperate:task];
-                                    request.responseObject = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:nil];
+                                    
+                                    TBAPIResponse *response = [[TBAPIResponse alloc] initWithRequest:request
+                                                                                           requestID:task.taskIdentifier
+                                                                                      responseObject:responseObject
+                                                                                              statusCode:((NSHTTPURLResponse *)task.response).statusCode];
+                                    request.response = response;
                                     [TBLogger loggerWithRequest:request];
                                
             }
                                 failure:^(NSURLSessionDataTask *task, NSError *error) {
                                     [self handleOperate:task];
+                                    TBAPIResponse *response = [[TBAPIResponse alloc] initWithRequest:request
+                                                                                           requestID:task.taskIdentifier
+                                                                                      responseObject:nil
+                                                                                          statusCode:((NSHTTPURLResponse *)task.response).statusCode error:error];
+                                   
+                                    request.response = response;
                                     [TBLogger loggerWithRequest:request error:error];
             }];
 
@@ -214,4 +226,5 @@
     TBLog(@"current quene size is %lu", (unsigned long) [_requestsTable count]);
     TBLog(@"Operation quene size is %lu", (unsigned long) self.sessionManager.operationQueue.operationCount);
 }
+
 @end
