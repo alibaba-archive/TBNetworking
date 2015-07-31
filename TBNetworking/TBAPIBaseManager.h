@@ -13,12 +13,12 @@
 
 
 /*************************************************************************************************/
-/*                                TBAPIBaseRequestInterceptor                                    */
+/*                                TBAPIBaseManagerInterceptor                                    */
 /*************************************************************************************************/
 /**
  *拦截器
  */
-@protocol TBAPIBaseRequestInterceptor <NSObject>
+@protocol TBAPIBaseManagerInterceptor <NSObject>
 
 @optional
 - (void)requestWillPerformSuccessResponse:(TBAPIBaseManager *)request;
@@ -36,19 +36,19 @@
 /**
  *  参数设置
  */
-@protocol TBAPIBaseRequestParametersDelegate <NSObject>
+@protocol TBAPIBaseManagerParametersDelegate <NSObject>
 
 - (NSDictionary *)parametersForAPI:(TBAPIBaseManager *)manager;
 
 @end
 
 /*************************************************************************************************/
-/*                             TBAPIBaseRequestDelegate                                          */
+/*                             TBAPIBaseManagerDelegate                                          */
 /*************************************************************************************************/
 /**
  *  请求回调协议
  */
-@protocol TBAPIBaseRequestDelegate <NSObject>
+@protocol TBAPIBaseManagerDelegate <NSObject>
 
 @optional
 - (void)requestAPIDidSuccess:(TBAPIBaseManager *)request;
@@ -105,8 +105,8 @@ typedef NS_ENUM(NSInteger , TBResponseSerializerType) {
 
 @interface TBAPIBaseManager : NSObject
 
-@property (nonatomic, weak)   id<TBAPIBaseRequestDelegate>     delegate;
-@property (nonatomic, weak)   id<TBAPIBaseRequestInterceptor>  interceptor;
+@property (nonatomic, weak)   id<TBAPIBaseManagerDelegate>     delegate;
+@property (nonatomic, weak)   id<TBAPIBaseManagerInterceptor>  interceptor;
 
 @property (nonatomic, assign, readonly) NSTimeInterval         requestTime;
 

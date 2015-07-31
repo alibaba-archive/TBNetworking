@@ -10,6 +10,7 @@
 		DB301F93FBF3F46A8C69F7BF /* libPods-TBNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA745D11C6699982B5EF1E79 /* libPods-TBNetworking.a */; };
 		E5CB325C1B6B29C9009B680E /* MobilePhoneAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E5CB325B1B6B29C9009B680E /* MobilePhoneAPIManager.m */; };
 		E5CB325F1B6B3B58009B680E /* TBValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = E5CB325E1B6B3B58009B680E /* TBValidator.m */; };
+		E5CB32621B6B5B9F009B680E /* TBAPIBatchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E5CB32611B6B5B9F009B680E /* TBAPIBatchManager.m */; };
 		E5DF9DAA1B68CC7B00B45857 /* TBAPIBaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E5DF9DA91B68CC7B00B45857 /* TBAPIBaseManager.m */; };
 		E5DF9DB41B68EE5C00B45857 /* TBAPIProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = E5DF9DB31B68EE5C00B45857 /* TBAPIProxy.m */; };
 		E5DF9DBA1B6A064300B45857 /* TBLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = E5DF9DB91B6A064300B45857 /* TBLogger.m */; };
@@ -41,6 +42,8 @@
 		E5CB325B1B6B29C9009B680E /* MobilePhoneAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MobilePhoneAPIManager.m; sourceTree = "<group>"; };
 		E5CB325D1B6B3B58009B680E /* TBValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBValidator.h; sourceTree = "<group>"; };
 		E5CB325E1B6B3B58009B680E /* TBValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBValidator.m; sourceTree = "<group>"; };
+		E5CB32601B6B5B9F009B680E /* TBAPIBatchManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBAPIBatchManager.h; sourceTree = "<group>"; };
+		E5CB32611B6B5B9F009B680E /* TBAPIBatchManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBAPIBatchManager.m; sourceTree = "<group>"; };
 		E5DF9DA81B68CC7B00B45857 /* TBAPIBaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBAPIBaseManager.h; sourceTree = "<group>"; };
 		E5DF9DA91B68CC7B00B45857 /* TBAPIBaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBAPIBaseManager.m; sourceTree = "<group>"; };
 		E5DF9DB21B68EE5C00B45857 /* TBAPIProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBAPIProxy.h; sourceTree = "<group>"; };
@@ -92,15 +95,17 @@
 			children = (
 				E5DF9DC21B6A25F100B45857 /* VaildatorComponents */,
 				E5DF9DC11B6A25CB00B45857 /* LoggerComponents */,
+				E5DF9DC31B6B10DF00B45857 /* TBNetworking.h */,
 				E5DF9DA81B68CC7B00B45857 /* TBAPIBaseManager.h */,
 				E5DF9DA91B68CC7B00B45857 /* TBAPIBaseManager.m */,
 				E5DF9DBB1B6A0AEE00B45857 /* TBAPIManager.h */,
 				E5DF9DBC1B6A0AEE00B45857 /* TBAPIManager.m */,
+				E5CB32601B6B5B9F009B680E /* TBAPIBatchManager.h */,
+				E5CB32611B6B5B9F009B680E /* TBAPIBatchManager.m */,
 				EB17D8661B6A665100D4E46D /* TBAPIResponse.h */,
 				EB17D8671B6A665100D4E46D /* TBAPIResponse.m */,
 				E5DF9DB21B68EE5C00B45857 /* TBAPIProxy.h */,
 				E5DF9DB31B68EE5C00B45857 /* TBAPIProxy.m */,
-				E5DF9DC31B6B10DF00B45857 /* TBNetworking.h */,
 			);
 			name = TBNetworking;
 			sourceTree = "<group>";
@@ -351,6 +356,7 @@
 				E5DF9DB41B68EE5C00B45857 /* TBAPIProxy.m in Sources */,
 				E5CB325C1B6B29C9009B680E /* MobilePhoneAPIManager.m in Sources */,
 				EBC264EF1B68C2E800C07B74 /* ViewController.m in Sources */,
+				E5CB32621B6B5B9F009B680E /* TBAPIBatchManager.m in Sources */,
 				E5DF9DBD1B6A0AEE00B45857 /* TBAPIManager.m in Sources */,
 				EBC264EC1B68C2E800C07B74 /* AppDelegate.m in Sources */,
 				E5DF9DBA1B6A064300B45857 /* TBLogger.m in Sources */,
