@@ -6,19 +6,19 @@
 //  Copyright (c) 2015年 Teambition. All rights reserved.
 //
 
-#import "TBChainManager.h"
-#import "TBChainManagerAgent.h"
+#import "TBAPIChainManager.h"
+#import "TBAPIChainManagerAgent.h"
 #import "TBLogger.h"
 #import "TBAPIBaseManager.h"
 
-@interface TBChainManager()<TBAPIBaseManagerDelegate>
+@interface TBAPIChainManager()<TBAPIBaseManagerDelegate>
 
 @property (nonatomic, strong) NSMutableArray *apiManagerArray;
 @property (nonatomic, assign) NSUInteger nextManagerIndex;
 
 @end
 
-@implementation TBChainManager
+@implementation TBAPIChainManager
 
 - (instancetype)init {
     self = [super init];
@@ -36,7 +36,7 @@
     }
     if ([_apiManagerArray count] > 0) {
         [self startNextManager];
-        [[TBChainManagerAgent sharedInstance] addChainManager:self];
+        [[TBAPIChainManagerAgent sharedInstance] addChainManager:self];
     } else {
         TBLog(@"apiManagerArray is empty");
     }
@@ -44,7 +44,7 @@
 
 - (void)stop {
     [self clearAllManager];
-    [[TBChainManagerAgent sharedInstance] removeChainManager:self];
+    [[TBAPIChainManagerAgent sharedInstance] removeChainManager:self];
 }
 
 - (BOOL)startNextManager {
@@ -72,7 +72,32 @@
 - (void)addManager:(TBAPIBaseManager *)manager {
     [_apiManagerArray addObject:manager];
 }
+
+
 #pragma mark - TBAPIBaseManagerDelegate
+
+- (void)apiRequestDidSuccess:(TBAPIBaseManager *)manager {
+    NSUInteger currentManagerIndex = _nextManagerIndex - 1;
+    if (currentManagerIndex < [_apiManagerArray count]) {
+        if ([_delegate respondsToSelector:@selector(chainSingleManagerDidSuccess:)]) {
+            [_delegate chainSingleManagerDidSuccess:manager];
+        }
+    }
+    if (![self startNextManager]) {
+        if ([_delegate respondsToSelector:@selector(chainAllManagerDidSuccess:)]) {
+            [_delegate chainAllManagerDidSuccess:self];
+        }
+        [[TBAPIChainManagerAgent sharedInstance] removeChainManager:self];
+    }
+}
+
+- (void)apiRequestDidFailed:(TBAPIBaseManager *)manager {
+    if ([_delegate respondsToSelector:@selector(chainAllManagerDidFailed:failedBaseManager:)]) {
+        [_delegate chainAllManagerDidFailed:self failedBaseManager:manager];
+    }
+    [[TBAPIChainManagerAgent sharedInstance] removeChainManager:self];
+    [_apiManagerArray removeAllObjects];
+}
 
 #pragma mark - getters and setters
 
