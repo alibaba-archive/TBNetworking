@@ -8,6 +8,7 @@
 
 #import "TBAPIBatchManager.h"
 #import "TBAPIManager.h"
+#import "TBAPIBatchAgent.h"
 
 @interface TBAPIBatchManager()<TBAPIBaseManagerDelegate>
 
@@ -32,7 +33,7 @@
     if (_finishCount!=0) {
         return;
     }
-    
+    [[TBAPIBatchAgent sharedInstance] addBatchManager:self];
     for (TBAPIManager *manager in _requestBachArray) {
         manager.delegate = self;
         [manager start];
@@ -46,7 +47,7 @@
         manager.delegate = self;
         [manager stop];
     }
-    
+    [[TBAPIBatchAgent sharedInstance] removeBatchManager:self];
 }
 
 
