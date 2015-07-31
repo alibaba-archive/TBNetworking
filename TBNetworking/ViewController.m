@@ -29,7 +29,7 @@
     
 }
 
-- (void)requestAPIDidSuccess:(TBAPIBaseManager *)request {
+- (void)apiRequestDidSuccess:(TBAPIBaseManager *)request {
     
     if ([request isKindOfClass:[MobilePhoneAPIManager class]]) {
         

@@ -21,6 +21,7 @@
 @optional
 
 - (void)batchRequestAPIDidSuccess:(TBAPIBatchManager *)request;
+- (void)batchSubRequestAPIDidSuccess:(TBAPIBatchManager *)request;
 - (void)batchRequestAPIDidFailed:(TBAPIBatchManager *)request;
 
 @end

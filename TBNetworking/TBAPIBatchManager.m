@@ -53,17 +53,16 @@
 
 #pragma mark - TBAPIManager Delegate
 
-- (void)requestAPIDidSuccess:(TBAPIBaseManager *)request {
+- (void)apiRequestDidSuccess:(TBAPIBaseManager *)request {
     _finishCount++;
     if (_finishCount == _requestBachArray.count) {
         if (_delegate !=nil && [_delegate respondsToSelector:@selector(batchRequestAPIDidSuccess:)]) {
             [_delegate batchRequestAPIDidSuccess:self];
         }
     }
-    
 }
 
-- (void)requestAPIDidFailed:(TBAPIBaseManager *)request {
+- (void)apiRequestDidFailed:(TBAPIBaseManager *)request {
     [self stop];
     
     if (_delegate !=nil && [_delegate respondsToSelector:@selector(batchRequestAPIDidFailed:)]) {

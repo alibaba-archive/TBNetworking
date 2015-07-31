@@ -239,7 +239,7 @@
             }
             
             if (request.delegate && [request.delegate respondsToSelector:@selector(requestAPIDidSuccess:)]) {
-                [request.delegate requestAPIDidSuccess:request];
+                [request.delegate apiRequestDidSuccess:request];
             }
             
             if (request.interceptor && [request.interceptor respondsToSelector:@selector(requestDidPerformSuccessResponse:)]) {
@@ -253,7 +253,7 @@
             }
             
             if (request.delegate && [request respondsToSelector:@selector(requestAPIDidFailed:)]) {
-                [request.delegate requestAPIDidFailed:request];
+                [request.delegate apiRequestDidFailed:request];
             }
             
             if (request.interceptor && [request respondsToSelector:@selector(requestDidPerformFailResponse:)]) {

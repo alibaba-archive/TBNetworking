@@ -6,18 +6,18 @@
 //  Copyright (c) 2015年 Teambition. All rights reserved.
 //
 
-#import "TBChainManagerAgent.h"
-#import "TBChainManager.h"
+#import "TBAPIChainManagerAgent.h"
+#import "TBAPIChainManager.h"
 
-@interface TBChainManagerAgent()
+@interface TBAPIChainManagerAgent()
 
 @property (nonatomic, strong) NSMutableArray *chainManagerArray;
 
 @end
 
-@implementation TBChainManagerAgent
+@implementation TBAPIChainManagerAgent
 
-+ (TBChainManagerAgent *)sharedInstance {
++ (TBAPIChainManagerAgent *)sharedInstance {
     static id sharedInstance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -34,13 +34,13 @@
     return self;
 }
 
-- (void)addChainManager:(TBChainManager *)manager {
+- (void)addChainManager:(TBAPIChainManager *)manager {
     @synchronized(self) {
         [_chainManagerArray addObject:manager];
     }
 }
 
-- (void)removeChainManager:(TBChainManager *)manager {
+- (void)removeChainManager:(TBAPIChainManager *)manager {
     @synchronized(self) {
         [_chainManagerArray removeObject:manager];
     }
