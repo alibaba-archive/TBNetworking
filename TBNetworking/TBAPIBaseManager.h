@@ -70,6 +70,10 @@
 
 - (NSString *)requestUrl;
 
+@optional
+
+- (NSDictionary *)typeJsonValidator;
+
 @end
 
 /*************************************************************************************************/
@@ -116,6 +120,11 @@ typedef NS_ENUM(NSInteger , TBResponseSerializerType) {
 
 - (NSString *)baseUrl;
 
+/**
+ *  请求类型,默认为GET请求
+ *
+ *  @return
+ */
 - (TBAPIRequestType)requestType;
 
 - (void)start;
@@ -124,7 +133,12 @@ typedef NS_ENUM(NSInteger , TBResponseSerializerType) {
 
 - (void)stop;
 
-
+/**
+ *  参数列表
+ *
+ *  @return
+ */
+- (NSDictionary *)parameters;
 
 /// 请求的SerializerType
 - (TBRequestSerializerType)requestSerializerType;
@@ -139,7 +153,6 @@ typedef NS_ENUM(NSInteger , TBResponseSerializerType) {
  */
 - (BOOL)isExcuting;
 
-
 /**
  *  请求结束
  */
@@ -150,6 +163,13 @@ typedef NS_ENUM(NSInteger , TBResponseSerializerType) {
  *  @return 
  */
 - (NSTimeInterval )requestTimeOutInterval;
+
+/**
+ *  请求头
+ *
+ *  @return 
+ */
+- (NSDictionary *)requestHeaderFieldValueDictionary;
 
 
 

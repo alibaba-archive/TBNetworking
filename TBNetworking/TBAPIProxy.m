@@ -8,6 +8,7 @@
 
 #import "TBAPIProxy.h"
 #import "TBAPIResponse.h"
+#import "TBValidator.h"
 
 @interface TBAPIProxy ()
 
@@ -68,19 +69,35 @@
         _sessionManager.responseSerializer = [AFJSONResponseSerializer serializer];
     }
     
+    // if api need add custom value to HTTPHeaderField
+    NSDictionary *headerFieldValueDictionary = [request requestHeaderFieldValueDictionary];
+    if (headerFieldValueDictionary != nil) {
+        for (id httpHeaderField in headerFieldValueDictionary.allKeys) {
+            id value = headerFieldValueDictionary[httpHeaderField];
+            if ([httpHeaderField isKindOfClass:[NSString class]] && [value isKindOfClass:[NSString class]]) {
+                [_sessionManager.requestSerializer setValue:(NSString *)value forHTTPHeaderField:(NSString *)httpHeaderField];
+            } else {
+
+            }
+        }
+    }
+
     switch (requestMethod) {
         case TBAPIManagerRequestTypeGET: {
             
             request.dataTask = [self.sessionManager
                                 GET:[self buildRequestUrl:request]
-                                parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
-                                    [self handleOperate:task];
+                                parameters:request.parameters success:^(NSURLSessionDataTask *task, id responseObject) {
+                                    
+                                    
+                                    
                                     
                                     TBAPIResponse *response = [[TBAPIResponse alloc] initWithRequest:request
                                                                                            requestID:task.taskIdentifier
-                                                                                      responseObject:responseObject
+                                                                                      responseObject:[NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil]
                                                                                               statusCode:((NSHTTPURLResponse *)task.response).statusCode];
                                     request.response = response;
+                                    [self handleOperate:task];
                                     [TBLogger loggerWithRequest:request];
                                
             }
@@ -156,7 +173,18 @@
 
 - (BOOL)checkResult:(TBAPIBaseManager *)request {
 
-    return YES;
+    BOOL result;
+    if ([request respondsToSelector:@selector(typeJsonValidator)]) {
+        NSDictionary *typeJsonValidator = [((id <TBAPIRequest>)request) typeJsonValidator];
+        if (typeJsonValidator) {
+            result = [TBValidator checkJsonType:request.response.responseObject withValidator:typeJsonValidator];
+            if (!result) {
+               TBLog(@"类型验证没通过");
+            }
+        }
+    }
+    
+    return request;
 }
 
 - (void)handleOperate:(NSURLSessionDataTask  *)dataTask {

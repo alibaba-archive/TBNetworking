@@ -8,10 +8,12 @@
 
 #import "ViewController.h"
 #import "StateAPIRequest.h"
+#import "MobilePhoneAPIManager.h"
 
 @interface ViewController ()<TBAPIBaseRequestDelegate>
 
 @property (nonatomic, strong) StateAPIRequest *stateRequest;
+@property (nonatomic, strong) MobilePhoneAPIManager *mobileManager;
 @end
 
 @implementation ViewController
@@ -24,7 +26,8 @@
         
     }
     //[self.siteManager start];
-    [self.stateRequest start];
+    //[self.stateRequest start];
+    [self.mobileManager start];
     
 }
 
@@ -45,6 +48,14 @@
     return _stateRequest;
 }
 
+- (MobilePhoneAPIManager *)mobileManager {
+
+    if (!_mobileManager) {
+        _mobileManager = [[MobilePhoneAPIManager alloc] init];
+        _mobileManager.delegate = self;
+    }
+    return _mobileManager;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
