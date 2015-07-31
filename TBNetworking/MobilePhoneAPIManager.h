@@ -7,7 +7,10 @@
 //
 
 #import "TBAPIManager.h"
+#import "TBNetworking.h"
 
 @interface MobilePhoneAPIManager : TBAPIManager <TBAPIRequest>
+
+- (NSString *)getPhoneNumber;
 
 @end

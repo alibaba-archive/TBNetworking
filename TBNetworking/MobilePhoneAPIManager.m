@@ -28,7 +28,14 @@
                      @"province":[NSString class],
                      @"telString":[NSString class],
                      },
-             @"errNum":[MobilePhoneAPIManager class]
+             @"errNum":[NSNumber class]
              };
+}
+
+- (NSString *)getPhoneNumber {
+    if(self.response.responseObject) {
+        return [self.response.responseObject valueForKeyPath:@"retData.telString"];
+    }
+    return nil;
 }
 @end

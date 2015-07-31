@@ -113,8 +113,6 @@ typedef NS_ENUM(NSInteger , TBResponseSerializerType) {
 @property (nonatomic, weak)   NSObject<TBAPIRequest>           *child;
 @property (nonatomic, strong) NSURLSessionDataTask             *dataTask;
 
-//@property (nonatomic, assign) id                               responseObject;
-//@property (nonatomic, assign) NSInteger                        responseStatusCode;
 @property (nonatomic, strong) TBAPIResponse                      *response;
 
 

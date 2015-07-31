@@ -7,12 +7,10 @@
 //
 
 #import "ViewController.h"
-#import "StateAPIRequest.h"
 #import "MobilePhoneAPIManager.h"
 
 @interface ViewController ()<TBAPIBaseRequestDelegate>
 
-@property (nonatomic, strong) StateAPIRequest *stateRequest;
 @property (nonatomic, strong) MobilePhoneAPIManager *mobileManager;
 @end
 
@@ -32,21 +30,16 @@
 }
 
 - (void)requestAPIDidSuccess:(TBAPIBaseManager *)request {
-
+    
+    if ([request isKindOfClass:[MobilePhoneAPIManager class]]) {
+        
+        NSLog(@"%@",[(MobilePhoneAPIManager *)request getPhoneNumber]);
+    }
 }
 
 
 
 #pragma makr gettter
-
-- (StateAPIRequest *)stateRequest {
-
-    if (!_stateRequest) {
-        _stateRequest = [[StateAPIRequest alloc] init];
-        _stateRequest.delegate = self;
-    }
-    return _stateRequest;
-}
 
 - (MobilePhoneAPIManager *)mobileManager {
 
