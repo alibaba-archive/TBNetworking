@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		DB301F93FBF3F46A8C69F7BF /* libPods-TBNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA745D11C6699982B5EF1E79 /* libPods-TBNetworking.a */; };
+		E5CB325C1B6B29C9009B680E /* MobilePhoneAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E5CB325B1B6B29C9009B680E /* MobilePhoneAPIManager.m */; };
+		E5CB325F1B6B3B58009B680E /* TBValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = E5CB325E1B6B3B58009B680E /* TBValidator.m */; };
 		E5DF9DAA1B68CC7B00B45857 /* TBAPIBaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E5DF9DA91B68CC7B00B45857 /* TBAPIBaseManager.m */; };
 		E5DF9DB41B68EE5C00B45857 /* TBAPIProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = E5DF9DB31B68EE5C00B45857 /* TBAPIProxy.m */; };
 		E5DF9DBA1B6A064300B45857 /* TBLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = E5DF9DB91B6A064300B45857 /* TBLogger.m */; };
@@ -36,6 +38,10 @@
 /* Begin PBXFileReference section */
 		55482E735C5C9EB3197EF6C2 /* Pods-TBNetworking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TBNetworking.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TBNetworking/Pods-TBNetworking.debug.xcconfig"; sourceTree = "<group>"; };
 		C6E7F51099E21135FCCF06AD /* Pods-TBNetworking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TBNetworking.release.xcconfig"; path = "Pods/Target Support Files/Pods-TBNetworking/Pods-TBNetworking.release.xcconfig"; sourceTree = "<group>"; };
+		E5CB325A1B6B29C9009B680E /* MobilePhoneAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobilePhoneAPIManager.h; sourceTree = "<group>"; };
+		E5CB325B1B6B29C9009B680E /* MobilePhoneAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MobilePhoneAPIManager.m; sourceTree = "<group>"; };
+		E5CB325D1B6B3B58009B680E /* TBValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBValidator.h; sourceTree = "<group>"; };
+		E5CB325E1B6B3B58009B680E /* TBValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBValidator.m; sourceTree = "<group>"; };
 		E5DF9DA81B68CC7B00B45857 /* TBAPIBaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBAPIBaseManager.h; sourceTree = "<group>"; };
 		E5DF9DA91B68CC7B00B45857 /* TBAPIBaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBAPIBaseManager.m; sourceTree = "<group>"; };
 		E5DF9DB21B68EE5C00B45857 /* TBAPIProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBAPIProxy.h; sourceTree = "<group>"; };
@@ -107,6 +113,8 @@
 			children = (
 				E5DF9DBE1B6A1FFC00B45857 /* StateAPIRequest.h */,
 				E5DF9DBF1B6A1FFC00B45857 /* StateAPIRequest.m */,
+				E5CB325A1B6B29C9009B680E /* MobilePhoneAPIManager.h */,
+				E5CB325B1B6B29C9009B680E /* MobilePhoneAPIManager.m */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -123,6 +131,8 @@
 		E5DF9DC21B6A25F100B45857 /* VaildatorComponents */ = {
 			isa = PBXGroup;
 			children = (
+				E5CB325D1B6B3B58009B680E /* TBValidator.h */,
+				E5CB325E1B6B3B58009B680E /* TBValidator.m */,
 			);
 			name = VaildatorComponents;
 			sourceTree = "<group>";
@@ -342,7 +352,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5CB325F1B6B3B58009B680E /* TBValidator.m in Sources */,
 				E5DF9DB41B68EE5C00B45857 /* TBAPIProxy.m in Sources */,
+				E5CB325C1B6B29C9009B680E /* MobilePhoneAPIManager.m in Sources */,
 				EBC264EF1B68C2E800C07B74 /* ViewController.m in Sources */,
 				E5DF9DBD1B6A0AEE00B45857 /* TBAPIManager.m in Sources */,
 				EBC264EC1B68C2E800C07B74 /* AppDelegate.m in Sources */,

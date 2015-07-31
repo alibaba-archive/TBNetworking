@@ -55,20 +55,23 @@
 }
 
 - (void)start {
-    self.requestStartTime = [NSDate date];
-    [[TBAPIProxy sharedInstance] addRequest:self];
+    [self startWithParameters:[self parameters]];
 }
 
 - (void)startWithParameters:(NSDictionary *)parameters {
-
-    
+    self.requestStartTime = [NSDate date];
+    [[TBAPIProxy sharedInstance] addRequest:self];
 }
 
 - (void)stop {
     
     [self.dataTask cancel];
     [self setDelegate:nil];
-    
+}
+
+- (NSDictionary *)parameters {
+
+    return nil;
 }
 
 - (void)complete {
@@ -82,7 +85,10 @@
 }
 
 - (NSTimeInterval )requestTimeOutInterval {
-    return 0;
+    return 10;
 }
 
+- (NSDictionary *)requestHeaderFieldValueDictionary {
+    return @{@"apikey":@"97681d7f39cb64d8060460dc5032fa48"};
+}
 @end
