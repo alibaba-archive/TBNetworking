@@ -16,6 +16,9 @@
 		E5DF9DB41B68EE5C00B45857 /* TBAPIProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = E5DF9DB31B68EE5C00B45857 /* TBAPIProxy.m */; };
 		E5DF9DBA1B6A064300B45857 /* TBLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = E5DF9DB91B6A064300B45857 /* TBLogger.m */; };
 		E5DF9DBD1B6A0AEE00B45857 /* TBAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E5DF9DBC1B6A0AEE00B45857 /* TBAPIManager.m */; };
+		E5DF9DC01B6A1FFC00B45857 /* StateAPIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E5DF9DBF1B6A1FFC00B45857 /* StateAPIRequest.m */; };
+		EB0A80651B6B567600DE1C0B /* TBChainManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EB0A80641B6B567600DE1C0B /* TBChainManager.m */; };
+		EB0A80681B6B613300DE1C0B /* TBChainManagerAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = EB0A80671B6B613300DE1C0B /* TBChainManagerAgent.m */; };
 		EB17D8681B6A665100D4E46D /* TBAPIResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = EB17D8671B6A665100D4E46D /* TBAPIResponse.m */; };
 		EBC264E91B68C2E800C07B74 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC264E81B68C2E800C07B74 /* main.m */; };
 		EBC264EC1B68C2E800C07B74 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC264EB1B68C2E800C07B74 /* AppDelegate.m */; };
@@ -57,6 +60,10 @@
 		E5DF9DBC1B6A0AEE00B45857 /* TBAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBAPIManager.m; sourceTree = "<group>"; };
 		E5DF9DC31B6B10DF00B45857 /* TBNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBNetworking.h; sourceTree = "<group>"; };
 		EA745D11C6699982B5EF1E79 /* libPods-TBNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TBNetworking.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB0A80631B6B567600DE1C0B /* TBChainManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBChainManager.h; sourceTree = "<group>"; };
+		EB0A80641B6B567600DE1C0B /* TBChainManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBChainManager.m; sourceTree = "<group>"; };
+		EB0A80661B6B613300DE1C0B /* TBChainManagerAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBChainManagerAgent.h; sourceTree = "<group>"; };
+		EB0A80671B6B613300DE1C0B /* TBChainManagerAgent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBChainManagerAgent.m; sourceTree = "<group>"; };
 		EB17D8661B6A665100D4E46D /* TBAPIResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBAPIResponse.h; sourceTree = "<group>"; };
 		EB17D8671B6A665100D4E46D /* TBAPIResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBAPIResponse.m; sourceTree = "<group>"; };
 		EBC264E31B68C2E800C07B74 /* TBNetworking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TBNetworking.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,6 +108,10 @@
 				E5DF9DC31B6B10DF00B45857 /* TBNetworking.h */,
 				E5DF9DA81B68CC7B00B45857 /* TBAPIBaseManager.h */,
 				E5DF9DA91B68CC7B00B45857 /* TBAPIBaseManager.m */,
+				EB0A80631B6B567600DE1C0B /* TBChainManager.h */,
+				EB0A80641B6B567600DE1C0B /* TBChainManager.m */,
+				EB0A80661B6B613300DE1C0B /* TBChainManagerAgent.h */,
+				EB0A80671B6B613300DE1C0B /* TBChainManagerAgent.m */,
 				E5DF9DBB1B6A0AEE00B45857 /* TBAPIManager.h */,
 				E5DF9DBC1B6A0AEE00B45857 /* TBAPIManager.m */,
 				E5CB32601B6B5B9F009B680E /* TBAPIBatchManager.h */,
@@ -366,6 +377,8 @@
 				E5DF9DBD1B6A0AEE00B45857 /* TBAPIManager.m in Sources */,
 				EBC264EC1B68C2E800C07B74 /* AppDelegate.m in Sources */,
 				E5DF9DBA1B6A064300B45857 /* TBLogger.m in Sources */,
+				EB0A80651B6B567600DE1C0B /* TBChainManager.m in Sources */,
+				EB0A80681B6B613300DE1C0B /* TBChainManagerAgent.m in Sources */,
 				EBC264E91B68C2E800C07B74 /* main.m in Sources */,
 				EB17D8681B6A665100D4E46D /* TBAPIResponse.m in Sources */,
 				E5DF9DAA1B68CC7B00B45857 /* TBAPIBaseManager.m in Sources */,

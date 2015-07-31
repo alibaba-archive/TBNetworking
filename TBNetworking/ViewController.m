@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "MobilePhoneAPIManager.h"
 
-@interface ViewController ()<TBAPIBaseRequestDelegate>
+@interface ViewController ()<TBAPIBaseManagerDelegate>
 
 @property (nonatomic, strong) MobilePhoneAPIManager *mobileManager;
 @end

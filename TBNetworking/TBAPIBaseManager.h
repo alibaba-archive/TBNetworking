@@ -51,8 +51,8 @@
 @protocol TBAPIBaseManagerDelegate <NSObject>
 
 @optional
-- (void)requestAPIDidSuccess:(TBAPIBaseManager *)request;
-- (void)requestAPIDidFailed:(TBAPIBaseManager *)request;
+- (void)requestAPIDidSuccess:(TBAPIBaseManager *)manager;
+- (void)requestAPIDidFailed:(TBAPIBaseManager *)manager;
 
 @end
 
