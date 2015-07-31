@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <AFNetworking.h>
 
-@class TBAPIBaseRequest;
+@class TBAPIBaseManager;
 
 
 /*************************************************************************************************/
@@ -21,12 +21,12 @@
 @protocol TBAPIBaseRequestInterceptor <NSObject>
 
 @optional
-- (void)requestWillPerformSuccessResponse:(TBAPIBaseRequest *)request;
-- (void)request:(TBAPIBaseRequest *)requst willPerformSuccessWithResponse:(NSURLResponse *)response;
-- (void)requestDidPerformSuccessResponse:(TBAPIBaseRequest *)request;
+- (void)requestWillPerformSuccessResponse:(TBAPIBaseManager *)request;
+- (void)request:(TBAPIBaseManager *)requst willPerformSuccessWithResponse:(NSURLResponse *)response;
+- (void)requestDidPerformSuccessResponse:(TBAPIBaseManager *)request;
 
-- (void)requestWillPerformFailResponse:(TBAPIBaseRequest *)response;
-- (void)requestDidPerformFailResponse:(TBAPIBaseRequest *)response;
+- (void)requestWillPerformFailResponse:(TBAPIBaseManager *)response;
+- (void)requestDidPerformFailResponse:(TBAPIBaseManager *)response;
 
 @end
 
@@ -38,7 +38,7 @@
  */
 @protocol TBAPIBaseRequestParametersDelegate <NSObject>
 
-- (NSDictionary *)parametersForAPI:(TBAPIBaseRequest *)manager;
+- (NSDictionary *)parametersForAPI:(TBAPIBaseManager *)manager;
 
 @end
 
@@ -51,8 +51,8 @@
 @protocol TBAPIBaseRequestDelegate <NSObject>
 
 @optional
-- (void)requestAPIDidSuccess:(TBAPIBaseRequest *)request;
-- (void)requestAPIDidFailed:(TBAPIBaseRequest *)request;
+- (void)requestAPIDidSuccess:(TBAPIBaseManager *)request;
+- (void)requestAPIDidFailed:(TBAPIBaseManager *)request;
 
 @end
 
@@ -99,7 +99,7 @@ typedef NS_ENUM(NSInteger , TBResponseSerializerType) {
 
 @class TBAPIResponse;
 
-@interface TBAPIBaseRequest : NSObject
+@interface TBAPIBaseManager : NSObject
 
 @property (nonatomic, weak)   id<TBAPIBaseRequestDelegate>     delegate;
 @property (nonatomic, weak)   id<TBAPIBaseRequestInterceptor>  interceptor;

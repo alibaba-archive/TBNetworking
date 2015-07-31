@@ -12,7 +12,7 @@
 @implementation TBLogger
 
 
-+ (void)loggerWithRequest:(TBAPIBaseRequest *)request {
++ (void)loggerWithRequest:(TBAPIBaseManager *)request {
 
 #ifdef DEBUG
     NSMutableString *logString = [NSMutableString stringWithString:@"\n\n==============================================================\n=                      Request Response                      =\n==============================================================\n\n"];
@@ -34,7 +34,7 @@
 
 }
 
-+ (void)loggerWithRequest:(TBAPIBaseRequest *)request error:(NSError *)error {
++ (void)loggerWithRequest:(TBAPIBaseManager *)request error:(NSError *)error {
 #ifdef DEBUG
     NSMutableString *logString = [NSMutableString stringWithString:@"\n\n==============================================================\n=                      Request Response                      =\n==============================================================\n\n"];
     

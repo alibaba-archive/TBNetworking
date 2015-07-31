@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 Teambition. All rights reserved.
 //
 
-#import "TBAPIRequest.h"
+#import "TBAPIManager.h"
 
-@interface StateAPIRequest : TBAPIRequest <TBAPIRequest>
+@interface StateAPIRequest : TBAPIManager <TBAPIRequest>
 
 
 

@@ -45,12 +45,12 @@
     return self;
 }
 
-- (NSString *)buildRequestUrl:(TBAPIBaseRequest *)request {
+- (NSString *)buildRequestUrl:(TBAPIBaseManager *)request {
     NSString *url = [request.child requestUrl];
     return [NSString stringWithFormat:@"%@%@",request.baseUrl,url];
 }
 
-- (void)addRequest:(TBAPIBaseRequest *)request {
+- (void)addRequest:(TBAPIBaseManager *)request {
 
     TBAPIRequestType requestMethod = [request requestType];
     
@@ -138,13 +138,13 @@
     [self addDataTask:request];
 }
 
-- (void)cancelRequest:(TBAPIBaseRequest *)request {
+- (void)cancelRequest:(TBAPIBaseManager *)request {
     [request stop];
 }
 
 - (void)cancelAllRequest {
     NSDictionary *copyTable = [_requestsTable copy];
-    for (TBAPIBaseRequest *request in copyTable) {
+    for (TBAPIBaseManager *request in copyTable) {
         [self cancelRequest:request];
     }
     
@@ -154,7 +154,7 @@
 
 #pragma mark - private method
 
-- (BOOL)checkResult:(TBAPIBaseRequest *)request {
+- (BOOL)checkResult:(TBAPIBaseManager *)request {
 
     return YES;
 }
@@ -162,7 +162,7 @@
 - (void)handleOperate:(NSURLSessionDataTask  *)dataTask {
     NSString *hashKey = [self requestHashKey:dataTask];
     
-    TBAPIBaseRequest *request = _requestsTable[hashKey];
+    TBAPIBaseManager *request = _requestsTable[hashKey];
     [request complete];
     if (request) {
         
@@ -207,7 +207,7 @@
     return hashKey;
 }
 
-- (void)addDataTask:(TBAPIBaseRequest *)request {
+- (void)addDataTask:(TBAPIBaseManager *)request {
     if (request.dataTask!=nil) {
         NSString *hashKey = [self requestHashKey:request.dataTask];
         @synchronized(self) {

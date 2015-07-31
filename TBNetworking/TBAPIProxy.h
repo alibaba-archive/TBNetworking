@@ -8,16 +8,16 @@
 
 #import <Foundation/Foundation.h>
 #import <AFNetworking.h>
-#import "TBAPIBaseRequest.h"
+#import "TBAPIBaseManager.h"
 #import "TBLogger.h"
 
 @interface TBAPIProxy : NSObject
 
 + (instancetype)sharedInstance;
 
-- (void)addRequest:(TBAPIBaseRequest *)request;
+- (void)addRequest:(TBAPIBaseManager *)request;
 
-- (void)cancelRequest:(TBAPIBaseRequest *)request;
+- (void)cancelRequest:(TBAPIBaseManager *)request;
 
 - (void)cancelAllRequest;
 @end

@@ -6,10 +6,10 @@
 //  Copyright (c) 2015 Teambition. All rights reserved.
 //
 
-#import "TBAPIBaseRequest.h"
+#import "TBAPIBaseManager.h"
 #import "TBAPIProxy.h"
 
-@interface TBAPIBaseRequest()
+@interface TBAPIBaseManager()
 
 @property (nonatomic, assign, readwrite) NSTimeInterval     requestTime;
 @property (nonatomic, strong) NSDate                        *requestStartTime;
@@ -17,7 +17,7 @@
 
 @end
 
-@implementation TBAPIBaseRequest
+@implementation TBAPIBaseManager
 
 - (instancetype)init {
 

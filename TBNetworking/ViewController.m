@@ -28,7 +28,7 @@
     
 }
 
-- (void)requestAPIDidSuccess:(TBAPIBaseRequest *)request {
+- (void)requestAPIDidSuccess:(TBAPIBaseManager *)request {
 
 }
 

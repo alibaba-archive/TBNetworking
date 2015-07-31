@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "TBAPIBaseRequest.h"
+#import "TBAPIBaseManager.h"
 
 #ifdef DEBUG
 #define TBLog(fmt, ...)  NSLog(fmt, ##__VA_ARGS__)
@@ -17,7 +17,7 @@
 
 @interface TBLogger : NSObject
 
-+ (void)loggerWithRequest:(TBAPIBaseRequest *)request;
++ (void)loggerWithRequest:(TBAPIBaseManager *)request;
 
-+ (void)loggerWithRequest:(TBAPIBaseRequest *)request error:(NSError *)error;
++ (void)loggerWithRequest:(TBAPIBaseManager *)request error:(NSError *)error;
 @end
