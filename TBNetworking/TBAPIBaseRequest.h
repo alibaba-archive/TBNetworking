@@ -11,22 +11,28 @@
 
 @class TBAPIBaseRequest;
 
-/**
- *  拦截器
- */
 
+/*************************************************************************************************/
+/*                                TBAPIBaseRequestInterceptor                                    */
+/*************************************************************************************************/
+/**
+ *拦截器
+ */
 @protocol TBAPIBaseRequestInterceptor <NSObject>
 
 @optional
 - (void)requestWillPerformSuccessResponse:(TBAPIBaseRequest *)request;
+- (void)request:(TBAPIBaseRequest *)requst willPerformSuccessWithResponse:(NSURLResponse *)response;
 - (void)requestDidPerformSuccessResponse:(TBAPIBaseRequest *)request;
 
 - (void)requestWillPerformFailResponse:(TBAPIBaseRequest *)response;
 - (void)requestDidPerformFailResponse:(TBAPIBaseRequest *)response;
 
-
 @end
 
+/*************************************************************************************************/
+/*                             TBAPIBaseRequestParametersDelegate                                */
+/*************************************************************************************************/
 /**
  *  参数设置
  */
@@ -36,25 +42,46 @@
 
 @end
 
+/*************************************************************************************************/
+/*                             TBAPIBaseRequestDelegate                                          */
+/*************************************************************************************************/
+/**
+ *  请求回调协议
+ */
+@protocol TBAPIBaseRequestDelegate <NSObject>
+
+@optional
+- (void)requestAPIDidSuccess:(TBAPIBaseRequest *)request;
+- (void)requestAPIDidFailed:(TBAPIBaseRequest *)request;
+
+@end
+
+
+/*************************************************************************************************/
+/*                                         TBAPIRequest                                          */
+/*************************************************************************************************/
+/**
+ *  子类必须遵守的协议
+ *  强制子类实现url的实现
+ */
+@protocol TBAPIRequest <NSObject>
+
+@required
+
+- (NSString *)requestUrl;
+
+@end
+
+/*************************************************************************************************/
+/*                                         Enums                                                 */
+/*************************************************************************************************/
 /**
  *  请求类型
  */
 typedef NS_ENUM(NSInteger, TBAPIRequestType){
-    /**
-     *  GET方法
-     */
     TBAPIManagerRequestTypeGET,
-    /**
-     *  POST方法
-     */
     TBAPIManagerRequestTypePOST,
-    /**
-     *  PUT方法
-     */
     TBAPIManagerRequestTypePUT,
-    /**
-     *  DELETE方法
-     */
     TBAPIManagerRequestTypeDELETE
 };
 
@@ -68,29 +95,9 @@ typedef NS_ENUM(NSInteger , TBResponseSerializerType) {
     TBResponseSerializerTypeJSON,
 };
 
-/**
- *  请求回调协议
- */
-@protocol TBAPIBaseRequestDelegate <NSObject>
-
-@optional
-- (void)requestAPIDidSuccess:(TBAPIBaseRequest *)request;
-- (void)requestAPIDidFailed:(TBAPIBaseRequest *)request;
-
-@end
 
 
-/**
- *  子类必须遵守的协议
- *  强制子类实现url的实现
- */
-@protocol TBAPIRequest <NSObject>
-
-@required
-
-- (NSString *)requestUrl;
-
-@end
+@class TBAPIResponse;
 
 @interface TBAPIBaseRequest : NSObject
 
@@ -102,8 +109,9 @@ typedef NS_ENUM(NSInteger , TBResponseSerializerType) {
 @property (nonatomic, weak)   NSObject<TBAPIRequest>           *child;
 @property (nonatomic, strong) NSURLSessionDataTask             *dataTask;
 
-@property (nonatomic, assign) id                               responseObject;
-@property (nonatomic, assign) NSInteger                        responseStatusCode;
+//@property (nonatomic, assign) id                               responseObject;
+//@property (nonatomic, assign) NSInteger                        responseStatusCode;
+@property (nonatomic, strong) TBAPIResponse                      *response;
 
 
 - (NSString *)baseUrl;
@@ -123,19 +131,6 @@ typedef NS_ENUM(NSInteger , TBResponseSerializerType) {
 
 /// 返回的的SerializerType
 - (TBResponseSerializerType)responseSerializerType;
-
-/**
- *  HTTP状态吗
- *
- *  @return
- */
-- (NSInteger)responseStatusCode;
-/**
- *  根据HTTP状态码来判断本次请求是否成功
- *
- *  @return 在200到299之间为成功
- */
-- (BOOL)requestSuccess;
 
 /**
  *  判断是否正在执行

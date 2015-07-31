@@ -54,11 +54,6 @@
     return TBResponseSerializerTypeHTTP;
 }
 
-- (NSInteger)responseStatusCode {
-    NSHTTPURLResponse *response = (NSHTTPURLResponse *)self.dataTask.response;
-    return response.statusCode;
-}
-
 - (void)start {
     self.requestStartTime = [NSDate date];
     [[TBAPIProxy sharedInstance] addRequest:self];
@@ -74,15 +69,6 @@
     [self.dataTask cancel];
     [self setDelegate:nil];
     
-}
-
-- (BOOL)requestSuccess {
-
-    NSInteger stateCode = [self responseStatusCode];
-    if (stateCode >=200 && stateCode <=299) {
-        return YES;
-    }
-    return NO;
 }
 
 - (void)complete {
