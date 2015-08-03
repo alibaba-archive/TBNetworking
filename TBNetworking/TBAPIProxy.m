@@ -51,26 +51,26 @@
     return [NSString stringWithFormat:@"%@%@",request.baseUrl,url];
 }
 
-- (void)addRequest:(TBAPIBaseManager *)request {
+- (void)addRequest:(TBAPIBaseManager *)manager {
 
-    TBAPIRequestType requestMethod = [request requestType];
+    TBAPIRequestType requestMethod = [manager requestType];
     
     
-    if (request.requestSerializerType == TBRequestSerializerTypeHTTP) {
+    if (manager.requestSerializerType == TBRequestSerializerTypeHTTP) {
         _sessionManager.requestSerializer = [AFHTTPRequestSerializer serializer];
 
     } else {
         _sessionManager.requestSerializer = [AFJSONRequestSerializer serializer];
     }
     
-    if (request.responseSerializerType == TBResponseSerializerTypeHTTP) {
+    if (manager.responseSerializerType == TBResponseSerializerTypeHTTP) {
         _sessionManager.responseSerializer = [AFHTTPResponseSerializer serializer];
     } else {
         _sessionManager.responseSerializer = [AFJSONResponseSerializer serializer];
     }
     
     // if api need add custom value to HTTPHeaderField
-    NSDictionary *headerFieldValueDictionary = [request requestHeaderFieldValueDictionary];
+    NSDictionary *headerFieldValueDictionary = [manager requestHeaderFieldValueDictionary];
     if (headerFieldValueDictionary != nil) {
         for (id httpHeaderField in headerFieldValueDictionary.allKeys) {
             id value = headerFieldValueDictionary[httpHeaderField];
@@ -85,25 +85,25 @@
     switch (requestMethod) {
         case TBAPIManagerRequestTypeGET: {
             
-            request.dataTask = [self.sessionManager
-                                GET:[self buildRequestUrl:request]
-                                parameters:request.parameters success:^(NSURLSessionDataTask *task, id responseObject) {
+            manager.dataTask = [self.sessionManager
+                                GET:[self buildRequestUrl:manager]
+                                parameters:manager.parameters success:^(NSURLSessionDataTask *task, id responseObject) {
                                 
-                                    TBAPIResponse *response = [[TBAPIResponse alloc] initWithRequest:request
+                                    TBAPIResponse *response = [[TBAPIResponse alloc] initWithRequest:manager
                                                                                            requestID:task.taskIdentifier
                                                                                       responseObject:[NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil]
                                                                                               statusCode:((NSHTTPURLResponse *)task.response).statusCode];
-                                    request.response = response;
+                                    manager.response = response;
                                     [self handleOperate:task];
                                
             }
                                 failure:^(NSURLSessionDataTask *task, NSError *error) {
                                     
-                                    TBAPIResponse *response = [[TBAPIResponse alloc] initWithRequest:request
+                                    TBAPIResponse *response = [[TBAPIResponse alloc] initWithRequest:manager
                                                                                            requestID:task.taskIdentifier
                                                                                       responseObject:nil
                                                                                           statusCode:((NSHTTPURLResponse *)task.response).statusCode error:error];
-                                    request.response = response;
+                                    manager.response = response;
                                     [self handleOperate:task];
             }];
 
@@ -111,22 +111,22 @@
             break;
         case TBAPIManagerRequestTypePOST: {
         
-            request.dataTask = [self.sessionManager
-                                POST:[self buildRequestUrl:request]
+            manager.dataTask = [self.sessionManager
+                                POST:[self buildRequestUrl:manager]
                                 parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
-                                    TBAPIResponse *response = [[TBAPIResponse alloc] initWithRequest:request
+                                    TBAPIResponse *response = [[TBAPIResponse alloc] initWithRequest:manager
                                                                                            requestID:task.taskIdentifier
                                                                                       responseObject:[NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil]
                                                                                           statusCode:((NSHTTPURLResponse *)task.response).statusCode];
-                                    request.response = response;
+                                    manager.response = response;
                                     [self handleOperate:task];
             }
                                 failure:^(NSURLSessionDataTask *task, NSError *error) {
-                                    TBAPIResponse *response = [[TBAPIResponse alloc] initWithRequest:request
+                                    TBAPIResponse *response = [[TBAPIResponse alloc] initWithRequest:manager
                                                                                            requestID:task.taskIdentifier
                                                                                       responseObject:nil
                                                                                           statusCode:((NSHTTPURLResponse *)task.response).statusCode error:error];
-                                    request.response = response;
+                                    manager.response = response;
                                     [self handleOperate:task];
             }];
             
@@ -135,45 +135,45 @@
             break;
         case TBAPIManagerRequestTypePUT: {
         
-            request.dataTask = [self.sessionManager
-                                PUT:[self buildRequestUrl:request]
+            manager.dataTask = [self.sessionManager
+                                PUT:[self buildRequestUrl:manager]
                                 parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
-                                    TBAPIResponse *response = [[TBAPIResponse alloc] initWithRequest:request
+                                    TBAPIResponse *response = [[TBAPIResponse alloc] initWithRequest:manager
                                                                                            requestID:task.taskIdentifier
                                                                                       responseObject:[NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil]
                                                                                           statusCode:((NSHTTPURLResponse *)task.response).statusCode];
-                                    request.response = response;
+                                    manager.response = response;
                                     [self handleOperate:task];
             }
                                 failure:^(NSURLSessionDataTask *task, NSError *error) {
-                                    TBAPIResponse *response = [[TBAPIResponse alloc] initWithRequest:request
+                                    TBAPIResponse *response = [[TBAPIResponse alloc] initWithRequest:manager
                                                                                            requestID:task.taskIdentifier
                                                                                       responseObject:nil
                                                                                           statusCode:((NSHTTPURLResponse *)task.response).statusCode error:error];
-                                    request.response = response;
+                                    manager.response = response;
                                     [self handleOperate:task];
             }];
         }
             break;
         case TBAPIManagerRequestTypeDELETE: {
         
-            request.dataTask = [self.sessionManager
-                                DELETE:[self buildRequestUrl:request]
+            manager.dataTask = [self.sessionManager
+                                DELETE:[self buildRequestUrl:manager]
                                 parameters:nil
                                 success:^(NSURLSessionDataTask *task, id responseObject) {
-                                    TBAPIResponse *response = [[TBAPIResponse alloc] initWithRequest:request
+                                    TBAPIResponse *response = [[TBAPIResponse alloc] initWithRequest:manager
                                                                                            requestID:task.taskIdentifier
                                                                                       responseObject:[NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil]
                                                                                           statusCode:((NSHTTPURLResponse *)task.response).statusCode];
-                                    request.response = response;
+                                    manager.response = response;
                                     [self handleOperate:task];
             }
                                 failure:^(NSURLSessionDataTask *task, NSError *error) {
-                                    TBAPIResponse *response = [[TBAPIResponse alloc] initWithRequest:request
+                                    TBAPIResponse *response = [[TBAPIResponse alloc] initWithRequest:manager
                                                                                            requestID:task.taskIdentifier
                                                                                       responseObject:nil
                                                                                           statusCode:((NSHTTPURLResponse *)task.response).statusCode error:error];
-                                    request.response = response;
+                                    manager.response = response;
                                     
                 
                                     [self handleOperate:task];
@@ -183,11 +183,11 @@
             break;
     }
     
-    [self addDataTask:request];
+    [self addDataTask:manager];
 }
 
-- (void)cancelRequest:(TBAPIBaseManager *)request {
-    [request stop];
+- (void)cancelRequest:(TBAPIBaseManager *)manager {
+    [manager stop];
 }
 
 - (void)cancelAllRequest {
@@ -220,44 +220,42 @@
 
 - (void)handleOperate:(NSURLSessionDataTask  *)dataTask {
     
-    
-    
     NSString *hashKey = [self requestHashKey:dataTask];
     
-    TBAPIBaseManager *request = _requestsTable[hashKey];
+    TBAPIBaseManager *manager = _requestsTable[hashKey];
     
-    [TBLogger loggerWithRequest:request];
+    [manager complete];
     
-    [request complete];
-    if (request) {
+    [TBLogger loggerWithRequest:manager];
+    if (manager) {
         
-        BOOL success = [self checkResult:request];
+        BOOL success = [self checkResult:manager];
         if (success) {
             
-            if (request.interceptor && [request.interceptor respondsToSelector:@selector(requestWillPerformSuccessResponse:)]) {
-                [request.interceptor requestWillPerformSuccessResponse:request];
+            if (manager.interceptor && [manager.interceptor respondsToSelector:@selector(requestWillPerformSuccessResponse:)]) {
+                [manager.interceptor requestWillPerformSuccessResponse:manager];
             }
             
-            if (request.delegate && [request.delegate respondsToSelector:@selector(requestAPIDidSuccess:)]) {
-                [request.delegate apiRequestDidSuccess:request];
+            if (manager.delegate && [manager.delegate respondsToSelector:@selector(apiRequestDidSuccess:)]) {
+                [manager.delegate apiRequestDidSuccess:manager];
             }
             
-            if (request.interceptor && [request.interceptor respondsToSelector:@selector(requestDidPerformSuccessResponse:)]) {
-                [request.interceptor requestDidPerformSuccessResponse:request];
+            if (manager.interceptor && [manager.interceptor respondsToSelector:@selector(requestDidPerformSuccessResponse:)]) {
+                [manager.interceptor requestDidPerformSuccessResponse:manager];
             }
             
         }
         else {
-            if (request.interceptor && [request respondsToSelector:@selector(requestWillPerformFailResponse:)]) {
-                [request.interceptor requestWillPerformFailResponse:request];
+            if (manager.interceptor && [manager respondsToSelector:@selector(requestWillPerformFailResponse:)]) {
+                [manager.interceptor requestWillPerformFailResponse:manager];
             }
             
-            if (request.delegate && [request respondsToSelector:@selector(requestAPIDidFailed:)]) {
-                [request.delegate apiRequestDidFailed:request];
+            if (manager.delegate && [manager respondsToSelector:@selector(apiRequestDidFailed:)]) {
+                [manager.delegate apiRequestDidFailed:manager];
             }
             
-            if (request.interceptor && [request respondsToSelector:@selector(requestDidPerformFailResponse:)]) {
-                [request.interceptor requestDidPerformFailResponse:request];
+            if (manager.interceptor && [manager respondsToSelector:@selector(requestDidPerformFailResponse:)]) {
+                [manager.interceptor requestDidPerformFailResponse:manager];
             }
             
         }

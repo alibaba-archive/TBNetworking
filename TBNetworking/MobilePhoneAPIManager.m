@@ -8,16 +8,22 @@
 
 #import "MobilePhoneAPIManager.h"
 
+@interface MobilePhoneAPIManager() <TBAPIBaseManagerParamSourceDelegate>
+
+@end
+
 @implementation MobilePhoneAPIManager
 
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        self.parameSource = self;
+    }
+    return self;
+}
 
 - (NSString *)requestUrl {
     return @"mobilephoneservice/mobilephone";
-}
-
-- (NSDictionary *)parameters {
-
-    return @{@"tel":@"18883359755"};
 }
 
 - (NSDictionary *)typeJsonValidator {
@@ -38,4 +44,10 @@
     }
     return nil;
 }
+
+#pragma mark - TBAPIBaseManagerParamSourceDelegate
+- (NSDictionary *)parametersForAPI:(TBAPIBaseManager *)manager {
+    return @{@"tel":@"18679211201"};
+}
+
 @end
