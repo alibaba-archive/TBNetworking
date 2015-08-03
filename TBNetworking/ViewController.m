@@ -31,6 +31,11 @@
 //    [self.mobileManager start];
 //    [self.idCardNumberManager start];
     [self.chainManager start];
+    //[self.siteManager start];
+    //[self.stateRequest start];
+    //[self.mobileManager start];
+
+    [self.mobileManager start];
     
 }
 

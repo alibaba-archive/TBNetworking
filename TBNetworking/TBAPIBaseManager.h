@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <AFNetworking.h>
+#import "TBNetworking.h"
+
 
 @class TBAPIBaseManager;
 
@@ -71,7 +72,7 @@
 
 @optional
 
-- (NSDictionary *)typeJsonValidator;
+- (NSDictionary *)jsonValidator;
 
 @end
 

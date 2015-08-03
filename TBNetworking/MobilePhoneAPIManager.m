@@ -26,15 +26,16 @@
     return @"mobilephoneservice/mobilephone";
 }
 
-- (NSDictionary *)typeJsonValidator {
+
+- (NSDictionary *)jsonValidator {
     return @{
-             @"errMsg":[NSString class],
-             @"reData":@{
-                     @"carrier":[NSString class],
-                     @"province":[NSString class],
-                     @"telString":[NSString class],
-                     },
-             @"errNum":[NSNumber class]
+             @"errMsg":TBValidatorPredicate.isNotNull,
+             @"errNum":TBValidatorPredicate.isNotNull,
+             @"retData":@{
+                     @"carrier":TBValidatorPredicate.isNotNull,
+                     @"province":TBValidatorPredicate.isNotNull,
+                     @"telString":TBValidatorPredicate.isNotNull
+                     }
              };
 }
 
