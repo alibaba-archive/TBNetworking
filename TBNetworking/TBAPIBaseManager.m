@@ -14,6 +14,7 @@
 @property (nonatomic, assign, readwrite) NSTimeInterval     requestTime;
 @property (nonatomic, strong) NSDate                        *requestStartTime;
 @property (nonatomic, strong) NSDate                        *requestEndTime;
+@property (nonatomic, copy)   NSDictionary                  *parameters;
 
 @end
 
@@ -55,7 +56,7 @@
 }
 
 - (void)start {
-    [self startWithParameters:[self parameters]];
+    [self startWithParameters:self.parameters];
 }
 
 - (void)startWithParameters:(NSDictionary *)parameters {
@@ -67,11 +68,6 @@
     
     [self.dataTask cancel];
     [self setDelegate:nil];
-}
-
-- (NSDictionary *)parameters {
-
-    return nil;
 }
 
 - (void)complete {
@@ -90,5 +86,15 @@
 
 - (NSDictionary *)requestHeaderFieldValueDictionary {
     return @{@"apikey":@"97681d7f39cb64d8060460dc5032fa48"};
+}
+
+#pragma mark - getters and setters
+- (NSDictionary *)parameters {
+    if (!_parameters) {
+        if ([self.parameSource respondsToSelector:@selector(parametersForAPI:)]) {
+            _parameters = [self.parameSource parametersForAPI:self];
+        }
+    }
+    return _parameters;
 }
 @end

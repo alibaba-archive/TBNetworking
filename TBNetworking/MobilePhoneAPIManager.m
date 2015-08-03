@@ -15,11 +15,6 @@
     return @"mobilephoneservice/mobilephone";
 }
 
-- (NSDictionary *)parameters {
-
-    return @{@"tel":@"18883359755"};
-}
-
 - (NSDictionary *)typeJsonValidator {
     return @{
              @"errMsg":[NSString class],

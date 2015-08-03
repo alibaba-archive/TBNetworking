@@ -31,12 +31,12 @@
 @end
 
 /*************************************************************************************************/
-/*                             TBAPIBaseRequestParametersDelegate                                */
+/*                             TBAPIBaseManagerParamSourceDelegate                               */
 /*************************************************************************************************/
 /**
  *  参数设置
  */
-@protocol TBAPIBaseManagerParametersDelegate <NSObject>
+@protocol TBAPIBaseManagerParamSourceDelegate <NSObject>
 
 - (NSDictionary *)parametersForAPI:(TBAPIBaseManager *)manager;
 
@@ -105,15 +105,16 @@ typedef NS_ENUM(NSInteger , TBResponseSerializerType) {
 
 @interface TBAPIBaseManager : NSObject
 
-@property (nonatomic, weak)   id<TBAPIBaseManagerDelegate>     delegate;
-@property (nonatomic, weak)   id<TBAPIBaseManagerInterceptor>  interceptor;
+@property (nonatomic, weak)   id<TBAPIBaseManagerDelegate>              delegate;
+@property (nonatomic, weak)   id<TBAPIBaseManagerParamSourceDelegate>   parameSource;
+@property (nonatomic, weak)   id<TBAPIBaseManagerInterceptor>           interceptor;
 
-@property (nonatomic, assign, readonly) NSTimeInterval         requestTime;
+@property (nonatomic, assign, readonly) NSTimeInterval                  requestTime;
 
-@property (nonatomic, weak)   NSObject<TBAPIRequest>           *child;
-@property (nonatomic, strong) NSURLSessionDataTask             *dataTask;
+@property (nonatomic, weak)   NSObject<TBAPIRequest>                    *child;
+@property (nonatomic, strong) NSURLSessionDataTask                      *dataTask;
 
-@property (nonatomic, strong) TBAPIResponse                      *response;
+@property (nonatomic, strong) TBAPIResponse                             *response;
 
 
 - (NSString *)baseUrl;
@@ -127,7 +128,7 @@ typedef NS_ENUM(NSInteger , TBResponseSerializerType) {
 
 - (void)start;
 
-- (void)startWithParameters:(NSDictionary *)parameters;
+//- (void)startWithParameters:(NSDictionary *)parameters;
 
 - (void)stop;
 

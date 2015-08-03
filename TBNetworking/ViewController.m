@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "MobilePhoneAPIManager.h"
 
-@interface ViewController ()<TBAPIBaseManagerDelegate>
+@interface ViewController ()<TBAPIBaseManagerDelegate,TBAPIBaseManagerParamSourceDelegate>
 
 @property (nonatomic, strong) MobilePhoneAPIManager *mobileManager;
 @end
@@ -46,6 +46,7 @@
     if (!_mobileManager) {
         _mobileManager = [[MobilePhoneAPIManager alloc] init];
         _mobileManager.delegate = self;
+        _mobileManager.parameSource = self;
     }
     return _mobileManager;
 }
@@ -54,4 +55,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (NSDictionary *)parametersForAPI:(TBAPIBaseManager *)manager{
+    if ([manager isKindOfClass:[MobilePhoneAPIManager class]]) {
+        return @{@"tel":@"18679211201"};
+    }
+    return nil;
+}
 @end
