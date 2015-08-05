@@ -7,7 +7,6 @@
 //
 
 #import "TBAPIResponse.h"
-//#import "TBAPIBaseRequest.h"
 
 @interface TBAPIResponse ()
 

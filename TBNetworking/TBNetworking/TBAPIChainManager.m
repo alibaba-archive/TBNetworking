@@ -7,8 +7,6 @@
 //
 
 #import "TBAPIChainManager.h"
-#import "TBAPIChainManagerAgent.h"
-#import "TBLogger.h"
 #import "TBAPIBaseManager.h"
 
 @interface TBAPIChainManager()<TBAPIBaseManagerDelegate>
@@ -31,14 +29,13 @@
 
 - (void)start {
     if (_nextManagerIndex > 0) {
-        TBLog(@"This chain manager has started");
         return;
     }
     if ([_apiManagerArray count] > 0) {
         [self startNextManager];
         [[TBAPIChainManagerAgent sharedInstance] addChainManager:self];
     } else {
-        TBLog(@"apiManagerArray is empty");
+        
     }
 }
 

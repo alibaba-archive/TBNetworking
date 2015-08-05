@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <AFNetworking.h>
+#import "TBNetworking.h"
+#import "TBAPIBatchAgent.h"
 #import "TBAPIBaseManager.h"
-#import "TBLogger.h"
 
 @interface TBAPIProxy : NSObject
 

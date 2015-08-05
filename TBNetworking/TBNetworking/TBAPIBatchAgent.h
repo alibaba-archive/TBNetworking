@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "TBAPIBatchManager.h"
+#import "TBNetworking.h"
+@class TBAPIBatchManager;
 
 @interface TBAPIBatchAgent : NSObject
 

@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "TBAPIChainManager.h"
+#import "TBAPIChainManagerAgent.h"
 
 @class TBAPIChainManager;
 @class TBAPIBaseManager;

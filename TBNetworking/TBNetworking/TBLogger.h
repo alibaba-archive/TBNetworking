@@ -9,12 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "TBAPIBaseManager.h"
 
-#ifdef DEBUG
-#define TBLog(fmt, ...)  NSLog(fmt, ##__VA_ARGS__)
-#else
-#define TBLOG(fmt,...);
-#endif
-
 @interface TBLogger : NSObject
 
 + (void)loggerWithRequest:(TBAPIBaseManager *)request;

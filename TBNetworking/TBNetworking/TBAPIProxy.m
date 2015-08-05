@@ -7,8 +7,6 @@
 //
 
 #import "TBAPIProxy.h"
-#import "TBAPIResponse.h"
-#import "TBJSONValidator.h"
 
 @interface TBAPIProxy ()
 
@@ -202,21 +200,15 @@
 #pragma mark - private method
 
 - (BOOL)checkResult:(TBAPIBaseManager *)request {
-
-    BOOL result;
+    
     if ([request respondsToSelector:@selector(jsonValidator)]) {
         NSDictionary *jsonValidator = [((id <TBAPIRequest>)request) jsonValidator];
         if (jsonValidator) {
             NSError *error;
-            result = [TBJSONValidator validateValue:request.response.responseObject withRequirements:jsonValidator error:&error];
-            if (!result) {
-                TBLog(@"类型验证没通过");
-                TBLog(@"%@",error);
-            }
+            return [TBJSONValidator validateValue:request.response.responseObject withRequirements:jsonValidator error:&error];
         }
     }
-    
-    return request;
+    return YES;
 }
 
 - (void)handleOperate:(NSURLSessionDataTask  *)dataTask {
@@ -278,8 +270,8 @@
             _requestsTable[hashKey] = request;
         }
     }
-    TBLog(@"requestsTable size is %lu", (unsigned long) [_requestsTable count]);
-    TBLog(@"Operation quene size is %lu", (unsigned long) self.sessionManager.operationQueue.operationCount);
+//    TBLog(@"requestsTable size is %lu", (unsigned long) [_requestsTable count]);
+//    TBLog(@"Operation quene size is %lu", (unsigned long) self.sessionManager.operationQueue.operationCount);
 }
 
 - (void)removeDataTask:(NSURLSessionDataTask *)dataTask {
@@ -287,8 +279,8 @@
     @synchronized(self) {
         [_requestsTable removeObjectForKey:hashKey];
     }
-    TBLog(@"current quene size is %lu", (unsigned long) [_requestsTable count]);
-    TBLog(@"Operation quene size is %lu", (unsigned long) self.sessionManager.operationQueue.operationCount);
+//    TBLog(@"current quene size is %lu", (unsigned long) [_requestsTable count]);
+//    TBLog(@"Operation quene size is %lu", (unsigned long) self.sessionManager.operationQueue.operationCount);
 }
 
 @end

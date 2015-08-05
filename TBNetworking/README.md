@@ -2,7 +2,7 @@
 README(Chinese)
 ==========
 
-## TBNetwork 是什么
+## TBKNetwork 是什么
 
 TBNetwork 是Teambition iOS 研发团队基于 [AFNetworking]() [YTKNetworking]() 封装的 iOS 网络库 。
 
@@ -54,8 +54,7 @@ TBNetwork 的主要作者是：
 
 ## 感谢
 
-TBNetwork 基于 [AFNetworking][AFNetworking] 和 [YTKNetworking][YTKNetworking] 进行开发，感谢他们对开源社区做出的贡献。
-感谢[iOS应用架构谈 网络层设计方案](http://casatwy.com/iosying-yong-jia-gou-tan-wang-luo-ceng-she-ji-fang-an.html)
+TBNetwork 基于 [AFNetworking][AFNetworking] 和 [AFDownloadRequestOperation][AFDownloadRequestOperation] 进行开发，感谢他们对开源社区做出的贡献。
 
 ## 协议
 

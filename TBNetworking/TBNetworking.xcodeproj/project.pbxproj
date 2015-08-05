@@ -9,7 +9,11 @@
 /* Begin PBXBuildFile section */
 		30E046FF857B0D3592E55255 /* libPods-TBNetworkingTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 615D1447EA584F2E710E6961 /* libPods-TBNetworkingTests.a */; };
 		DB301F93FBF3F46A8C69F7BF /* libPods-TBNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA745D11C6699982B5EF1E79 /* libPods-TBNetworking.a */; };
-		E5CB325C1B6B29C9009B680E /* MobilePhoneAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E5CB325B1B6B29C9009B680E /* MobilePhoneAPIManager.m */; };
+		E57BC9A51B725FBE009DCB76 /* IDCardNumberAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E57BC9A21B725FBE009DCB76 /* IDCardNumberAPIManager.m */; };
+		E57BC9A61B725FBE009DCB76 /* MobilePhoneAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E57BC9A41B725FBE009DCB76 /* MobilePhoneAPIManager.m */; };
+		E57BC9AA1B725FCD009DCB76 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E57BC9A81B725FCD009DCB76 /* AppDelegate.m */; };
+		E57BC9AB1B725FCD009DCB76 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E57BC9A91B725FCD009DCB76 /* main.m */; };
+		E57BC9AE1B725FF1009DCB76 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E57BC9AD1B725FF1009DCB76 /* ViewController.m */; };
 		E5CB325F1B6B3B58009B680E /* TBJSONValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = E5CB325E1B6B3B58009B680E /* TBJSONValidator.m */; };
 		E5CB32621B6B5B9F009B680E /* TBAPIBatchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E5CB32611B6B5B9F009B680E /* TBAPIBatchManager.m */; };
 		E5CB32651B6B6640009B680E /* TBAPIBatchAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = E5CB32641B6B6640009B680E /* TBAPIBatchAgent.m */; };
@@ -22,10 +26,6 @@
 		EB0A80651B6B567600DE1C0B /* TBAPIChainManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EB0A80641B6B567600DE1C0B /* TBAPIChainManager.m */; };
 		EB0A80681B6B613300DE1C0B /* TBAPIChainManagerAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = EB0A80671B6B613300DE1C0B /* TBAPIChainManagerAgent.m */; };
 		EB17D8681B6A665100D4E46D /* TBAPIResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = EB17D8671B6A665100D4E46D /* TBAPIResponse.m */; };
-		EB5161781B6F4429006A34FB /* IDCardNumberAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5161771B6F4429006A34FB /* IDCardNumberAPIManager.m */; };
-		EBC264E91B68C2E800C07B74 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC264E81B68C2E800C07B74 /* main.m */; };
-		EBC264EC1B68C2E800C07B74 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC264EB1B68C2E800C07B74 /* AppDelegate.m */; };
-		EBC264EF1B68C2E800C07B74 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC264EE1B68C2E800C07B74 /* ViewController.m */; };
 		EBC264F21B68C2E800C07B74 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBC264F01B68C2E800C07B74 /* Main.storyboard */; };
 		EBC264F41B68C2E800C07B74 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBC264F31B68C2E800C07B74 /* Images.xcassets */; };
 		EBC264F71B68C2E800C07B74 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBC264F51B68C2E800C07B74 /* LaunchScreen.xib */; };
@@ -48,8 +48,15 @@
 		948FB1EEE914B1A7BE831E87 /* Pods-TBNetworkingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TBNetworkingTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TBNetworkingTests/Pods-TBNetworkingTests.release.xcconfig"; sourceTree = "<group>"; };
 		B614343AE7A800BCBA88FD18 /* Pods-TBNetworkingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TBNetworkingTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TBNetworkingTests/Pods-TBNetworkingTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C6E7F51099E21135FCCF06AD /* Pods-TBNetworking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TBNetworking.release.xcconfig"; path = "Pods/Target Support Files/Pods-TBNetworking/Pods-TBNetworking.release.xcconfig"; sourceTree = "<group>"; };
-		E5CB325A1B6B29C9009B680E /* MobilePhoneAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobilePhoneAPIManager.h; sourceTree = "<group>"; };
-		E5CB325B1B6B29C9009B680E /* MobilePhoneAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MobilePhoneAPIManager.m; sourceTree = "<group>"; };
+		E57BC9A11B725FBE009DCB76 /* IDCardNumberAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IDCardNumberAPIManager.h; path = API/IDCardNumberAPIManager.h; sourceTree = "<group>"; };
+		E57BC9A21B725FBE009DCB76 /* IDCardNumberAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IDCardNumberAPIManager.m; path = API/IDCardNumberAPIManager.m; sourceTree = "<group>"; };
+		E57BC9A31B725FBE009DCB76 /* MobilePhoneAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MobilePhoneAPIManager.h; path = API/MobilePhoneAPIManager.h; sourceTree = "<group>"; };
+		E57BC9A41B725FBE009DCB76 /* MobilePhoneAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MobilePhoneAPIManager.m; path = API/MobilePhoneAPIManager.m; sourceTree = "<group>"; };
+		E57BC9A71B725FCD009DCB76 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = other/AppDelegate.h; sourceTree = "<group>"; };
+		E57BC9A81B725FCD009DCB76 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = other/AppDelegate.m; sourceTree = "<group>"; };
+		E57BC9A91B725FCD009DCB76 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = other/main.m; sourceTree = "<group>"; };
+		E57BC9AC1B725FF1009DCB76 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = ViewController/ViewController.h; sourceTree = "<group>"; };
+		E57BC9AD1B725FF1009DCB76 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = ViewController/ViewController.m; sourceTree = "<group>"; };
 		E5CB325D1B6B3B58009B680E /* TBJSONValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBJSONValidator.h; sourceTree = "<group>"; };
 		E5CB325E1B6B3B58009B680E /* TBJSONValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBJSONValidator.m; sourceTree = "<group>"; };
 		E5CB32601B6B5B9F009B680E /* TBAPIBatchManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBAPIBatchManager.h; sourceTree = "<group>"; };
@@ -75,15 +82,8 @@
 		EB0A80671B6B613300DE1C0B /* TBAPIChainManagerAgent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBAPIChainManagerAgent.m; sourceTree = "<group>"; };
 		EB17D8661B6A665100D4E46D /* TBAPIResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBAPIResponse.h; sourceTree = "<group>"; };
 		EB17D8671B6A665100D4E46D /* TBAPIResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBAPIResponse.m; sourceTree = "<group>"; };
-		EB5161761B6F4429006A34FB /* IDCardNumberAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDCardNumberAPIManager.h; sourceTree = "<group>"; };
-		EB5161771B6F4429006A34FB /* IDCardNumberAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDCardNumberAPIManager.m; sourceTree = "<group>"; };
 		EBC264E31B68C2E800C07B74 /* TBNetworking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TBNetworking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBC264E71B68C2E800C07B74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EBC264E81B68C2E800C07B74 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		EBC264EA1B68C2E800C07B74 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		EBC264EB1B68C2E800C07B74 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		EBC264ED1B68C2E800C07B74 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		EBC264EE1B68C2E800C07B74 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		EBC264F11B68C2E800C07B74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EBC264F31B68C2E800C07B74 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		EBC264F61B68C2E800C07B74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -115,6 +115,10 @@
 		E5DF9DA71B68C5AC00B45857 /* TBNetworking */ = {
 			isa = PBXGroup;
 			children = (
+				E57BC9AC1B725FF1009DCB76 /* ViewController.h */,
+				E57BC9AD1B725FF1009DCB76 /* ViewController.m */,
+				E57BC9A71B725FCD009DCB76 /* AppDelegate.h */,
+				E57BC9A81B725FCD009DCB76 /* AppDelegate.m */,
 				E5DF9DC21B6A25F100B45857 /* VaildatorComponents */,
 				E5DF9DC11B6A25CB00B45857 /* LoggerComponents */,
 				E5DF9DC31B6B10DF00B45857 /* TBNetworking.h */,
@@ -141,10 +145,10 @@
 		E5DF9DAE1B68D27600B45857 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				E5CB325A1B6B29C9009B680E /* MobilePhoneAPIManager.h */,
-				E5CB325B1B6B29C9009B680E /* MobilePhoneAPIManager.m */,
-				EB5161761B6F4429006A34FB /* IDCardNumberAPIManager.h */,
-				EB5161771B6F4429006A34FB /* IDCardNumberAPIManager.m */,
+				E57BC9A11B725FBE009DCB76 /* IDCardNumberAPIManager.h */,
+				E57BC9A21B725FBE009DCB76 /* IDCardNumberAPIManager.m */,
+				E57BC9A31B725FBE009DCB76 /* MobilePhoneAPIManager.h */,
+				E57BC9A41B725FBE009DCB76 /* MobilePhoneAPIManager.m */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -194,10 +198,6 @@
 			children = (
 				E5DF9DAE1B68D27600B45857 /* API */,
 				E5DF9DA71B68C5AC00B45857 /* TBNetworking */,
-				EBC264EA1B68C2E800C07B74 /* AppDelegate.h */,
-				EBC264EB1B68C2E800C07B74 /* AppDelegate.m */,
-				EBC264ED1B68C2E800C07B74 /* ViewController.h */,
-				EBC264EE1B68C2E800C07B74 /* ViewController.m */,
 				EBC264F01B68C2E800C07B74 /* Main.storyboard */,
 				EBC264F31B68C2E800C07B74 /* Images.xcassets */,
 				EBC264F51B68C2E800C07B74 /* LaunchScreen.xib */,
@@ -209,8 +209,8 @@
 		EBC264E61B68C2E800C07B74 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E57BC9A91B725FCD009DCB76 /* main.m */,
 				EBC264E71B68C2E800C07B74 /* Info.plist */,
-				EBC264E81B68C2E800C07B74 /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -424,18 +424,18 @@
 				E5CB32651B6B6640009B680E /* TBAPIBatchAgent.m in Sources */,
 				E5DF9DB41B68EE5C00B45857 /* TBAPIProxy.m in Sources */,
 				E5DD07031B6F62D700CA08D3 /* TBValidatorPredicate.m in Sources */,
-				E5CB325C1B6B29C9009B680E /* MobilePhoneAPIManager.m in Sources */,
-				EBC264EF1B68C2E800C07B74 /* ViewController.m in Sources */,
 				E5CB32621B6B5B9F009B680E /* TBAPIBatchManager.m in Sources */,
 				E5DF9DBD1B6A0AEE00B45857 /* TBAPIManager.m in Sources */,
-				EB5161781B6F4429006A34FB /* IDCardNumberAPIManager.m in Sources */,
-				EBC264EC1B68C2E800C07B74 /* AppDelegate.m in Sources */,
+				E57BC9AB1B725FCD009DCB76 /* main.m in Sources */,
+				E57BC9A51B725FBE009DCB76 /* IDCardNumberAPIManager.m in Sources */,
+				E57BC9A61B725FBE009DCB76 /* MobilePhoneAPIManager.m in Sources */,
 				E5DF9DBA1B6A064300B45857 /* TBLogger.m in Sources */,
+				E57BC9AE1B725FF1009DCB76 /* ViewController.m in Sources */,
 				EB0A80651B6B567600DE1C0B /* TBAPIChainManager.m in Sources */,
 				EB0A80681B6B613300DE1C0B /* TBAPIChainManagerAgent.m in Sources */,
-				EBC264E91B68C2E800C07B74 /* main.m in Sources */,
 				EB17D8681B6A665100D4E46D /* TBAPIResponse.m in Sources */,
 				E5DF9DAA1B68CC7B00B45857 /* TBAPIBaseManager.m in Sources */,
+				E57BC9AA1B725FCD009DCB76 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

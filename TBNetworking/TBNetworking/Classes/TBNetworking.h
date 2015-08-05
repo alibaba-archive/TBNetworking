@@ -9,10 +9,13 @@
 #ifndef TBNetworking_TBNetworking_h
 #define TBNetworking_TBNetworking_h
 
-
 #endif
+#import "AFNetworking.h"
 #import "TBAPIResponse.h"
-#import <AFNetworking.h>
 #import "TBJSONValidator.h"
 #import "TBValidatorPredicate.h"
 #import "TBJSONValidator.h"
+#import "TBAPIProxy.h"
+#import "TBLogger.h"
+
+

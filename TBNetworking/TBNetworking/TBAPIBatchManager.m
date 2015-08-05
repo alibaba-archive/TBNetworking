@@ -7,8 +7,7 @@
 //
 
 #import "TBAPIBatchManager.h"
-#import "TBAPIManager.h"
-#import "TBAPIBatchAgent.h"
+
 
 @interface TBAPIBatchManager()<TBAPIBaseManagerDelegate>
 

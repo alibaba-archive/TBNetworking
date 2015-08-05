@@ -1,13 +1,13 @@
 //
-//  TBAPIRequest.h
+//  TBAPIRequest.m
 //  TBNetworking
 //
 //  Created by ChenHao on 7/30/15.
 //  Copyright (c) 2015 Teambition. All rights reserved.
 //
 
-#import "TBAPIBaseManager.h"
+#import "TBAPIManager.h"
 
-@interface TBAPIManager : TBAPIBaseManager
+@implementation TBAPIManager
 
 @end
