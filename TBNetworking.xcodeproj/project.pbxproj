@@ -7,6 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		30E046FF857B0D3592E55255 /* libPods-TBNetworkingTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 615D1447EA584F2E710E6961 /* libPods-TBNetworkingTests.a */; };
+		DB301F93FBF3F46A8C69F7BF /* libPods-TBNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA745D11C6699982B5EF1E79 /* libPods-TBNetworking.a */; };
+		E5CB325C1B6B29C9009B680E /* MobilePhoneAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E5CB325B1B6B29C9009B680E /* MobilePhoneAPIManager.m */; };
+		E5CB325F1B6B3B58009B680E /* TBJSONValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = E5CB325E1B6B3B58009B680E /* TBJSONValidator.m */; };
+		E5CB32621B6B5B9F009B680E /* TBAPIBatchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E5CB32611B6B5B9F009B680E /* TBAPIBatchManager.m */; };
+		E5CB32651B6B6640009B680E /* TBAPIBatchAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = E5CB32641B6B6640009B680E /* TBAPIBatchAgent.m */; };
+		E5DD07001B6F411200CA08D3 /* ValidatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E5DD06FF1B6F411200CA08D3 /* ValidatorTests.m */; };
+		E5DD07031B6F62D700CA08D3 /* TBValidatorPredicate.m in Sources */ = {isa = PBXBuildFile; fileRef = E5DD07021B6F62D700CA08D3 /* TBValidatorPredicate.m */; };
+		E5DF9DAA1B68CC7B00B45857 /* TBAPIBaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E5DF9DA91B68CC7B00B45857 /* TBAPIBaseManager.m */; };
+		E5DF9DB41B68EE5C00B45857 /* TBAPIProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = E5DF9DB31B68EE5C00B45857 /* TBAPIProxy.m */; };
+		E5DF9DBA1B6A064300B45857 /* TBLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = E5DF9DB91B6A064300B45857 /* TBLogger.m */; };
+		E5DF9DBD1B6A0AEE00B45857 /* TBAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E5DF9DBC1B6A0AEE00B45857 /* TBAPIManager.m */; };
+		EB0A80651B6B567600DE1C0B /* TBAPIChainManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EB0A80641B6B567600DE1C0B /* TBAPIChainManager.m */; };
+		EB0A80681B6B613300DE1C0B /* TBAPIChainManagerAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = EB0A80671B6B613300DE1C0B /* TBAPIChainManagerAgent.m */; };
+		EB17D8681B6A665100D4E46D /* TBAPIResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = EB17D8671B6A665100D4E46D /* TBAPIResponse.m */; };
+		EB5161781B6F4429006A34FB /* IDCardNumberAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5161771B6F4429006A34FB /* IDCardNumberAPIManager.m */; };
 		EBC264E91B68C2E800C07B74 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC264E81B68C2E800C07B74 /* main.m */; };
 		EBC264EC1B68C2E800C07B74 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC264EB1B68C2E800C07B74 /* AppDelegate.m */; };
 		EBC264EF1B68C2E800C07B74 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC264EE1B68C2E800C07B74 /* ViewController.m */; };
@@ -27,6 +43,40 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		55482E735C5C9EB3197EF6C2 /* Pods-TBNetworking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TBNetworking.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TBNetworking/Pods-TBNetworking.debug.xcconfig"; sourceTree = "<group>"; };
+		615D1447EA584F2E710E6961 /* libPods-TBNetworkingTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TBNetworkingTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		948FB1EEE914B1A7BE831E87 /* Pods-TBNetworkingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TBNetworkingTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TBNetworkingTests/Pods-TBNetworkingTests.release.xcconfig"; sourceTree = "<group>"; };
+		B614343AE7A800BCBA88FD18 /* Pods-TBNetworkingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TBNetworkingTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TBNetworkingTests/Pods-TBNetworkingTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C6E7F51099E21135FCCF06AD /* Pods-TBNetworking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TBNetworking.release.xcconfig"; path = "Pods/Target Support Files/Pods-TBNetworking/Pods-TBNetworking.release.xcconfig"; sourceTree = "<group>"; };
+		E5CB325A1B6B29C9009B680E /* MobilePhoneAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobilePhoneAPIManager.h; sourceTree = "<group>"; };
+		E5CB325B1B6B29C9009B680E /* MobilePhoneAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MobilePhoneAPIManager.m; sourceTree = "<group>"; };
+		E5CB325D1B6B3B58009B680E /* TBJSONValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBJSONValidator.h; sourceTree = "<group>"; };
+		E5CB325E1B6B3B58009B680E /* TBJSONValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBJSONValidator.m; sourceTree = "<group>"; };
+		E5CB32601B6B5B9F009B680E /* TBAPIBatchManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBAPIBatchManager.h; sourceTree = "<group>"; };
+		E5CB32611B6B5B9F009B680E /* TBAPIBatchManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBAPIBatchManager.m; sourceTree = "<group>"; };
+		E5CB32631B6B6640009B680E /* TBAPIBatchAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBAPIBatchAgent.h; sourceTree = "<group>"; };
+		E5CB32641B6B6640009B680E /* TBAPIBatchAgent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBAPIBatchAgent.m; sourceTree = "<group>"; };
+		E5DD06FF1B6F411200CA08D3 /* ValidatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValidatorTests.m; sourceTree = "<group>"; };
+		E5DD07011B6F62D700CA08D3 /* TBValidatorPredicate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBValidatorPredicate.h; sourceTree = "<group>"; };
+		E5DD07021B6F62D700CA08D3 /* TBValidatorPredicate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBValidatorPredicate.m; sourceTree = "<group>"; };
+		E5DF9DA81B68CC7B00B45857 /* TBAPIBaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBAPIBaseManager.h; sourceTree = "<group>"; };
+		E5DF9DA91B68CC7B00B45857 /* TBAPIBaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBAPIBaseManager.m; sourceTree = "<group>"; };
+		E5DF9DB21B68EE5C00B45857 /* TBAPIProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBAPIProxy.h; sourceTree = "<group>"; };
+		E5DF9DB31B68EE5C00B45857 /* TBAPIProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBAPIProxy.m; sourceTree = "<group>"; };
+		E5DF9DB81B6A064300B45857 /* TBLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBLogger.h; sourceTree = "<group>"; };
+		E5DF9DB91B6A064300B45857 /* TBLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBLogger.m; sourceTree = "<group>"; };
+		E5DF9DBB1B6A0AEE00B45857 /* TBAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBAPIManager.h; sourceTree = "<group>"; };
+		E5DF9DBC1B6A0AEE00B45857 /* TBAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBAPIManager.m; sourceTree = "<group>"; };
+		E5DF9DC31B6B10DF00B45857 /* TBNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBNetworking.h; sourceTree = "<group>"; };
+		EA745D11C6699982B5EF1E79 /* libPods-TBNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TBNetworking.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB0A80631B6B567600DE1C0B /* TBAPIChainManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBAPIChainManager.h; sourceTree = "<group>"; };
+		EB0A80641B6B567600DE1C0B /* TBAPIChainManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBAPIChainManager.m; sourceTree = "<group>"; };
+		EB0A80661B6B613300DE1C0B /* TBAPIChainManagerAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBAPIChainManagerAgent.h; sourceTree = "<group>"; };
+		EB0A80671B6B613300DE1C0B /* TBAPIChainManagerAgent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBAPIChainManagerAgent.m; sourceTree = "<group>"; };
+		EB17D8661B6A665100D4E46D /* TBAPIResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBAPIResponse.h; sourceTree = "<group>"; };
+		EB17D8671B6A665100D4E46D /* TBAPIResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBAPIResponse.m; sourceTree = "<group>"; };
+		EB5161761B6F4429006A34FB /* IDCardNumberAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDCardNumberAPIManager.h; sourceTree = "<group>"; };
+		EB5161771B6F4429006A34FB /* IDCardNumberAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDCardNumberAPIManager.m; sourceTree = "<group>"; };
 		EBC264E31B68C2E800C07B74 /* TBNetworking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TBNetworking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBC264E71B68C2E800C07B74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EBC264E81B68C2E800C07B74 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -47,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB301F93FBF3F46A8C69F7BF /* libPods-TBNetworking.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,18 +105,78 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30E046FF857B0D3592E55255 /* libPods-TBNetworkingTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E5DF9DA71B68C5AC00B45857 /* TBNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				E5DF9DC21B6A25F100B45857 /* VaildatorComponents */,
+				E5DF9DC11B6A25CB00B45857 /* LoggerComponents */,
+				E5DF9DC31B6B10DF00B45857 /* TBNetworking.h */,
+				E5DF9DA81B68CC7B00B45857 /* TBAPIBaseManager.h */,
+				E5DF9DA91B68CC7B00B45857 /* TBAPIBaseManager.m */,
+				EB0A80631B6B567600DE1C0B /* TBAPIChainManager.h */,
+				EB0A80641B6B567600DE1C0B /* TBAPIChainManager.m */,
+				EB0A80661B6B613300DE1C0B /* TBAPIChainManagerAgent.h */,
+				EB0A80671B6B613300DE1C0B /* TBAPIChainManagerAgent.m */,
+				E5DF9DBB1B6A0AEE00B45857 /* TBAPIManager.h */,
+				E5DF9DBC1B6A0AEE00B45857 /* TBAPIManager.m */,
+				E5CB32601B6B5B9F009B680E /* TBAPIBatchManager.h */,
+				E5CB32611B6B5B9F009B680E /* TBAPIBatchManager.m */,
+				E5CB32631B6B6640009B680E /* TBAPIBatchAgent.h */,
+				E5CB32641B6B6640009B680E /* TBAPIBatchAgent.m */,
+				EB17D8661B6A665100D4E46D /* TBAPIResponse.h */,
+				EB17D8671B6A665100D4E46D /* TBAPIResponse.m */,
+				E5DF9DB21B68EE5C00B45857 /* TBAPIProxy.h */,
+				E5DF9DB31B68EE5C00B45857 /* TBAPIProxy.m */,
+			);
+			name = TBNetworking;
+			sourceTree = "<group>";
+		};
+		E5DF9DAE1B68D27600B45857 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				E5CB325A1B6B29C9009B680E /* MobilePhoneAPIManager.h */,
+				E5CB325B1B6B29C9009B680E /* MobilePhoneAPIManager.m */,
+				EB5161761B6F4429006A34FB /* IDCardNumberAPIManager.h */,
+				EB5161771B6F4429006A34FB /* IDCardNumberAPIManager.m */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		E5DF9DC11B6A25CB00B45857 /* LoggerComponents */ = {
+			isa = PBXGroup;
+			children = (
+				E5DF9DB81B6A064300B45857 /* TBLogger.h */,
+				E5DF9DB91B6A064300B45857 /* TBLogger.m */,
+			);
+			name = LoggerComponents;
+			sourceTree = "<group>";
+		};
+		E5DF9DC21B6A25F100B45857 /* VaildatorComponents */ = {
+			isa = PBXGroup;
+			children = (
+				E5CB325D1B6B3B58009B680E /* TBJSONValidator.h */,
+				E5CB325E1B6B3B58009B680E /* TBJSONValidator.m */,
+				E5DD07011B6F62D700CA08D3 /* TBValidatorPredicate.h */,
+				E5DD07021B6F62D700CA08D3 /* TBValidatorPredicate.m */,
+			);
+			name = VaildatorComponents;
+			sourceTree = "<group>";
+		};
 		EBC264DA1B68C2E800C07B74 = {
 			isa = PBXGroup;
 			children = (
 				EBC264E51B68C2E800C07B74 /* TBNetworking */,
 				EBC264FF1B68C2E800C07B74 /* TBNetworkingTests */,
 				EBC264E41B68C2E800C07B74 /* Products */,
+				FE3C1A34A958FE8B6B212EDF /* Pods */,
+				FE068DF5A55C8715944C17F5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,6 +192,8 @@
 		EBC264E51B68C2E800C07B74 /* TBNetworking */ = {
 			isa = PBXGroup;
 			children = (
+				E5DF9DAE1B68D27600B45857 /* API */,
+				E5DF9DA71B68C5AC00B45857 /* TBNetworking */,
 				EBC264EA1B68C2E800C07B74 /* AppDelegate.h */,
 				EBC264EB1B68C2E800C07B74 /* AppDelegate.m */,
 				EBC264ED1B68C2E800C07B74 /* ViewController.h */,
@@ -106,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				EBC265021B68C2E800C07B74 /* TBNetworkingTests.m */,
+				E5DD06FF1B6F411200CA08D3 /* ValidatorTests.m */,
 				EBC265001B68C2E800C07B74 /* Supporting Files */,
 			);
 			path = TBNetworkingTests;
@@ -119,6 +233,26 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		FE068DF5A55C8715944C17F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EA745D11C6699982B5EF1E79 /* libPods-TBNetworking.a */,
+				615D1447EA584F2E710E6961 /* libPods-TBNetworkingTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FE3C1A34A958FE8B6B212EDF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				55482E735C5C9EB3197EF6C2 /* Pods-TBNetworking.debug.xcconfig */,
+				C6E7F51099E21135FCCF06AD /* Pods-TBNetworking.release.xcconfig */,
+				B614343AE7A800BCBA88FD18 /* Pods-TBNetworkingTests.debug.xcconfig */,
+				948FB1EEE914B1A7BE831E87 /* Pods-TBNetworkingTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -126,9 +260,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EBC265061B68C2E800C07B74 /* Build configuration list for PBXNativeTarget "TBNetworking" */;
 			buildPhases = (
+				3EE7D6E40051517360661EF1 /* Check Pods Manifest.lock */,
 				EBC264DF1B68C2E800C07B74 /* Sources */,
 				EBC264E01B68C2E800C07B74 /* Frameworks */,
 				EBC264E11B68C2E800C07B74 /* Resources */,
+				8A1AFF468CF6F1782032780C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -143,9 +279,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EBC265091B68C2E800C07B74 /* Build configuration list for PBXNativeTarget "TBNetworkingTests" */;
 			buildPhases = (
+				8255E2361118A14AD2D994BB /* Check Pods Manifest.lock */,
 				EBC264F81B68C2E800C07B74 /* Sources */,
 				EBC264F91B68C2E800C07B74 /* Frameworks */,
 				EBC264FA1B68C2E800C07B74 /* Resources */,
+				0EBE4385520ED99F9118C27D /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -214,14 +352,90 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0EBE4385520ED99F9118C27D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TBNetworkingTests/Pods-TBNetworkingTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3EE7D6E40051517360661EF1 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8255E2361118A14AD2D994BB /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8A1AFF468CF6F1782032780C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TBNetworking/Pods-TBNetworking-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		EBC264DF1B68C2E800C07B74 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5CB325F1B6B3B58009B680E /* TBJSONValidator.m in Sources */,
+				E5CB32651B6B6640009B680E /* TBAPIBatchAgent.m in Sources */,
+				E5DF9DB41B68EE5C00B45857 /* TBAPIProxy.m in Sources */,
+				E5DD07031B6F62D700CA08D3 /* TBValidatorPredicate.m in Sources */,
+				E5CB325C1B6B29C9009B680E /* MobilePhoneAPIManager.m in Sources */,
 				EBC264EF1B68C2E800C07B74 /* ViewController.m in Sources */,
+				E5CB32621B6B5B9F009B680E /* TBAPIBatchManager.m in Sources */,
+				E5DF9DBD1B6A0AEE00B45857 /* TBAPIManager.m in Sources */,
+				EB5161781B6F4429006A34FB /* IDCardNumberAPIManager.m in Sources */,
 				EBC264EC1B68C2E800C07B74 /* AppDelegate.m in Sources */,
+				E5DF9DBA1B6A064300B45857 /* TBLogger.m in Sources */,
+				EB0A80651B6B567600DE1C0B /* TBAPIChainManager.m in Sources */,
+				EB0A80681B6B613300DE1C0B /* TBAPIChainManagerAgent.m in Sources */,
 				EBC264E91B68C2E800C07B74 /* main.m in Sources */,
+				EB17D8681B6A665100D4E46D /* TBAPIResponse.m in Sources */,
+				E5DF9DAA1B68CC7B00B45857 /* TBAPIBaseManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,6 +443,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5DD07001B6F411200CA08D3 /* ValidatorTests.m in Sources */,
 				EBC265031B68C2E800C07B74 /* TBNetworkingTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -345,6 +560,7 @@
 		};
 		EBC265071B68C2E800C07B74 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55482E735C5C9EB3197EF6C2 /* Pods-TBNetworking.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TBNetworking/Info.plist;
@@ -355,6 +571,7 @@
 		};
 		EBC265081B68C2E800C07B74 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C6E7F51099E21135FCCF06AD /* Pods-TBNetworking.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TBNetworking/Info.plist;
@@ -365,6 +582,7 @@
 		};
 		EBC2650A1B68C2E800C07B74 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B614343AE7A800BCBA88FD18 /* Pods-TBNetworkingTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -384,6 +602,7 @@
 		};
 		EBC2650B1B68C2E800C07B74 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 948FB1EEE914B1A7BE831E87 /* Pods-TBNetworkingTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -416,6 +635,7 @@
 				EBC265081B68C2E800C07B74 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EBC265091B68C2E800C07B74 /* Build configuration list for PBXNativeTarget "TBNetworkingTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +644,7 @@
 				EBC2650B1B68C2E800C07B74 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
