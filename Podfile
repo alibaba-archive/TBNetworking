@@ -8,6 +8,6 @@ pod 'AFNetworking'
 end
 
 target 'TBNetworkingTests' do
-
+pod 'OCMock', '~> 3.1.2'
 end
 

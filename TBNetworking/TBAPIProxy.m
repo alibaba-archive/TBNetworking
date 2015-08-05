@@ -8,7 +8,7 @@
 
 #import "TBAPIProxy.h"
 #import "TBAPIResponse.h"
-#import "TBValidator.h"
+#import "TBJSONValidator.h"
 
 @interface TBAPIProxy ()
 
@@ -204,12 +204,14 @@
 - (BOOL)checkResult:(TBAPIBaseManager *)request {
 
     BOOL result;
-    if ([request respondsToSelector:@selector(typeJsonValidator)]) {
-        NSDictionary *typeJsonValidator = [((id <TBAPIRequest>)request) typeJsonValidator];
-        if (typeJsonValidator) {
-            result = [TBValidator checkJsonType:request.response.responseObject withValidator:typeJsonValidator];
+    if ([request respondsToSelector:@selector(jsonValidator)]) {
+        NSDictionary *jsonValidator = [((id <TBAPIRequest>)request) jsonValidator];
+        if (jsonValidator) {
+            NSError *error;
+            result = [TBJSONValidator validateValue:request.response.responseObject withRequirements:jsonValidator error:&error];
             if (!result) {
-               TBLog(@"类型验证没通过");
+                TBLog(@"类型验证没通过");
+                TBLog(@"%@",error);
             }
         }
     }
