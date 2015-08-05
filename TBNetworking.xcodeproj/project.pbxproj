@@ -19,6 +19,7 @@
 		EB0A80651B6B567600DE1C0B /* TBAPIChainManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EB0A80641B6B567600DE1C0B /* TBAPIChainManager.m */; };
 		EB0A80681B6B613300DE1C0B /* TBAPIChainManagerAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = EB0A80671B6B613300DE1C0B /* TBAPIChainManagerAgent.m */; };
 		EB17D8681B6A665100D4E46D /* TBAPIResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = EB17D8671B6A665100D4E46D /* TBAPIResponse.m */; };
+		EB5161781B6F4429006A34FB /* IDCardNumberAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5161771B6F4429006A34FB /* IDCardNumberAPIManager.m */; };
 		EBC264E91B68C2E800C07B74 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC264E81B68C2E800C07B74 /* main.m */; };
 		EBC264EC1B68C2E800C07B74 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC264EB1B68C2E800C07B74 /* AppDelegate.m */; };
 		EBC264EF1B68C2E800C07B74 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC264EE1B68C2E800C07B74 /* ViewController.m */; };
@@ -65,6 +66,8 @@
 		EB0A80671B6B613300DE1C0B /* TBAPIChainManagerAgent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBAPIChainManagerAgent.m; sourceTree = "<group>"; };
 		EB17D8661B6A665100D4E46D /* TBAPIResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBAPIResponse.h; sourceTree = "<group>"; };
 		EB17D8671B6A665100D4E46D /* TBAPIResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBAPIResponse.m; sourceTree = "<group>"; };
+		EB5161761B6F4429006A34FB /* IDCardNumberAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDCardNumberAPIManager.h; sourceTree = "<group>"; };
+		EB5161771B6F4429006A34FB /* IDCardNumberAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDCardNumberAPIManager.m; sourceTree = "<group>"; };
 		EBC264E31B68C2E800C07B74 /* TBNetworking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TBNetworking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBC264E71B68C2E800C07B74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EBC264E81B68C2E800C07B74 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -130,6 +133,8 @@
 			children = (
 				E5CB325A1B6B29C9009B680E /* MobilePhoneAPIManager.h */,
 				E5CB325B1B6B29C9009B680E /* MobilePhoneAPIManager.m */,
+				EB5161761B6F4429006A34FB /* IDCardNumberAPIManager.h */,
+				EB5161771B6F4429006A34FB /* IDCardNumberAPIManager.m */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -374,6 +379,7 @@
 				EBC264EF1B68C2E800C07B74 /* ViewController.m in Sources */,
 				E5CB32621B6B5B9F009B680E /* TBAPIBatchManager.m in Sources */,
 				E5DF9DBD1B6A0AEE00B45857 /* TBAPIManager.m in Sources */,
+				EB5161781B6F4429006A34FB /* IDCardNumberAPIManager.m in Sources */,
 				EBC264EC1B68C2E800C07B74 /* AppDelegate.m in Sources */,
 				E5DF9DBA1B6A064300B45857 /* TBLogger.m in Sources */,
 				EB0A80651B6B567600DE1C0B /* TBAPIChainManager.m in Sources */,
