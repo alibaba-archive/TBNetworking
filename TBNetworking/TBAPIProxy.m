@@ -195,7 +195,6 @@
     for (TBAPIBaseManager *request in copyTable) {
         [self cancelRequest:request];
     }
-    
 }
 
 
