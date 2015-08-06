@@ -7,12 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "TBNetworking.h"
+
 @class TBAPIBatchManager;
 
-@interface TBAPIBatchAgent : NSObject
+@interface TBAPIBatchManagerAgent : NSObject
 
-+ (TBAPIBatchAgent *)sharedInstance;
++ (TBAPIBatchManagerAgent *)sharedInstance;
 
 - (void)addBatchManager:(TBAPIBatchManager *)manager;
 

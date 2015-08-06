@@ -11,15 +11,11 @@
 @interface TBAPIProxy ()
 
 @property (nonatomic, strong) AFHTTPSessionManager *sessionManager;
+@property (nonatomic, strong) NSMutableDictionary  *requestsTable;
 
 @end
 
-@implementation TBAPIProxy {
-
-    NSMutableDictionary *_requestsTable;
-    
-}
-
+@implementation TBAPIProxy
 
 + (instancetype)sharedInstance {
 
@@ -38,10 +34,34 @@
 
         _sessionManager = [AFHTTPSessionManager manager];
         _sessionManager.operationQueue.maxConcurrentOperationCount = 4;
-
         _requestsTable = [[NSMutableDictionary alloc] init];
+        [self addReachblityManager:_sessionManager];
     }
     return self;
+}
+
+#pragma mark ReachablityManager
+
+- (void)addReachblityManager:(AFHTTPSessionManager *)manager {
+    __block AFHTTPSessionManager *managerBlock = manager;
+    [manager.reachabilityManager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        switch (status) {
+            case AFNetworkReachabilityStatusReachableViaWiFi:
+            {
+                managerBlock.operationQueue.maxConcurrentOperationCount = 20;
+                [TBLogger TBLog:@"change to Wifi"];
+            }
+                break;
+            case AFNetworkReachabilityStatusReachableViaWWAN:
+            {
+                managerBlock.operationQueue.maxConcurrentOperationCount = 4;
+                [TBLogger TBLog:@"change to 2G/3G"];
+            }
+            default:
+                break;
+        }
+    }];
+    [manager.reachabilityManager startMonitoring];
 }
 
 - (NSString *)buildRequestUrl:(TBAPIBaseManager *)request {
@@ -87,8 +107,7 @@
                                 GET:[self buildRequestUrl:manager]
                                 parameters:manager.parameters success:^(NSURLSessionDataTask *task, id responseObject) {
                                 
-                                    TBAPIResponse *response = [[TBAPIResponse alloc] initWithRequest:manager
-                                                                                           requestID:task.taskIdentifier
+                                    TBAPIResponse *response = [[TBAPIResponse alloc] initWithRequestID:task.taskIdentifier
                                                                                       responseObject:[NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil]
                                                                                               statusCode:((NSHTTPURLResponse *)task.response).statusCode];
                                     manager.response = response;
@@ -97,8 +116,7 @@
             }
                                 failure:^(NSURLSessionDataTask *task, NSError *error) {
                                     
-                                    TBAPIResponse *response = [[TBAPIResponse alloc] initWithRequest:manager
-                                                                                           requestID:task.taskIdentifier
+                                    TBAPIResponse *response = [[TBAPIResponse alloc] initWithRequestID:task.taskIdentifier
                                                                                       responseObject:nil
                                                                                           statusCode:((NSHTTPURLResponse *)task.response).statusCode error:error];
                                     manager.response = response;
@@ -112,16 +130,14 @@
             manager.dataTask = [self.sessionManager
                                 POST:[self buildRequestUrl:manager]
                                 parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
-                                    TBAPIResponse *response = [[TBAPIResponse alloc] initWithRequest:manager
-                                                                                           requestID:task.taskIdentifier
+                                    TBAPIResponse *response = [[TBAPIResponse alloc] initWithRequestID:task.taskIdentifier
                                                                                       responseObject:[NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil]
                                                                                           statusCode:((NSHTTPURLResponse *)task.response).statusCode];
                                     manager.response = response;
                                     [self handleOperate:task];
             }
                                 failure:^(NSURLSessionDataTask *task, NSError *error) {
-                                    TBAPIResponse *response = [[TBAPIResponse alloc] initWithRequest:manager
-                                                                                           requestID:task.taskIdentifier
+                                    TBAPIResponse *response = [[TBAPIResponse alloc] initWithRequestID:task.taskIdentifier
                                                                                       responseObject:nil
                                                                                           statusCode:((NSHTTPURLResponse *)task.response).statusCode error:error];
                                     manager.response = response;
@@ -136,16 +152,14 @@
             manager.dataTask = [self.sessionManager
                                 PUT:[self buildRequestUrl:manager]
                                 parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
-                                    TBAPIResponse *response = [[TBAPIResponse alloc] initWithRequest:manager
-                                                                                           requestID:task.taskIdentifier
+                                    TBAPIResponse *response = [[TBAPIResponse alloc] initWithRequestID:task.taskIdentifier
                                                                                       responseObject:[NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil]
                                                                                           statusCode:((NSHTTPURLResponse *)task.response).statusCode];
                                     manager.response = response;
                                     [self handleOperate:task];
             }
                                 failure:^(NSURLSessionDataTask *task, NSError *error) {
-                                    TBAPIResponse *response = [[TBAPIResponse alloc] initWithRequest:manager
-                                                                                           requestID:task.taskIdentifier
+                                    TBAPIResponse *response = [[TBAPIResponse alloc] initWithRequestID:task.taskIdentifier
                                                                                       responseObject:nil
                                                                                           statusCode:((NSHTTPURLResponse *)task.response).statusCode error:error];
                                     manager.response = response;
@@ -159,16 +173,14 @@
                                 DELETE:[self buildRequestUrl:manager]
                                 parameters:nil
                                 success:^(NSURLSessionDataTask *task, id responseObject) {
-                                    TBAPIResponse *response = [[TBAPIResponse alloc] initWithRequest:manager
-                                                                                           requestID:task.taskIdentifier
+                                    TBAPIResponse *response = [[TBAPIResponse alloc] initWithRequestID:task.taskIdentifier
                                                                                       responseObject:[NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil]
                                                                                           statusCode:((NSHTTPURLResponse *)task.response).statusCode];
                                     manager.response = response;
                                     [self handleOperate:task];
             }
                                 failure:^(NSURLSessionDataTask *task, NSError *error) {
-                                    TBAPIResponse *response = [[TBAPIResponse alloc] initWithRequest:manager
-                                                                                           requestID:task.taskIdentifier
+                                    TBAPIResponse *response = [[TBAPIResponse alloc] initWithRequestID:task.taskIdentifier
                                                                                       responseObject:nil
                                                                                           statusCode:((NSHTTPURLResponse *)task.response).statusCode error:error];
                                     manager.response = response;
@@ -270,8 +282,8 @@
             _requestsTable[hashKey] = request;
         }
     }
-//    TBLog(@"requestsTable size is %lu", (unsigned long) [_requestsTable count]);
-//    TBLog(@"Operation quene size is %lu", (unsigned long) self.sessionManager.operationQueue.operationCount);
+    [TBLogger TBLog:[NSString stringWithFormat:@"requestsTable size is %lu", (unsigned long) [_requestsTable count]]];
+    [TBLogger TBLog:[NSString stringWithFormat:@"Operation quene size is %lu", (unsigned long) self.sessionManager.operationQueue.operationCount]];
 }
 
 - (void)removeDataTask:(NSURLSessionDataTask *)dataTask {
@@ -279,8 +291,8 @@
     @synchronized(self) {
         [_requestsTable removeObjectForKey:hashKey];
     }
-//    TBLog(@"current quene size is %lu", (unsigned long) [_requestsTable count]);
-//    TBLog(@"Operation quene size is %lu", (unsigned long) self.sessionManager.operationQueue.operationCount);
+    [TBLogger TBLog:[NSString stringWithFormat:@"requestsTable size is %lu", (unsigned long) [_requestsTable count]]];
+    [TBLogger TBLog:[NSString stringWithFormat:@"Operation quene size is %lu", (unsigned long) self.sessionManager.operationQueue.operationCount]];
 }
 
 @end

@@ -16,7 +16,7 @@
 		E57BC9AE1B725FF1009DCB76 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E57BC9AD1B725FF1009DCB76 /* ViewController.m */; };
 		E5CB325F1B6B3B58009B680E /* TBJSONValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = E5CB325E1B6B3B58009B680E /* TBJSONValidator.m */; };
 		E5CB32621B6B5B9F009B680E /* TBAPIBatchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E5CB32611B6B5B9F009B680E /* TBAPIBatchManager.m */; };
-		E5CB32651B6B6640009B680E /* TBAPIBatchAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = E5CB32641B6B6640009B680E /* TBAPIBatchAgent.m */; };
+		E5CB32651B6B6640009B680E /* TBAPIBatchManagerAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = E5CB32641B6B6640009B680E /* TBAPIBatchManagerAgent.m */; };
 		E5DD07001B6F411200CA08D3 /* ValidatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E5DD06FF1B6F411200CA08D3 /* ValidatorTests.m */; };
 		E5DD07031B6F62D700CA08D3 /* TBValidatorPredicate.m in Sources */ = {isa = PBXBuildFile; fileRef = E5DD07021B6F62D700CA08D3 /* TBValidatorPredicate.m */; };
 		E5DF9DAA1B68CC7B00B45857 /* TBAPIBaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E5DF9DA91B68CC7B00B45857 /* TBAPIBaseManager.m */; };
@@ -61,8 +61,8 @@
 		E5CB325E1B6B3B58009B680E /* TBJSONValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBJSONValidator.m; sourceTree = "<group>"; };
 		E5CB32601B6B5B9F009B680E /* TBAPIBatchManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBAPIBatchManager.h; sourceTree = "<group>"; };
 		E5CB32611B6B5B9F009B680E /* TBAPIBatchManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBAPIBatchManager.m; sourceTree = "<group>"; };
-		E5CB32631B6B6640009B680E /* TBAPIBatchAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBAPIBatchAgent.h; sourceTree = "<group>"; };
-		E5CB32641B6B6640009B680E /* TBAPIBatchAgent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBAPIBatchAgent.m; sourceTree = "<group>"; };
+		E5CB32631B6B6640009B680E /* TBAPIBatchManagerAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBAPIBatchManagerAgent.h; sourceTree = "<group>"; };
+		E5CB32641B6B6640009B680E /* TBAPIBatchManagerAgent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBAPIBatchManagerAgent.m; sourceTree = "<group>"; };
 		E5DD06FF1B6F411200CA08D3 /* ValidatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValidatorTests.m; sourceTree = "<group>"; };
 		E5DD07011B6F62D700CA08D3 /* TBValidatorPredicate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBValidatorPredicate.h; sourceTree = "<group>"; };
 		E5DD07021B6F62D700CA08D3 /* TBValidatorPredicate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBValidatorPredicate.m; sourceTree = "<group>"; };
@@ -132,8 +132,8 @@
 				E5DF9DBC1B6A0AEE00B45857 /* TBAPIManager.m */,
 				E5CB32601B6B5B9F009B680E /* TBAPIBatchManager.h */,
 				E5CB32611B6B5B9F009B680E /* TBAPIBatchManager.m */,
-				E5CB32631B6B6640009B680E /* TBAPIBatchAgent.h */,
-				E5CB32641B6B6640009B680E /* TBAPIBatchAgent.m */,
+				E5CB32631B6B6640009B680E /* TBAPIBatchManagerAgent.h */,
+				E5CB32641B6B6640009B680E /* TBAPIBatchManagerAgent.m */,
 				EB17D8661B6A665100D4E46D /* TBAPIResponse.h */,
 				EB17D8671B6A665100D4E46D /* TBAPIResponse.m */,
 				E5DF9DB21B68EE5C00B45857 /* TBAPIProxy.h */,
@@ -421,7 +421,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5CB325F1B6B3B58009B680E /* TBJSONValidator.m in Sources */,
-				E5CB32651B6B6640009B680E /* TBAPIBatchAgent.m in Sources */,
+				E5CB32651B6B6640009B680E /* TBAPIBatchManagerAgent.m in Sources */,
 				E5DF9DB41B68EE5C00B45857 /* TBAPIProxy.m in Sources */,
 				E5DD07031B6F62D700CA08D3 /* TBValidatorPredicate.m in Sources */,
 				E5CB32621B6B5B9F009B680E /* TBAPIBatchManager.m in Sources */,

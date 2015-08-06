@@ -32,7 +32,7 @@
     if (_finishCount!=0) {
         return;
     }
-    [[TBAPIBatchAgent sharedInstance] addBatchManager:self];
+    [[TBAPIBatchManagerAgent sharedInstance] addBatchManager:self];
     for (TBAPIManager *manager in _requestBachArray) {
         manager.delegate = self;
         [manager start];
@@ -46,7 +46,7 @@
         manager.delegate = self;
         [manager stop];
     }
-    [[TBAPIBatchAgent sharedInstance] removeBatchManager:self];
+    [[TBAPIBatchManagerAgent sharedInstance] removeBatchManager:self];
 }
 
 
