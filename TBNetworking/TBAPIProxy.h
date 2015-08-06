@@ -7,9 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "TBNetworking.h"
-#import "TBAPIBatchAgent.h"
+#import "TBAPIBatchManagerAgent.h"
 #import "TBAPIBaseManager.h"
+#import "TBAPIResponse.h"
+#import <AFNetworking.h>
 
 @interface TBAPIProxy : NSObject
 

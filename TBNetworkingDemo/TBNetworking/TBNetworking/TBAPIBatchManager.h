@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "TBAPIManager.h"
-#import "TBAPIBatchAgent.h"
+#import "TBAPIBatchManagerAgent.h"
 
 /*************************************************************************************************/
 /*                             TBAPIBaseRequestDelegate                                          */
