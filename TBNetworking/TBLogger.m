@@ -55,5 +55,12 @@
     
 }
 
++ (void)TBLog:(NSString *)log {
+#ifdef DEBUG
+    NSLog(@"%@",log);
+#endif
+    
+}
+
 
 @end

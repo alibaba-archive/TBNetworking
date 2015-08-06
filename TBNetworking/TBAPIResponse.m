@@ -12,8 +12,7 @@
 
 @property (nonatomic, assign, readwrite) TBAPIResponseStatus status;
 @property (nonatomic, assign, readwrite) NSInteger statusCode;
-@property (nonatomic, copy, readwrite)   id responseObject;
-@property (nonatomic, strong, readwrite) TBAPIBaseManager *request;
+@property (nonatomic, copy,   readwrite) id responseObject;
 @property (nonatomic, assign, readwrite) NSInteger requestID;
 @property (nonatomic, assign, readwrite) BOOL isCache;
 
@@ -22,11 +21,10 @@
 @implementation TBAPIResponse
 
 #pragma mark - life cycle
-- (instancetype)initWithRequest:(TBAPIBaseManager *)request requestID:(NSInteger)requestID responseObject:(id)responseObject statusCode:(NSInteger)statusCode {
+- (instancetype)initWithRequestID:(NSInteger)requestID responseObject:(id)responseObject statusCode:(NSInteger)statusCode {
     
     self = [super init];
     if (self) {
-        self.request = request;
         self.requestID = requestID;
         self.responseObject = responseObject;
         self.statusCode = statusCode;
@@ -36,11 +34,10 @@
     return self;
 }
 
-- (instancetype)initWithRequest:(TBAPIBaseManager *)request requestID:(NSInteger)requestID responseObject:(id)responseObject statusCode:(NSInteger)statusCode error:(NSError *)error {
+- (instancetype)initWithRequestID:(NSInteger)requestID responseObject:(id)responseObject statusCode:(NSInteger)statusCode error:(NSError *)error {
     
     self = [super init];
     if (self) {
-        self.request = request;
         self.requestID = requestID;
         self.responseObject = responseObject;
         self.status = [self responseStatusWithError:error];

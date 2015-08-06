@@ -6,22 +6,22 @@
 //  Copyright (c) 2015 Teambition. All rights reserved.
 //
 
-#import "TBAPIBatchAgent.h"
+#import "TBAPIBatchManagerAgent.h"
 
-@interface TBAPIBatchAgent()
+@interface TBAPIBatchManagerAgent()
 
 @property (strong, nonatomic) NSMutableArray *requestArray;
 
 @end
 
-@implementation TBAPIBatchAgent
+@implementation TBAPIBatchManagerAgent
 
-+ (TBAPIBatchAgent *)sharedInstance {
++ (TBAPIBatchManagerAgent *)sharedInstance {
 
-    static TBAPIBatchAgent *sharedInstace = nil;
+    static TBAPIBatchManagerAgent *sharedInstace = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        sharedInstace = [[TBAPIBatchAgent alloc] init];
+        sharedInstace = [[TBAPIBatchManagerAgent alloc] init];
     });
     return sharedInstace;
 }

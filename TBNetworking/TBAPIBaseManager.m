@@ -7,6 +7,7 @@
 //
 
 #import "TBAPIBaseManager.h"
+#import "TBAPIProxy.h"
 
 @interface TBAPIBaseManager()
 
