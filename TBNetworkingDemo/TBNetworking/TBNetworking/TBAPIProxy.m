@@ -262,12 +262,9 @@
             if (manager.interceptor && [manager respondsToSelector:@selector(requestDidPerformFailResponse:)]) {
                 [manager.interceptor requestDidPerformFailResponse:manager];
             }
-            
         }
     }
     [self removeDataTask:dataTask];
-   
-    
 }
 
 - (NSString *)requestHashKey :(NSURLSessionDataTask  *)dataTsk {
