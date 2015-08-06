@@ -115,6 +115,9 @@
 		E524EA631B73520500B5860D /* TBNetworking */ = {
 			isa = PBXGroup;
 			children = (
+				E524EA881B735C6B00B5860D /* Validate */,
+				E524EA871B735C5D00B5860D /* Logger */,
+				E524EA781B73521B00B5860D /* TBNetworking.h */,
 				E524EA641B73521B00B5860D /* TBAPIBaseManager.h */,
 				E524EA651B73521B00B5860D /* TBAPIBaseManager.m */,
 				E524EA661B73521B00B5860D /* TBAPIBatchManager.h */,
@@ -131,15 +134,28 @@
 				E524EA711B73521B00B5860D /* TBAPIProxy.m */,
 				E524EA721B73521B00B5860D /* TBAPIResponse.h */,
 				E524EA731B73521B00B5860D /* TBAPIResponse.m */,
-				E524EA741B73521B00B5860D /* TBJSONValidator.h */,
-				E524EA751B73521B00B5860D /* TBJSONValidator.m */,
+			);
+			name = TBNetworking;
+			sourceTree = "<group>";
+		};
+		E524EA871B735C5D00B5860D /* Logger */ = {
+			isa = PBXGroup;
+			children = (
 				E524EA761B73521B00B5860D /* TBLogger.h */,
 				E524EA771B73521B00B5860D /* TBLogger.m */,
-				E524EA781B73521B00B5860D /* TBNetworking.h */,
+			);
+			name = Logger;
+			sourceTree = "<group>";
+		};
+		E524EA881B735C6B00B5860D /* Validate */ = {
+			isa = PBXGroup;
+			children = (
+				E524EA741B73521B00B5860D /* TBJSONValidator.h */,
+				E524EA751B73521B00B5860D /* TBJSONValidator.m */,
 				E524EA791B73521B00B5860D /* TBValidatorPredicate.h */,
 				E524EA7A1B73521B00B5860D /* TBValidatorPredicate.m */,
 			);
-			name = TBNetworking;
+			name = Validate;
 			sourceTree = "<group>";
 		};
 		E5DF9DA71B68C5AC00B45857 /* TBNetworking */ = {

@@ -43,7 +43,24 @@ TBNetwork 的基本的思想是把每一个网络请求封装成对象。所以�
 
 ## 相关的使用教程和 Demo
 
- 无
+ `TBJSONValidator`数据验证，有时候服务端会返回错误的数据数据，这时候就需要进行数据的正确性验证，反正应用因为错误数据而产生的闪退。
+ 
+ ```
+ - (NSDictionary *)jsonValidator {
+    return @{
+             @"errMsg":TBValidatorPredicate.isNotNull,
+             @"errNum":TBValidatorPredicate.isNotNull,
+             @"retData":@{
+                     @"carrier":TBValidatorPredicate.isNotNull,
+                     @"province":TBValidatorPredicate.isNotNull,
+                     @"telString":TBValidatorPredicate.isNotNull
+                     }
+             };
+}
+
+ ```
+ 
+ 子类中实现`jsonValidator`方法
 
 ## 作者
 
