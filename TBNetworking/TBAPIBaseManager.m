@@ -26,8 +26,8 @@
     if (self) {
         self.delegate = nil;
         
-        if ([self conformsToProtocol:@protocol(TBAPIRequest)]) {
-            self.child = (id <TBAPIRequest>)self;
+        if ([self conformsToProtocol:@protocol(TBAPIManager)]) {
+            self.child = (id <TBAPIManager>)self;
         }
     }
     return self;

@@ -9,7 +9,7 @@
 #import "TBAPIManager.h"
 #import "TBNetworking.h"
 
-@interface MobilePhoneAPIManager : TBAPIManager <TBAPIRequest>
+@interface MobilePhoneAPIManager : TBAPIManager <TBAPIManager>
 
 - (NSString *)getPhoneNumber;
 

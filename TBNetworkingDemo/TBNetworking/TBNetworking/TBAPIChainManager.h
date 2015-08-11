@@ -15,7 +15,7 @@
 @protocol TBAPIChainManagerDelegate <NSObject>
 
 - (void)chainAllManagerDidSuccess:(TBAPIChainManager *)chainManager;
-- (void)chainSingleManagerDidSuccess:(TBAPIBaseManager *)manager;
+- (void)chainSubManagerDidSuccess:(TBAPIBaseManager *)manager;
 - (void)chainAllManagerDidFailed:(TBAPIChainManager *)chainManager failedBaseManager:(TBAPIBaseManager *)manager;
 
 @end

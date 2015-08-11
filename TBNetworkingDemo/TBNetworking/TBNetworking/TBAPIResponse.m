@@ -11,10 +11,10 @@
 @interface TBAPIResponse ()
 
 @property (nonatomic, assign, readwrite) TBAPIResponseStatus status;
-@property (nonatomic, assign, readwrite) NSInteger statusCode;
-@property (nonatomic, copy,   readwrite) id responseObject;
-@property (nonatomic, assign, readwrite) NSInteger requestID;
-@property (nonatomic, assign, readwrite) BOOL isCache;
+@property (nonatomic, assign, readwrite) NSInteger           statusCode;
+@property (nonatomic, copy,   readwrite) id                  responseObject;
+@property (nonatomic, assign, readwrite) NSInteger           requestID;
+@property (nonatomic, assign, readwrite) BOOL                isCache;
 
 @end
 

@@ -77,7 +77,7 @@
     NSUInteger currentManagerIndex = _nextManagerIndex - 1;
     if (currentManagerIndex < [_apiManagerArray count]) {
         if ([_delegate respondsToSelector:@selector(chainSingleManagerDidSuccess:)]) {
-            [_delegate chainSingleManagerDidSuccess:manager];
+            [_delegate chainSubManagerDidSuccess:manager];
         }
     }
     if (![self startNextManager]) {

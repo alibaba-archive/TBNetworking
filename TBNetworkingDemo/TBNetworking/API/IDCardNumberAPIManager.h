@@ -9,6 +9,6 @@
 #import "TBAPIManager.h"
 #import "TBNetworking.h"
 
-@interface IDCardNumberAPIManager : TBAPIManager <TBAPIRequest>
+@interface IDCardNumberAPIManager : TBAPIManager <TBAPIManager>
 
 @end

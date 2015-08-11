@@ -71,6 +71,8 @@
 
 - (void)addRequest:(TBAPIBaseManager *)manager {
 
+    [_sessionManager.requestSerializer setTimeoutInterval:manager.requestTimeOutInterval];
+    
     TBAPIRequestType requestMethod = [manager requestType];
     
     
@@ -214,7 +216,7 @@
 - (BOOL)checkResult:(TBAPIBaseManager *)request {
     
     if ([request respondsToSelector:@selector(jsonValidator)]) {
-        NSDictionary *jsonValidator = [((id <TBAPIRequest>)request) jsonValidator];
+        NSDictionary *jsonValidator = [((id <TBAPIManager>)request) jsonValidator];
         if (jsonValidator) {
             NSError *error;
             return [TBJSONValidator validateValue:request.response.responseObject withRequirements:jsonValidator error:&error];
@@ -237,30 +239,30 @@
         BOOL success = [self checkResult:manager];
         if (success) {
             
-            if (manager.interceptor && [manager.interceptor respondsToSelector:@selector(requestWillPerformSuccessResponse:)]) {
-                [manager.interceptor requestWillPerformSuccessResponse:manager];
+            if (manager.interceptor && [manager.interceptor respondsToSelector:@selector(managerWillPerformSuccessResponse:)]) {
+                [manager.interceptor managerWillPerformSuccessResponse:manager];
             }
             
             if (manager.delegate && [manager.delegate respondsToSelector:@selector(apiRequestDidSuccess:)]) {
                 [manager.delegate apiRequestDidSuccess:manager];
             }
             
-            if (manager.interceptor && [manager.interceptor respondsToSelector:@selector(requestDidPerformSuccessResponse:)]) {
-                [manager.interceptor requestDidPerformSuccessResponse:manager];
+            if (manager.interceptor && [manager.interceptor respondsToSelector:@selector(managerDidPerformSuccessResponse:)]) {
+                [manager.interceptor managerDidPerformSuccessResponse:manager];
             }
             
         }
         else {
-            if (manager.interceptor && [manager respondsToSelector:@selector(requestWillPerformFailResponse:)]) {
-                [manager.interceptor requestWillPerformFailResponse:manager];
+            if (manager.interceptor && [manager respondsToSelector:@selector(managerWillPerformFailResponse:)]) {
+                [manager.interceptor managerWillPerformFailResponse:manager];
             }
             
             if (manager.delegate && [manager respondsToSelector:@selector(apiRequestDidFailed:)]) {
                 [manager.delegate apiRequestDidFailed:manager];
             }
             
-            if (manager.interceptor && [manager respondsToSelector:@selector(requestDidPerformFailResponse:)]) {
-                [manager.interceptor requestDidPerformFailResponse:manager];
+            if (manager.interceptor && [manager respondsToSelector:@selector(managerDidPerformFailResponse:)]) {
+                [manager.interceptor managerDidPerformFailResponse:manager];
             }
         }
     }

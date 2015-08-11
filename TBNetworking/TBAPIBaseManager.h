@@ -19,12 +19,12 @@
 @protocol TBAPIBaseManagerInterceptor <NSObject>
 
 @optional
-- (void)requestWillPerformSuccessResponse:(TBAPIBaseManager *)request;
-- (void)request:(TBAPIBaseManager *)requst willPerformSuccessWithResponse:(NSURLResponse *)response;
-- (void)requestDidPerformSuccessResponse:(TBAPIBaseManager *)request;
+- (void)managerWillPerformSuccessResponse:(TBAPIBaseManager *)manager;
+- (void)manager:(TBAPIBaseManager *)manager willPerformSuccessWithResponse:(NSURLResponse *)response;
+- (void)managerDidPerformSuccessResponse:(TBAPIBaseManager *)manager;
 
-- (void)requestWillPerformFailResponse:(TBAPIBaseManager *)response;
-- (void)requestDidPerformFailResponse:(TBAPIBaseManager *)response;
+- (void)managerWillPerformFailResponse:(TBAPIBaseManager *)manager;
+- (void)managerDidPerformFailResponse:(TBAPIBaseManager *)manager;
 
 @end
 
@@ -55,20 +55,17 @@
 
 
 /*************************************************************************************************/
-/*                                         TBAPIRequest                                          */
+/*                                         TBAPIManager                                          */
 /*************************************************************************************************/
 /**
  *  子类必须遵守的协议
  *  强制子类实现url的实现
  */
-@protocol TBAPIRequest <NSObject>
+@protocol TBAPIManager <NSObject>
 
 @required
-
 - (NSString *)requestUrl;
-
 @optional
-
 - (NSDictionary *)jsonValidator;
 
 @end
@@ -109,7 +106,7 @@ typedef NS_ENUM(NSInteger , TBResponseSerializerType) {
 @property (nonatomic, assign, readonly) NSTimeInterval                  requestTime;
 @property (nonatomic, strong, readonly) NSDictionary                    *parameters;
 
-@property (nonatomic, weak)   NSObject<TBAPIRequest>                    *child;
+@property (nonatomic, weak)   NSObject<TBAPIManager>                    *child;
 @property (nonatomic, strong) NSURLSessionDataTask                      *dataTask;
 
 @property (nonatomic, strong) TBAPIResponse                             *response;

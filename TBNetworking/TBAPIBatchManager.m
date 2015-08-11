@@ -55,8 +55,8 @@
 - (void)apiRequestDidSuccess:(TBAPIBaseManager *)request {
     _finishCount++;
     if (_finishCount == _requestBachArray.count) {
-        if (_delegate !=nil && [_delegate respondsToSelector:@selector(batchRequestAPIDidSuccess:)]) {
-            [_delegate batchRequestAPIDidSuccess:self];
+        if (_delegate !=nil && [_delegate respondsToSelector:@selector(batchManagerDidSuccess:)]) {
+            [_delegate batchManagerDidSuccess:self];
         }
     }
 }
@@ -64,8 +64,8 @@
 - (void)apiRequestDidFailed:(TBAPIBaseManager *)request {
     [self stop];
     
-    if (_delegate !=nil && [_delegate respondsToSelector:@selector(batchRequestAPIDidFailed:)]) {
-        [_delegate batchRequestAPIDidFailed:self];
+    if (_delegate !=nil && [_delegate respondsToSelector:@selector(batchManagerDidFailed:)]) {
+        [_delegate batchManagerDidFailed:self];
     }
 }
 
