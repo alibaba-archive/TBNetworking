@@ -78,7 +78,7 @@
 }
 
 #pragma mark - TBAPIChainManagerDelegate
-- (void)chainSingleManagerDidSuccess:(TBAPIBaseManager *)manager {
+- (void)chainSubManagerDidSuccess:(TBAPIBaseManager *)manager {
     if ([manager isKindOfClass:[MobilePhoneAPIManager class]]) {
         NSLog(@"moble manager finished");
     }
