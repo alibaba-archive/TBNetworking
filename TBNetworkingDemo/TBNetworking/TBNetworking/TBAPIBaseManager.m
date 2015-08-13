@@ -90,10 +90,8 @@
 
 #pragma mark - getters and setters
 - (NSDictionary *)parameters {
-    if (!_parameters) {
-        if ([self.parameSource respondsToSelector:@selector(parametersForAPI:)]) {
-            _parameters = [self.parameSource parametersForAPI:self];
-        }
+    if ([self.parameSource respondsToSelector:@selector(parametersForAPI:)]) {
+        _parameters = [self.parameSource parametersForAPI:self];
     }
     return _parameters;
 }
