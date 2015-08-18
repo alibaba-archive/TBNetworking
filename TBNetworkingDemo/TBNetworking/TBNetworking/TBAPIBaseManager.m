@@ -55,6 +55,10 @@
     return TBResponseSerializerTypeHTTP;
 }
 
+- (TBLoggerType)responseLoggerType {
+    return TBLoggerTypeDefault;
+}
+
 - (void)start {
     [self startWithParameters:self.parameters];
 }

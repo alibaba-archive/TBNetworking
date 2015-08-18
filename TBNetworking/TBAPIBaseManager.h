@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TBLogger.h"
 
 @class TBAPIBaseManager;
 
@@ -132,6 +133,14 @@ typedef NS_ENUM(NSInteger , TBResponseSerializerType) {
 
 /// 返回的的SerializerType
 - (TBResponseSerializerType)responseSerializerType;
+
+/**
+ *  控制台在DEBUG模式下打印的返回结果，默认为LoggerTypeDefault
+ *  默认显示不带responseObject
+ *
+ *  @return 
+ */
+- (TBLoggerType)responseLoggerType;
 
 /**
  *  判断是否正在执行
