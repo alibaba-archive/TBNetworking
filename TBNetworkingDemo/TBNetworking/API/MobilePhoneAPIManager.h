@@ -6,10 +6,10 @@
 //  Copyright (c) 2015 Teambition. All rights reserved.
 //
 
-#import "TBAPIManager.h"
+#import "APIBaseManager.h"
 #import "TBNetworking.h"
 
-@interface MobilePhoneAPIManager : TBAPIManager <TBAPIManager>
+@interface MobilePhoneAPIManager : APIBaseManager <TBAPIManager>
 
 - (NSString *)getPhoneNumber;
 

@@ -26,6 +26,7 @@
 		E57BC9AB1B725FCD009DCB76 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E57BC9A91B725FCD009DCB76 /* main.m */; };
 		E57BC9AE1B725FF1009DCB76 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E57BC9AD1B725FF1009DCB76 /* ViewController.m */; };
 		E5DD07001B6F411200CA08D3 /* ValidatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E5DD06FF1B6F411200CA08D3 /* ValidatorTests.m */; };
+		E5E297551B85B8D8007A6F28 /* APIBaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E5E297541B85B8D8007A6F28 /* APIBaseManager.m */; };
 		EBC264F21B68C2E800C07B74 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBC264F01B68C2E800C07B74 /* Main.storyboard */; };
 		EBC264F41B68C2E800C07B74 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBC264F31B68C2E800C07B74 /* Images.xcassets */; };
 		EBC264F71B68C2E800C07B74 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBC264F51B68C2E800C07B74 /* LaunchScreen.xib */; };
@@ -81,6 +82,8 @@
 		E57BC9AC1B725FF1009DCB76 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = ViewController/ViewController.h; sourceTree = "<group>"; };
 		E57BC9AD1B725FF1009DCB76 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = ViewController/ViewController.m; sourceTree = "<group>"; };
 		E5DD06FF1B6F411200CA08D3 /* ValidatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValidatorTests.m; sourceTree = "<group>"; };
+		E5E297531B85B8D8007A6F28 /* APIBaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIBaseManager.h; sourceTree = "<group>"; };
+		E5E297541B85B8D8007A6F28 /* APIBaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIBaseManager.m; sourceTree = "<group>"; };
 		EA745D11C6699982B5EF1E79 /* libPods-TBNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TBNetworking.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBC264E31B68C2E800C07B74 /* TBNetworking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TBNetworking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBC264E71B68C2E800C07B74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -177,6 +180,8 @@
 				E57BC9A21B725FBE009DCB76 /* IDCardNumberAPIManager.m */,
 				E57BC9A31B725FBE009DCB76 /* MobilePhoneAPIManager.h */,
 				E57BC9A41B725FBE009DCB76 /* MobilePhoneAPIManager.m */,
+				E5E297531B85B8D8007A6F28 /* APIBaseManager.h */,
+				E5E297541B85B8D8007A6F28 /* APIBaseManager.m */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -447,6 +452,7 @@
 				E524EA851B73521B00B5860D /* TBValidatorPredicate.m in Sources */,
 				E57BC9AB1B725FCD009DCB76 /* main.m in Sources */,
 				E57BC9A51B725FBE009DCB76 /* IDCardNumberAPIManager.m in Sources */,
+				E5E297551B85B8D8007A6F28 /* APIBaseManager.m in Sources */,
 				E57BC9A61B725FBE009DCB76 /* MobilePhoneAPIManager.m in Sources */,
 				E524EA811B73521B00B5860D /* TBAPIProxy.m in Sources */,
 				E524EA7D1B73521B00B5860D /* TBAPIBatchManagerAgent.m in Sources */,
