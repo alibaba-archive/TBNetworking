@@ -7,13 +7,20 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "TBAPIBaseManager.h"
+@class TBAPIBaseManager;
+
+typedef NS_ENUM(NSInteger, TBLoggerType) {
+    TBLoggerTypeDefault,
+    TBLoggerTypeNone,
+    TBLoggerTypeNoResponseObject,
+    TBLoggerTypeDetail,
+};
 
 @interface TBLogger : NSObject
 
-+ (void)loggerWithRequest:(TBAPIBaseManager *)request;
++ (void)loggerWithRequest:(TBAPIBaseManager *)request responseType:(TBLoggerType )type;
 
-+ (void)loggerWithRequest:(TBAPIBaseManager *)request error:(NSError *)error;
++ (void)loggerWithRequest:(TBAPIBaseManager *)request error:(NSError *)error responseType:(TBLoggerType )type;
 
 + (void)TBLog:(NSString *)log;
 @end
