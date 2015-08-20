@@ -34,7 +34,7 @@
 }
 
 - (NSString *)baseUrl {
-    return @"http://apis.baidu.com/apistore/";
+    return nil;
 }
 
 - (NSString *)requestUrl {
@@ -53,6 +53,10 @@
 
 - (TBResponseSerializerType)responseSerializerType {
     return TBResponseSerializerTypeHTTP;
+}
+
+- (TBLoggerType)responseLoggerType {
+    return TBLoggerTypeDefault;
 }
 
 - (void)start {
@@ -85,7 +89,7 @@
 }
 
 - (NSDictionary *)requestHeaderFieldValueDictionary {
-    return @{@"apikey":@"97681d7f39cb64d8060460dc5032fa48"};
+    return nil;
 }
 
 #pragma mark - getters and setters

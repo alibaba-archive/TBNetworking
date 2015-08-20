@@ -12,9 +12,14 @@
 @implementation TBLogger
 
 
-+ (void)loggerWithRequest:(TBAPIBaseManager *)request {
++ (void)loggerWithRequest:(TBAPIBaseManager *)request responseType:(TBLoggerType )type{
 
 #ifdef DEBUG
+    
+    if (type == TBLoggerTypeNone) {
+        return;
+    }
+    
     NSMutableString *logString = [NSMutableString stringWithString:@"\n\n==============================================================\n=                      Request Response                      =\n==============================================================\n\n"];
     
     [logString appendFormat:@"HTTP   state:\t\t%ld\n",[request.response statusCode]];
@@ -24,9 +29,10 @@
     [logString appendFormat:@"Request  url:\t\t%@\n",[request.child requestUrl]];
     [logString appendFormat:@"absolute url:\t\t%@\n",request.dataTask.response.URL.absoluteString];
     [logString appendFormat:@"Request Type:\t\t%ld\n",[request requestType]];
-    [logString appendFormat:@"ResponseObject:\t\t%@\n",[request.response responseObject]];
+    if (type == TBLoggerTypeDetail) {
+        [logString appendFormat:@"ResponseObject:\t\t%@\n",[request.response responseObject]];
+    }
     [logString appendFormat:@"Request Time:\t\t%lfs\n",(double)[request requestTime]];
-    
     [logString appendFormat:@"\n\n==============================================================\n=                        Response End                        =\n==============================================================\n\n\n\n"];
     NSLog(@"%@",logString);
     
@@ -34,8 +40,13 @@
 
 }
 
-+ (void)loggerWithRequest:(TBAPIBaseManager *)request error:(NSError *)error {
++ (void)loggerWithRequest:(TBAPIBaseManager *)request error:(NSError *)error responseType:(TBLoggerType )type{
 #ifdef DEBUG
+    
+    if (type == TBLoggerTypeNone) {
+        return;
+    }
+    
     NSMutableString *logString = [NSMutableString stringWithString:@"\n\n==============================================================\n=                      Request Response                      =\n==============================================================\n\n"];
     
     [logString appendFormat:@"HTTP   state:\t\t%ld\n",[request.response statusCode]];

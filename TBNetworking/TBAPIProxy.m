@@ -233,7 +233,7 @@
     
     [manager complete];
     
-    [TBLogger loggerWithRequest:manager];
+    [TBLogger loggerWithRequest:manager responseType:manager.responseLoggerType];
     if (manager) {
         
         BOOL success = [self checkResult:manager];
