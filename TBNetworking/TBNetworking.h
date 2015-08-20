@@ -12,7 +12,6 @@
 #endif
 #import "TBAPIBaseManager.h"
 #import "TBAPIChainManager.h"
-#import "TBAPIChainManagerAgent.h"
 #import "TBAPIManager.h"
 #import "TBAPIBatchManager.h"
 #import "TBAPIResponse.h"
