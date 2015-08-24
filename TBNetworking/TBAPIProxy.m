@@ -107,7 +107,8 @@
             
             manager.dataTask = [self.sessionManager
                                 GET:[self buildRequestUrl:manager]
-                                parameters:manager.parameters success:^(NSURLSessionDataTask *task, id responseObject) {
+                                parameters:manager.parameters
+                                success:^(NSURLSessionDataTask *task, id responseObject) {
                                 
                                     TBAPIResponse *response = [[TBAPIResponse alloc] initWithRequestID:task.taskIdentifier
                                                                                       responseObject:[NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil]
@@ -131,7 +132,8 @@
         
             manager.dataTask = [self.sessionManager
                                 POST:[self buildRequestUrl:manager]
-                                parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+                                parameters:manager.parameters
+                                success:^(NSURLSessionDataTask *task, id responseObject) {
                                     TBAPIResponse *response = [[TBAPIResponse alloc] initWithRequestID:task.taskIdentifier
                                                                                       responseObject:[NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil]
                                                                                           statusCode:((NSHTTPURLResponse *)task.response).statusCode];
@@ -153,7 +155,8 @@
         
             manager.dataTask = [self.sessionManager
                                 PUT:[self buildRequestUrl:manager]
-                                parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+                                parameters:manager.parameters
+                                success:^(NSURLSessionDataTask *task, id responseObject) {
                                     TBAPIResponse *response = [[TBAPIResponse alloc] initWithRequestID:task.taskIdentifier
                                                                                       responseObject:[NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil]
                                                                                           statusCode:((NSHTTPURLResponse *)task.response).statusCode];
@@ -173,7 +176,7 @@
         
             manager.dataTask = [self.sessionManager
                                 DELETE:[self buildRequestUrl:manager]
-                                parameters:nil
+                                parameters:manager.parameters
                                 success:^(NSURLSessionDataTask *task, id responseObject) {
                                     TBAPIResponse *response = [[TBAPIResponse alloc] initWithRequestID:task.taskIdentifier
                                                                                       responseObject:[NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil]
