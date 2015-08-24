@@ -28,7 +28,7 @@
     [logString appendFormat:@"Base     Url:\t\t%@\n",[request baseUrl]];
     [logString appendFormat:@"Request  url:\t\t%@\n",[request.child requestUrl]];
     [logString appendFormat:@"absolute url:\t\t%@\n",request.dataTask.response.URL.absoluteString];
-    [logString appendFormat:@"Request Type:\t\t%ld\n",[request requestType]];
+    [logString appendFormat:@"Request Type:\t\t%@\n",[self typeString:[request requestType]]];
     if (type == TBLoggerTypeDetail) {
         [logString appendFormat:@"ResponseObject:\t\t%@\n",[request.response responseObject]];
     }
@@ -55,7 +55,7 @@
     [logString appendFormat:@"Base     Url:\t\t%@\n",[request baseUrl]];
     [logString appendFormat:@"Request  url:\t\t%@\n",[request.child requestUrl]];
     [logString appendFormat:@"absolute url:\t\t%@\n",request.dataTask.response.URL.absoluteString];
-    [logString appendFormat:@"Request Type:\t\t%ld\n",[request requestType]];
+    [logString appendFormat:@"Request Type:\t\t%@\n",[self typeString:[request requestType]]];
     [logString appendFormat:@"Request Time:\t\t%lfs\n",(double)[request requestTime]];
     [logString appendFormat:@"Error     :\t\t%@\n",error];
     
@@ -71,6 +71,37 @@
     NSLog(@"%@",log);
 #endif
     
+}
+
++ (NSString *)typeString:(TBAPIRequestType )type {
+
+    NSString *typeStr = nil;
+    switch (type) {
+        case TBAPIManagerRequestTypeGET:
+        {
+            typeStr = @"GET";
+        }
+            break;
+        case TBAPIManagerRequestTypePOST:
+        {
+            typeStr = @"POST";
+        }
+            break;
+        case TBAPIManagerRequestTypePUT:
+        {
+            typeStr = @"PUT";
+        }
+            break;
+        case TBAPIManagerRequestTypeDELETE:
+        {
+            typeStr = @"DELETE";
+        }
+            break;
+            
+        default:
+            break;
+    }
+    return typeStr;
 }
 
 
