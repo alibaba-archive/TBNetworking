@@ -11,7 +11,7 @@
 @implementation APIBaseManager
 
 - (NSString *)baseUrl {
-    return @"http://apis.baidu.com/apistore/";
+    return @"";
 }
 
 - (NSDictionary *)requestHeaderFieldValueDictionary {

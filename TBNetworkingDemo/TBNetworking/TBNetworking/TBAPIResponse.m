@@ -15,6 +15,7 @@
 @property (nonatomic, copy,   readwrite) id                  responseObject;
 @property (nonatomic, assign, readwrite) NSInteger           requestID;
 @property (nonatomic, assign, readwrite) BOOL                isCache;
+@property (nonatomic, strong, readwrite) NSError             *error;
 
 @end
 
@@ -43,6 +44,7 @@
         self.status = [self responseStatusWithError:error];
         self.statusCode = statusCode;
         self.isCache = NO;
+        self.error = error;
     }
     return self;
 }

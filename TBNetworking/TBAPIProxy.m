@@ -256,15 +256,15 @@
             
         }
         else {
-            if (manager.interceptor && [manager respondsToSelector:@selector(managerWillPerformFailResponse:)]) {
+            if (manager.interceptor && [manager.interceptor respondsToSelector:@selector(managerWillPerformFailResponse:)]) {
                 [manager.interceptor managerWillPerformFailResponse:manager];
             }
             
-            if (manager.delegate && [manager respondsToSelector:@selector(apiRequestDidFailed:)]) {
+            if (manager.delegate && [manager.delegate respondsToSelector:@selector(apiRequestDidFailed:)]) {
                 [manager.delegate apiRequestDidFailed:manager];
             }
             
-            if (manager.interceptor && [manager respondsToSelector:@selector(managerDidPerformFailResponse:)]) {
+            if (manager.interceptor && [manager.interceptor respondsToSelector:@selector(managerDidPerformFailResponse:)]) {
                 [manager.interceptor managerDidPerformFailResponse:manager];
             }
         }
