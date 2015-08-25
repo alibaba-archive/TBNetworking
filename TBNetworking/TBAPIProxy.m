@@ -218,6 +218,10 @@
 
 - (BOOL)checkResult:(TBAPIBaseManager *)request {
     
+    if (!(request.response.statusCode >=200 && request.response.statusCode <=299)) {
+        return NO;
+    }
+    
     if ([request respondsToSelector:@selector(jsonValidator)]) {
         NSDictionary *jsonValidator = [((id <TBAPIManager>)request) jsonValidator];
         if (jsonValidator) {
