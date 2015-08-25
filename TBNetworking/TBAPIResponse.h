@@ -25,6 +25,7 @@ typedef NS_ENUM(NSUInteger, TBAPIResponseStatus) {
 @property (nonatomic, strong, readonly) TBAPIBaseManager    *request;
 @property (nonatomic, assign, readonly) NSInteger           requestID;
 @property (nonatomic, assign, readonly) BOOL                isCache;
+@property (nonatomic, strong, readonly) NSError             *error;
 
 - (instancetype)initWithRequestID:(NSInteger)requestID responseObject:(id)responseObject statusCode:(NSInteger)statusCode;
 

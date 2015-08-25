@@ -23,7 +23,7 @@
 }
 
 - (NSString *)requestUrl {
-    return @"idservice/id";
+    return @"idservice/idsdffds";
 }
 
 - (NSDictionary *)parametersForAPI:(TBAPIBaseManager *)manager {
