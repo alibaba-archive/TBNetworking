@@ -6,7 +6,6 @@
 //  Copyright (c) 2015年 Teambition. All rights reserved.
 //
 
-#import "TBNetworking.h"
 #import "APIBaseManager.h"
 
 @interface IDCardNumberAPIManager : APIBaseManager <TBAPIManager>
