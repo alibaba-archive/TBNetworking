@@ -35,7 +35,7 @@
     //[self.stateRequest start];
     //[self.mobileManager start];
 
-    [self.mobileManager start];
+//    [self.mobileManager start];
     
 }
 

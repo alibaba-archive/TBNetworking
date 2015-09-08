@@ -7,10 +7,12 @@
 //
 
 #import "TBAPIProxy.h"
+#import "TBJSONValidator.h"
 
 @interface TBAPIProxy ()
 
 @property (nonatomic, strong) AFHTTPSessionManager *sessionManager;
+@property (nonatomic, strong) NSURLSession          *session;
 @property (nonatomic, strong) NSMutableDictionary  *requestsTable;
 
 @end
@@ -197,7 +199,21 @@
             break;
         case TBAPIManagerRequestTypeUPLOAD:
         {
-            manager.dataTask = [self.sessionManager uploadTaskWithRequest:<#(NSURLRequest *)#> fromFile:<#(NSURL *)#> progress:<#(NSProgress *__autoreleasing *)#> completionHandler:<#^(NSURLResponse *response, id responseObject, NSError *error)completionHandler#>]
+            NSProgress *progress;
+            NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:[self buildRequestUrl:manager]]];
+            
+            if ([manager valueForKey:@"uploadData"]) {
+                manager.dataTask = [self.sessionManager uploadTaskWithRequest:request fromData:[manager valueForKey:@"uploadData"] progress:&progress completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
+                    
+                }];
+            }
+            
+            if ([manager valueForKey:@"uploadURL"]) {
+                manager.dataTask = [self.sessionManager uploadTaskWithRequest:request fromData:[manager valueForKey:@"uploadURL"] progress:&progress completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
+                    
+                }];
+            }
+            
         }
             break;
         default:

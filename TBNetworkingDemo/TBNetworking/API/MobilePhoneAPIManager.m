@@ -23,7 +23,7 @@
 }
 
 - (NSString *)requestUrl {
-    return @"mobilephoneservice/mobilephone11";
+    return @"mobilephoneservice/mobilephone";
 }
 
 

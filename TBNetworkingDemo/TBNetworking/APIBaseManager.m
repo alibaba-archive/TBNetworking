@@ -11,7 +11,7 @@
 @implementation APIBaseManager
 
 - (NSString *)baseUrl {
-    return @"";
+    return @"http://www.api.com/";
 }
 
 - (NSDictionary *)requestHeaderFieldValueDictionary {

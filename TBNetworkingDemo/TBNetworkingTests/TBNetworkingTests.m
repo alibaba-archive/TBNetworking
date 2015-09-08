@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
+#import <OHHTTPStubs.h>
+#import "MobilePhoneAPIManager.h"
+#import "IDCardNumberAPIManager.h"
+#import <Nocilla.h>
 
-@interface TBNetworkingTests : XCTestCase
+@interface TBNetworkingTests : XCTestCase<TBAPIBaseManagerDelegate>
 
 @end
 
@@ -17,24 +21,57 @@
 
 - (void)setUp {
     [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
+//    
+//    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
+//        return [request.URL.absoluteString isEqualToString:@"http://www.api.com/mobilephoneservice/mobilephone?tel=18679211201"];
+//    } withStubResponse:^OHHTTPStubsResponse*(NSURLRequest *request) {
+//        // Stub it with our "wsresponse.json" stub file (which is in same bundle as self)
+//        //        return [[OHHTTPStubsResponse responseWithJSONObject:@"{}" statusCode:200 headers:nil] responseTime:3.0];
+//        return [OHHTTPStubsResponse responseWithJSONObject:@"{}" statusCode:200 headers:@{@"Content-Type":@"application/json"}];
+//    }];
+//    
+//    
+//    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
+//        return [request.URL.absoluteString isEqualToString:@"http://www.api.com/idservice/id"];
+//    } withStubResponse:^OHHTTPStubsResponse*(NSURLRequest *request) {
+//        // Stub it with our "wsresponse.json" stub file (which is in same bundle as self)
+//        //        return [[OHHTTPStubsResponse responseWithJSONObject:@"{}" statusCode:200 headers:nil] responseTime:3.0];
+//        return [OHHTTPStubsResponse responseWithJSONObject:@"{}" statusCode:200 headers:@{@"Content-Type":@"application/json"}];
+//    }];
 }
 
 - (void)tearDown {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
 }
 
 - (void)testExample {
-    // This is an example of a functional test case.
-    XCTAssert(YES, @"Pass");
+  
+    MobilePhoneAPIManager *manager = [[MobilePhoneAPIManager alloc] init];
+    manager.delegate = self;
+    [manager start];
 }
 
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
+- (void)testIDCard {
+
+    IDCardNumberAPIManager *card = [[IDCardNumberAPIManager alloc] init];
+    card.delegate = self;
+    [card start];
+    
+}
+
+- (void)testUpload {
+
+    
+}
+
+- (void)apiRequestDidFailed:(TBAPIBaseManager *)manager {
+
+    NSLog(@"%@",manager.response.error);
+}
+
+- (void)apiRequestDidSuccess:(TBAPIBaseManager *)manager {
+
+    
 }
 
 @end
