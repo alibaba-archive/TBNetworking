@@ -10,6 +10,7 @@
 #import "TBAPIProxy.h"
 #import "TBAPIResponse.h"
 
+
 @interface TBAPIBaseManager()
 
 @property (nonatomic, assign, readwrite) NSTimeInterval     requestTime;

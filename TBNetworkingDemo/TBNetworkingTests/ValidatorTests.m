@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
-#import "TBNetworking.h"
+#import "TBValidatorPredicate.h"
+#import "TBJSONValidator.h"
 
 @interface ValidatorTests : XCTestCase
 

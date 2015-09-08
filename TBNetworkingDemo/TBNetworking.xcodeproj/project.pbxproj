@@ -67,7 +67,6 @@
 		E524EA751B73521B00B5860D /* TBJSONValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TBJSONValidator.m; path = TBNetworking/TBJSONValidator.m; sourceTree = "<group>"; };
 		E524EA761B73521B00B5860D /* TBLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TBLogger.h; path = TBNetworking/TBLogger.h; sourceTree = "<group>"; };
 		E524EA771B73521B00B5860D /* TBLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TBLogger.m; path = TBNetworking/TBLogger.m; sourceTree = "<group>"; };
-		E524EA781B73521B00B5860D /* TBNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TBNetworking.h; path = TBNetworking/TBNetworking.h; sourceTree = "<group>"; };
 		E524EA791B73521B00B5860D /* TBValidatorPredicate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TBValidatorPredicate.h; path = TBNetworking/TBValidatorPredicate.h; sourceTree = "<group>"; };
 		E524EA7A1B73521B00B5860D /* TBValidatorPredicate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TBValidatorPredicate.m; path = TBNetworking/TBValidatorPredicate.m; sourceTree = "<group>"; };
 		E57BC9A11B725FBE009DCB76 /* IDCardNumberAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IDCardNumberAPIManager.h; path = API/IDCardNumberAPIManager.h; sourceTree = "<group>"; };
@@ -121,7 +120,6 @@
 				E5FC50C81B9EBFDD0025DC68 /* Upload */,
 				E524EA881B735C6B00B5860D /* Validate */,
 				E524EA871B735C5D00B5860D /* Logger */,
-				E524EA781B73521B00B5860D /* TBNetworking.h */,
 				E524EA641B73521B00B5860D /* TBAPIBaseManager.h */,
 				E524EA651B73521B00B5860D /* TBAPIBaseManager.m */,
 				E524EA661B73521B00B5860D /* TBAPIBatchManager.h */,
