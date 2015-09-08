@@ -82,7 +82,8 @@ typedef NS_ENUM(NSInteger, TBAPIRequestType){
     TBAPIManagerRequestTypeGET,
     TBAPIManagerRequestTypePOST,
     TBAPIManagerRequestTypePUT,
-    TBAPIManagerRequestTypeDELETE
+    TBAPIManagerRequestTypeDELETE,
+    TBAPIManagerRequestTypeUPLOAD
 };
 
 typedef NS_ENUM(NSInteger , TBRequestSerializerType) {

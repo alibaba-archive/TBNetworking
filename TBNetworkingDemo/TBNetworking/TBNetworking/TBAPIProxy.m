@@ -194,6 +194,12 @@
                                     [self handleOperate:task];
             }];
         }
+            break;
+        case TBAPIManagerRequestTypeUPLOAD:
+        {
+            manager.dataTask = [self.sessionManager uploadTaskWithRequest:<#(NSURLRequest *)#> fromFile:<#(NSURL *)#> progress:<#(NSProgress *__autoreleasing *)#> completionHandler:<#^(NSURLResponse *response, id responseObject, NSError *error)completionHandler#>]
+        }
+            break;
         default:
             break;
     }
