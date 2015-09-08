@@ -27,6 +27,7 @@
 		E57BC9AE1B725FF1009DCB76 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E57BC9AD1B725FF1009DCB76 /* ViewController.m */; };
 		E5DD07001B6F411200CA08D3 /* ValidatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E5DD06FF1B6F411200CA08D3 /* ValidatorTests.m */; };
 		E5E297551B85B8D8007A6F28 /* APIBaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E5E297541B85B8D8007A6F28 /* APIBaseManager.m */; };
+		E5FC50CE1B9EC1C50025DC68 /* TBAPIUploadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E5FC50CD1B9EC1C50025DC68 /* TBAPIUploadManager.m */; };
 		EBC264F21B68C2E800C07B74 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBC264F01B68C2E800C07B74 /* Main.storyboard */; };
 		EBC264F41B68C2E800C07B74 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBC264F31B68C2E800C07B74 /* Images.xcassets */; };
 		EBC264F71B68C2E800C07B74 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBC264F51B68C2E800C07B74 /* LaunchScreen.xib */; };
@@ -84,6 +85,8 @@
 		E5DD06FF1B6F411200CA08D3 /* ValidatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValidatorTests.m; sourceTree = "<group>"; };
 		E5E297531B85B8D8007A6F28 /* APIBaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIBaseManager.h; sourceTree = "<group>"; };
 		E5E297541B85B8D8007A6F28 /* APIBaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIBaseManager.m; sourceTree = "<group>"; };
+		E5FC50CC1B9EC1C50025DC68 /* TBAPIUploadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TBAPIUploadManager.h; path = TBNetworking/TBAPIUploadManager.h; sourceTree = "<group>"; };
+		E5FC50CD1B9EC1C50025DC68 /* TBAPIUploadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TBAPIUploadManager.m; path = TBNetworking/TBAPIUploadManager.m; sourceTree = "<group>"; };
 		EA745D11C6699982B5EF1E79 /* libPods-TBNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TBNetworking.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBC264E31B68C2E800C07B74 /* TBNetworking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TBNetworking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBC264E71B68C2E800C07B74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -118,6 +121,7 @@
 		E524EA631B73520500B5860D /* TBNetworking */ = {
 			isa = PBXGroup;
 			children = (
+				E5FC50C81B9EBFDD0025DC68 /* Upload */,
 				E524EA881B735C6B00B5860D /* Validate */,
 				E524EA871B735C5D00B5860D /* Logger */,
 				E524EA781B73521B00B5860D /* TBNetworking.h */,
@@ -184,6 +188,15 @@
 				E5E297541B85B8D8007A6F28 /* APIBaseManager.m */,
 			);
 			name = API;
+			sourceTree = "<group>";
+		};
+		E5FC50C81B9EBFDD0025DC68 /* Upload */ = {
+			isa = PBXGroup;
+			children = (
+				E5FC50CC1B9EC1C50025DC68 /* TBAPIUploadManager.h */,
+				E5FC50CD1B9EC1C50025DC68 /* TBAPIUploadManager.m */,
+			);
+			name = Upload;
 			sourceTree = "<group>";
 		};
 		EBC264DA1B68C2E800C07B74 = {
@@ -462,6 +475,7 @@
 				E524EA7E1B73521B00B5860D /* TBAPIChainManager.m in Sources */,
 				E57BC9AE1B725FF1009DCB76 /* ViewController.m in Sources */,
 				E524EA831B73521B00B5860D /* TBJSONValidator.m in Sources */,
+				E5FC50CE1B9EC1C50025DC68 /* TBAPIUploadManager.m in Sources */,
 				E57BC9AA1B725FCD009DCB76 /* AppDelegate.m in Sources */,
 				E524EA7B1B73521B00B5860D /* TBAPIBaseManager.m in Sources */,
 			);

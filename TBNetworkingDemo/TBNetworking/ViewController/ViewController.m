@@ -13,9 +13,9 @@
 
 @interface ViewController ()<TBAPIBaseManagerDelegate,TBAPIChainManagerDelegate>
 
-@property (nonatomic, strong) MobilePhoneAPIManager *mobileManager;
-@property (nonatomic, strong) IDCardNumberAPIManager *idCardNumberManager;
-@property (nonatomic, strong) TBAPIChainManager     *chainManager;
+@property (nonatomic, strong) MobilePhoneAPIManager     *mobileManager;
+@property (nonatomic, strong) IDCardNumberAPIManager    *idCardNumberManager;
+@property (nonatomic, strong) TBAPIChainManager         *chainManager;
 
 @end
 
