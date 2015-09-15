@@ -78,3 +78,12 @@ TBNetwork 基于 [AFNetworking][AFNetworking] 和 [YTKNetworking][YTKNetworking]
 
 TBNetwork 被许可在 MIT 协议下使用。查阅 LICENSE 文件来获得更多信息。
 
+##change log
+
+
+##0.1.0
+* deprecated batchManagerDidSuccess;
+* deprecated batchManagerDidFailed;
+* add batchManagerDidFinish
+
+

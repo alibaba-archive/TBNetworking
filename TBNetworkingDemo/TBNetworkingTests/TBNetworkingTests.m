@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
+#import "MobilePhoneAPIManager.h"
 
 @interface TBNetworkingTests : XCTestCase
 
@@ -26,8 +27,10 @@
 }
 
 - (void)testExample {
-    // This is an example of a functional test case.
-    XCTAssert(YES, @"Pass");
+    MobilePhoneAPIManager *manager = [[MobilePhoneAPIManager alloc] init];
+    manager.delegate = self;
+    [manager start];
+//    [self waitForExpectationsWithTimeout:5 handler:nil];
 }
 
 - (void)testPerformanceExample {
