@@ -7,6 +7,8 @@
 //
 
 #import "TBAPIBaseManager.h"
+#import "TBJSONValidator.h"
+#import "TBValidatorPredicate.h"
 
 @interface APIBaseManager : TBAPIBaseManager
 

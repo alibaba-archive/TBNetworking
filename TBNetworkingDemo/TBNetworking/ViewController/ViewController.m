@@ -11,11 +11,12 @@
 #import "IDCardNumberAPIManager.h"
 #import "TBAPIChainManager.h"
 
-@interface ViewController ()<TBAPIBaseManagerDelegate,TBAPIChainManagerDelegate>
+@interface ViewController ()<TBAPIBaseManagerDelegate,TBAPIChainManagerDelegate, TBAPIBatchManagerDelegate>
 
 @property (nonatomic, strong) MobilePhoneAPIManager *mobileManager;
 @property (nonatomic, strong) IDCardNumberAPIManager *idCardNumberManager;
 @property (nonatomic, strong) TBAPIChainManager     *chainManager;
+@property (nonatomic, strong) TBAPIBatchManager     *batchManager;
 
 @end
 
@@ -35,7 +36,10 @@
     //[self.stateRequest start];
     //[self.mobileManager start];
 
-    [self.mobileManager start];
+    [self.batchManager start];
+    
+    
+    
     
 }
 
@@ -81,6 +85,16 @@
     return _chainManager;
 }
 
+- (TBAPIBatchManager *)batchManager {
+    if (!_batchManager) {
+        _batchManager = [[TBAPIBatchManager alloc] init];
+        _batchManager.delegate = self;
+        [_batchManager addManager:self.mobileManager];
+        [_batchManager addManager:self.idCardNumberManager];
+    }
+    return _batchManager;
+}
+
 #pragma mark - TBAPIChainManagerDelegate
 - (void)chainSubManagerDidSuccess:(TBAPIBaseManager *)manager {
     if ([manager isKindOfClass:[MobilePhoneAPIManager class]]) {
@@ -95,6 +109,22 @@
 }
 - (void)chainAllManagerDidFailed:(TBAPIChainManager *)chainManager failedBaseManager:(TBAPIBaseManager *)manager {
     NSLog(@"chain all failed");
+}
+
+
+- (void)batchSubManagerDidFaild:(TBAPIBaseManager *)manager {
+
+}
+
+- (void)batchSubManagerDidSuccess:(TBAPIBaseManager *)manager {
+
+}
+
+- (void)batchManagerDidFinish:(TBAPIBatchManager *)manager {
+
+    NSLog(@"all done");
+    NSLog(@"success %ld",manager.successCount);
+    NSLog(@"faild %ld",manager.faildCount);
 }
 
 - (void)didReceiveMemoryWarning {

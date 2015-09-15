@@ -14,7 +14,6 @@
 		E524EA7D1B73521B00B5860D /* TBAPIBatchManagerAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = E524EA691B73521B00B5860D /* TBAPIBatchManagerAgent.m */; };
 		E524EA7E1B73521B00B5860D /* TBAPIChainManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E524EA6B1B73521B00B5860D /* TBAPIChainManager.m */; };
 		E524EA7F1B73521B00B5860D /* TBAPIChainManagerAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = E524EA6D1B73521B00B5860D /* TBAPIChainManagerAgent.m */; };
-		E524EA801B73521B00B5860D /* TBAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E524EA6F1B73521B00B5860D /* TBAPIManager.m */; };
 		E524EA811B73521B00B5860D /* TBAPIProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = E524EA711B73521B00B5860D /* TBAPIProxy.m */; };
 		E524EA821B73521B00B5860D /* TBAPIResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = E524EA731B73521B00B5860D /* TBAPIResponse.m */; };
 		E524EA831B73521B00B5860D /* TBJSONValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = E524EA751B73521B00B5860D /* TBJSONValidator.m */; };
@@ -59,8 +58,6 @@
 		E524EA6B1B73521B00B5860D /* TBAPIChainManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TBAPIChainManager.m; path = TBNetworking/TBAPIChainManager.m; sourceTree = "<group>"; };
 		E524EA6C1B73521B00B5860D /* TBAPIChainManagerAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TBAPIChainManagerAgent.h; path = TBNetworking/TBAPIChainManagerAgent.h; sourceTree = "<group>"; };
 		E524EA6D1B73521B00B5860D /* TBAPIChainManagerAgent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TBAPIChainManagerAgent.m; path = TBNetworking/TBAPIChainManagerAgent.m; sourceTree = "<group>"; };
-		E524EA6E1B73521B00B5860D /* TBAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TBAPIManager.h; path = TBNetworking/TBAPIManager.h; sourceTree = "<group>"; };
-		E524EA6F1B73521B00B5860D /* TBAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TBAPIManager.m; path = TBNetworking/TBAPIManager.m; sourceTree = "<group>"; };
 		E524EA701B73521B00B5860D /* TBAPIProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TBAPIProxy.h; path = TBNetworking/TBAPIProxy.h; sourceTree = "<group>"; };
 		E524EA711B73521B00B5860D /* TBAPIProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TBAPIProxy.m; path = TBNetworking/TBAPIProxy.m; sourceTree = "<group>"; };
 		E524EA721B73521B00B5860D /* TBAPIResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TBAPIResponse.h; path = TBNetworking/TBAPIResponse.h; sourceTree = "<group>"; };
@@ -131,8 +128,6 @@
 				E524EA6B1B73521B00B5860D /* TBAPIChainManager.m */,
 				E524EA6C1B73521B00B5860D /* TBAPIChainManagerAgent.h */,
 				E524EA6D1B73521B00B5860D /* TBAPIChainManagerAgent.m */,
-				E524EA6E1B73521B00B5860D /* TBAPIManager.h */,
-				E524EA6F1B73521B00B5860D /* TBAPIManager.m */,
 				E524EA701B73521B00B5860D /* TBAPIProxy.h */,
 				E524EA711B73521B00B5860D /* TBAPIProxy.m */,
 				E524EA721B73521B00B5860D /* TBAPIResponse.h */,
@@ -458,7 +453,6 @@
 				E524EA7D1B73521B00B5860D /* TBAPIBatchManagerAgent.m in Sources */,
 				E524EA841B73521B00B5860D /* TBLogger.m in Sources */,
 				E524EA821B73521B00B5860D /* TBAPIResponse.m in Sources */,
-				E524EA801B73521B00B5860D /* TBAPIManager.m in Sources */,
 				E524EA7E1B73521B00B5860D /* TBAPIChainManager.m in Sources */,
 				E57BC9AE1B725FF1009DCB76 /* ViewController.m in Sources */,
 				E524EA831B73521B00B5860D /* TBJSONValidator.m in Sources */,

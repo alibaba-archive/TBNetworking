@@ -23,11 +23,15 @@
 }
 
 - (NSString *)requestUrl {
-    return @"idservice/idsdffds";
+    return @"idservice/id";
 }
 
 - (NSDictionary *)parametersForAPI:(TBAPIBaseManager *)manager {
     return @{@"id":@"360421199306080039"};
+}
+
+- (TBLoggerType )responseLoggerType {
+    return TBLoggerTypeDetail;
 }
 
 

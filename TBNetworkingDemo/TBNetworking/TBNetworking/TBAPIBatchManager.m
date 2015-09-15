@@ -11,7 +11,13 @@
 
 @interface TBAPIBatchManager()<TBAPIBaseManagerDelegate>
 
-@property (nonatomic, assign) NSInteger finishCount;
+@property (nonatomic, assign) NSInteger     finishCount;
+@property (nonatomic, assign, readwrite)    NSInteger       successCount;
+@property (nonatomic, assign, readwrite)    NSInteger       faildCount;
+@property (nonatomic, strong, readwrite)    NSArray         *requestBachArray;
+@property (nonatomic, strong, readwrite)    NSMutableArray  *successMutalArray;
+@property (nonatomic, strong, readwrite)    NSMutableArray  *faildMutalArray;
+
 
 @end
 
@@ -22,10 +28,17 @@
     self = [super init];
     if (self) {
         _requestBachArray = managerArray;
+        _successMutalArray = [NSMutableArray new];
+        _faildMutalArray = [NSMutableArray new];
         _finishCount = 0;
-        
     }
     return self;
+}
+
+- (void)addManager:(TBAPIBaseManager *)manager {
+    NSMutableArray *temp = [[NSMutableArray alloc] initWithArray:_requestBachArray];
+    [temp addObject:manager];
+    _requestBachArray = [temp copy];
 }
 
 - (void)start {
@@ -33,7 +46,7 @@
         return;
     }
     [[TBAPIBatchManagerAgent sharedInstance] addBatchManager:self];
-    for (TBAPIManager *manager in _requestBachArray) {
+    for (TBAPIBaseManager *manager in _requestBachArray) {
         manager.delegate = self;
         [manager start];
     }
@@ -42,7 +55,7 @@
 
 - (void)stop {
     _delegate = nil;
-    for (TBAPIManager *manager in _requestBachArray) {
+    for (TBAPIBaseManager *manager in _requestBachArray) {
         manager.delegate = self;
         [manager stop];
     }
@@ -53,20 +66,57 @@
 #pragma mark - TBAPIManager Delegate
 
 - (void)apiRequestDidSuccess:(TBAPIBaseManager *)request {
+    
     _finishCount++;
+    _successCount++;
+    
+    [_successMutalArray addObject:request];
+    
+    if (_delegate && [_delegate respondsToSelector:@selector(batchSubManagerDidSuccess:)]) {
+        [_delegate batchSubManagerDidSuccess:request];
+    }
+    
     if (_finishCount == _requestBachArray.count) {
-        if (_delegate !=nil && [_delegate respondsToSelector:@selector(batchManagerDidSuccess:)]) {
+        if (_delegate && [_delegate respondsToSelector:@selector(batchManagerDidSuccess:)]) {
             [_delegate batchManagerDidSuccess:self];
+        }
+    }
+    
+    if (_finishCount == _requestBachArray.count) {
+        if (_delegate && [_delegate respondsToSelector:@selector(batchManagerDidFinish:)]) {
+            [_delegate batchManagerDidFinish:self];
         }
     }
 }
 
 - (void)apiRequestDidFailed:(TBAPIBaseManager *)request {
-    [self stop];
+    //[self stop];
     
-    if (_delegate !=nil && [_delegate respondsToSelector:@selector(batchManagerDidFailed:)]) {
+    _finishCount++;
+    _faildCount++;
+    [_faildMutalArray addObject:request];
+    
+    if (_delegate && [_delegate respondsToSelector:@selector(batchSubManagerDidFaild:)]) {
+        [_delegate batchSubManagerDidFaild:request];
+    }
+ 
+    if (_delegate && [_delegate respondsToSelector:@selector(batchManagerDidFailed:)]) {
         [_delegate batchManagerDidFailed:self];
     }
+    
+    if (_finishCount == _requestBachArray.count) {
+        if (_delegate && [_delegate respondsToSelector:@selector(batchManagerDidFinish:)]) {
+            [_delegate batchManagerDidFinish:self];
+        }
+    }
+}
+
+- (NSArray *)successArray {
+    return [_successMutalArray copy];
+}
+
+- (NSArray *)faildArray {
+    return [_faildMutalArray copy];
 }
 
 @end
