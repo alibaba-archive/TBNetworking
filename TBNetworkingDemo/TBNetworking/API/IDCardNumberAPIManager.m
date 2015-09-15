@@ -8,7 +8,7 @@
 
 #import "IDCardNumberAPIManager.h"
 
-@interface IDCardNumberAPIManager() <TBAPIBaseManagerParamSourceDelegate>
+@interface IDCardNumberAPIManager()
 
 @end
 
@@ -17,17 +17,21 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        self.parameSource = self;
+        
     }
     return self;
 }
 
 - (NSString *)requestUrl {
-    return @"idservice/idsdffds";
+    return @"idservice/id";
 }
 
 - (NSDictionary *)parametersForAPI:(TBAPIBaseManager *)manager {
     return @{@"id":@"360421199306080039"};
+}
+
+- (TBLoggerType )responseLoggerType {
+    return TBLoggerTypeDetail;
 }
 
 
