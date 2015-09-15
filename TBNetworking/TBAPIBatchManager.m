@@ -75,13 +75,7 @@
     if (_delegate && [_delegate respondsToSelector:@selector(batchSubManagerDidSuccess:)]) {
         [_delegate batchSubManagerDidSuccess:request];
     }
-    
-    if (_finishCount == _requestBachArray.count) {
-        if (_delegate && [_delegate respondsToSelector:@selector(batchManagerDidSuccess:)]) {
-            [_delegate batchManagerDidSuccess:self];
-        }
-    }
-    
+        
     if (_finishCount == _requestBachArray.count) {
         if (_delegate && [_delegate respondsToSelector:@selector(batchManagerDidFinish:)]) {
             [_delegate batchManagerDidFinish:self];
@@ -98,10 +92,6 @@
     
     if (_delegate && [_delegate respondsToSelector:@selector(batchSubManagerDidFaild:)]) {
         [_delegate batchSubManagerDidFaild:request];
-    }
- 
-    if (_delegate && [_delegate respondsToSelector:@selector(batchManagerDidFailed:)]) {
-        [_delegate batchManagerDidFailed:self];
     }
     
     if (_finishCount == _requestBachArray.count) {
