@@ -8,7 +8,7 @@
 
 #import "IDCardNumberAPIManager.h"
 
-@interface IDCardNumberAPIManager() <TBAPIBaseManagerParamSourceDelegate>
+@interface IDCardNumberAPIManager()
 
 @end
 
@@ -17,7 +17,7 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        self.parameSource = self;
+        
     }
     return self;
 }

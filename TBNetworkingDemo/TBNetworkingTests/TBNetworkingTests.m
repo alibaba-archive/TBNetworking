@@ -26,8 +26,16 @@
 }
 
 - (void)testExample {
+<<<<<<< Updated upstream
     // This is an example of a functional test case.
     XCTAssert(YES, @"Pass");
+=======
+  
+    MobilePhoneAPIManager *manager = [[MobilePhoneAPIManager alloc] init];
+    manager.delegate = self;
+    [manager start];
+//    [self waitForExpectationsWithTimeout:5 handler:nil];
+>>>>>>> Stashed changes
 }
 
 - (void)testPerformanceExample {
