@@ -10,6 +10,7 @@
 #import "MobilePhoneAPIManager.h"
 #import "IDCardNumberAPIManager.h"
 #import "TBAPIChainManager.h"
+#import "TBAPIBatchManager.h"
 
 @interface ViewController ()<TBAPIBaseManagerDelegate,TBAPIChainManagerDelegate, TBAPIBatchManagerDelegate>
 
