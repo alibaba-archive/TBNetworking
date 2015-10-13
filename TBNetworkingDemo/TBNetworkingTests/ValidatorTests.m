@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
-#import "TBNetworking.h"
+#import "TBValidatorPredicate.h"
+#import "TBJSONValidator.h"
 
 @interface ValidatorTests : XCTestCase
 
@@ -89,22 +90,6 @@
     XCTAssert(result);
  
 }
-
-- (void)testMobile {
-
-    NSDictionary *predicate =  @{
-      @"errMsg":TBValidatorPredicate.isNotNull,
-      @"errNum":TBValidatorPredicate.isNotNull,
-      @"retData":@{
-              @"carrier":TBValidatorPredicate.isNotNull,
-              @"province":TBValidatorPredicate.isNotNull,
-              @"telString":TBValidatorPredicate.isNotNull
-              }
-      };
-    
-    
-}
-
 
 - (void)testPerformanceExample {
     // This is an example of a performance test case.

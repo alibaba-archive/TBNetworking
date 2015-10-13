@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "TBLogger.h"
 
-
 @class TBAPIBaseManager;
 
 /*************************************************************************************************/
@@ -82,7 +81,8 @@ typedef NS_ENUM(NSInteger, TBAPIRequestType){
     TBAPIManagerRequestTypeGET,
     TBAPIManagerRequestTypePOST,
     TBAPIManagerRequestTypePUT,
-    TBAPIManagerRequestTypeDELETE
+    TBAPIManagerRequestTypeDELETE,
+    TBAPIManagerRequestTypeUPLOAD
 };
 
 typedef NS_ENUM(NSInteger , TBRequestSerializerType) {
@@ -108,11 +108,11 @@ typedef NS_ENUM(NSInteger , TBResponseSerializerType) {
 @property (nonatomic, assign, readonly) NSTimeInterval                  requestTime;
 @property (nonatomic, strong, readonly) NSDictionary                    *parameters;
 
-@property (nonatomic, weak)   NSObject<TBAPIManager>                    *child;
-@property (nonatomic, strong) NSURLSessionDataTask                      *dataTask;
+@property (nonatomic, weak)     NSObject<TBAPIManager>                  *child;
+@property (nonatomic, strong)   NSURLSessionDataTask                    *dataTask;
 
-@property (nonatomic, strong) TBAPIResponse                             *response;
-
+@property (nonatomic, strong)   TBAPIResponse                           *response;
+@property (nonatomic, strong)   NSDictionary                            *userInfo;
 
 - (NSString *)baseUrl;
 

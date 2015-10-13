@@ -7,6 +7,7 @@
 //
 
 #import "TBValidatorPredicate.h"
+#import "TBJSONValidator.h"
 
 @interface TBValidatorPredicate()
 @property (nonatomic, strong) NSMutableArray *requirements; // An array of ValidatorBlocks
