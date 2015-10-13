@@ -8,7 +8,7 @@
 
 #import "TBLogger.h"
 #import "TBAPIResponse.h"
-#import "APIBaseManager.h"
+#import "TBAPIBaseManager.h"
 
 @implementation TBLogger
 

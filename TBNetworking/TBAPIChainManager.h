@@ -22,8 +22,8 @@
 
 @interface TBAPIChainManager : NSObject
 
-@property (nonatomic, weak) id<TBAPIChainManagerDelegate> delegate;
-
+@property (nonatomic, weak)     id<TBAPIChainManagerDelegate> delegate;
+@property (nonatomic, strong)   NSDictionary    *userInfo;
 - (void)start;
 
 - (void)stop;

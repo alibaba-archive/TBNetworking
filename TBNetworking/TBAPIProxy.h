@@ -10,7 +10,7 @@
 #import "TBAPIBatchManagerAgent.h"
 #import "TBAPIBaseManager.h"
 #import "TBAPIResponse.h"
-#import <AFNetworking.h>
+#import "AFNetworking.h"
 
 @interface TBAPIProxy : NSObject
 

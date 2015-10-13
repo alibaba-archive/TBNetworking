@@ -40,11 +40,12 @@
 @interface TBAPIBatchManager : NSObject
 
 @property (nonatomic, weak) id<TBAPIBatchManagerDelegate> delegate;
-@property (nonatomic, strong, readonly)     NSArray     *requestBachArray;
-@property (nonatomic, strong, readonly)     NSArray     *successArray;
-@property (nonatomic, strong, readonly)     NSArray     *faildArray;
-@property (nonatomic, assign, readonly)     NSInteger   successCount;
-@property (nonatomic, assign, readonly)     NSInteger   faildCount;
+@property (nonatomic, strong, readonly)     NSArray         *requestBachArray;
+@property (nonatomic, strong, readonly)     NSArray         *successArray;
+@property (nonatomic, strong, readonly)     NSArray         *faildArray;
+@property (nonatomic, assign, readonly)     NSInteger       successCount;
+@property (nonatomic, assign, readonly)     NSInteger       faildCount;
+@property (nonatomic, strong)               NSDictionary    *userInfo;
 
 - (instancetype)initWithManagerArray:(NSArray *)managerArray;
 
