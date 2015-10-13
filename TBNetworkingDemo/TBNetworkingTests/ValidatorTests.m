@@ -91,22 +91,6 @@
  
 }
 
-- (void)testMobile {
-
-    NSDictionary *predicate =  @{
-      @"errMsg":TBValidatorPredicate.isNotNull,
-      @"errNum":TBValidatorPredicate.isNotNull,
-      @"retData":@{
-              @"carrier":TBValidatorPredicate.isNotNull,
-              @"province":TBValidatorPredicate.isNotNull,
-              @"telString":TBValidatorPredicate.isNotNull
-              }
-      };
-    
-    
-}
-
-
 - (void)testPerformanceExample {
     // This is an example of a performance test case.
     [self measureBlock:^{

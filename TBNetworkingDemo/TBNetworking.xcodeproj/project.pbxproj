@@ -598,6 +598,7 @@
 			baseConfigurationReference = 55482E735C5C9EB3197EF6C2 /* Pods-TBNetworking.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = TBNetworking/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Teambition.$(PRODUCT_NAME:rfc1034identifier)";
@@ -610,6 +611,7 @@
 			baseConfigurationReference = C6E7F51099E21135FCCF06AD /* Pods-TBNetworking.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = TBNetworking/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Teambition.$(PRODUCT_NAME:rfc1034identifier)";
