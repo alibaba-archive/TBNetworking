@@ -11,6 +11,8 @@
 #import "IDCardNumberAPIManager.h"
 #import "TBAPIChainManager.h"
 #import "TBAPIBatchManager.h"
+#import "ArrayTestAPIManager.h"
+#import <AFNetworking.h>
 
 @interface ViewController ()<TBAPIBaseManagerDelegate,TBAPIChainManagerDelegate, TBAPIBatchManagerDelegate>
 
@@ -18,6 +20,7 @@
 @property (nonatomic, strong) IDCardNumberAPIManager *idCardNumberManager;
 @property (nonatomic, strong) TBAPIChainManager     *chainManager;
 @property (nonatomic, strong) TBAPIBatchManager     *batchManager;
+@property (nonatomic, strong) ArrayTestAPIManager   *arrayManager;
 
 @end
 
@@ -37,9 +40,17 @@
     //[self.stateRequest start];
     //[self.mobileManager start];
 
-    [self.batchManager start];
+//    [self.batchManager start];
+    [self.arrayManager start];
     
-    
+    AFHTTPSessionManager *mananger= [ AFHTTPSessionManager manager];
+    mananger.requestSerializer = [AFJSONRequestSerializer serializer];
+    //mananger.responseSerializer = [JSONResponseSerializerWithData serializer];
+    [mananger POST:@"http://127.0.0.1:3000/" parameters:@{@"userId":@[]} success:^(NSURLSessionDataTask *task, id responseObject) {
+        
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        
+    }];
     
     
 }
@@ -94,6 +105,14 @@
         [_batchManager addManager:self.idCardNumberManager];
     }
     return _batchManager;
+}
+
+- (ArrayTestAPIManager *)arrayManager {
+    if (!_arrayManager) {
+        _arrayManager = [[ArrayTestAPIManager alloc] init];
+        _arrayManager.delegate = self;
+    }
+    return _arrayManager;
 }
 
 #pragma mark - TBAPIChainManagerDelegate

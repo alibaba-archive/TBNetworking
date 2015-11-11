@@ -24,6 +24,7 @@
 		E57BC9AA1B725FCD009DCB76 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E57BC9A81B725FCD009DCB76 /* AppDelegate.m */; };
 		E57BC9AB1B725FCD009DCB76 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E57BC9A91B725FCD009DCB76 /* main.m */; };
 		E57BC9AE1B725FF1009DCB76 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E57BC9AD1B725FF1009DCB76 /* ViewController.m */; };
+		E594177A1BDDCA4A008DFB9C /* ArrayTestAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E59417791BDDCA4A008DFB9C /* ArrayTestAPIManager.m */; };
 		E5DD07001B6F411200CA08D3 /* ValidatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E5DD06FF1B6F411200CA08D3 /* ValidatorTests.m */; };
 		E5E297551B85B8D8007A6F28 /* APIBaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E5E297541B85B8D8007A6F28 /* APIBaseManager.m */; };
 		E5FC50CE1B9EC1C50025DC68 /* TBAPIUploadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E5FC50CD1B9EC1C50025DC68 /* TBAPIUploadManager.m */; };
@@ -78,6 +79,8 @@
 		E57BC9A91B725FCD009DCB76 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = other/main.m; sourceTree = "<group>"; };
 		E57BC9AC1B725FF1009DCB76 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = ViewController/ViewController.h; sourceTree = "<group>"; };
 		E57BC9AD1B725FF1009DCB76 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = ViewController/ViewController.m; sourceTree = "<group>"; };
+		E59417781BDDCA4A008DFB9C /* ArrayTestAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ArrayTestAPIManager.h; path = API/ArrayTestAPIManager.h; sourceTree = "<group>"; };
+		E59417791BDDCA4A008DFB9C /* ArrayTestAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ArrayTestAPIManager.m; path = API/ArrayTestAPIManager.m; sourceTree = "<group>"; };
 		E5DD06FF1B6F411200CA08D3 /* ValidatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValidatorTests.m; sourceTree = "<group>"; };
 		E5E297531B85B8D8007A6F28 /* APIBaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIBaseManager.h; sourceTree = "<group>"; };
 		E5E297541B85B8D8007A6F28 /* APIBaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIBaseManager.m; sourceTree = "<group>"; };
@@ -177,6 +180,8 @@
 				E57BC9A21B725FBE009DCB76 /* IDCardNumberAPIManager.m */,
 				E57BC9A31B725FBE009DCB76 /* MobilePhoneAPIManager.h */,
 				E57BC9A41B725FBE009DCB76 /* MobilePhoneAPIManager.m */,
+				E59417781BDDCA4A008DFB9C /* ArrayTestAPIManager.h */,
+				E59417791BDDCA4A008DFB9C /* ArrayTestAPIManager.m */,
 				E5E297531B85B8D8007A6F28 /* APIBaseManager.h */,
 				E5E297541B85B8D8007A6F28 /* APIBaseManager.m */,
 			);
@@ -285,6 +290,7 @@
 				EBC264E11B68C2E800C07B74 /* Resources */,
 				8A1AFF468CF6F1782032780C /* Copy Pods Resources */,
 				E524EA861B73529C00B5860D /* ShellScript */,
+				80CD6D4455556EEEC57A6A98 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -304,6 +310,7 @@
 				EBC264F91B68C2E800C07B74 /* Frameworks */,
 				EBC264FA1B68C2E800C07B74 /* Resources */,
 				0EBE4385520ED99F9118C27D /* Copy Pods Resources */,
+				4641697A73B9DEAB34777039 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -403,6 +410,36 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		4641697A73B9DEAB34777039 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TBNetworkingTests/Pods-TBNetworkingTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		80CD6D4455556EEEC57A6A98 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TBNetworking/Pods-TBNetworking-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		8255E2361118A14AD2D994BB /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -467,6 +504,7 @@
 				E524EA7E1B73521B00B5860D /* TBAPIChainManager.m in Sources */,
 				E57BC9AE1B725FF1009DCB76 /* ViewController.m in Sources */,
 				E524EA831B73521B00B5860D /* TBJSONValidator.m in Sources */,
+				E594177A1BDDCA4A008DFB9C /* ArrayTestAPIManager.m in Sources */,
 				E5FC50CE1B9EC1C50025DC68 /* TBAPIUploadManager.m in Sources */,
 				E57BC9AA1B725FCD009DCB76 /* AppDelegate.m in Sources */,
 				E524EA7B1B73521B00B5860D /* TBAPIBaseManager.m in Sources */,
@@ -600,6 +638,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = TBNetworking/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Teambition.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -613,6 +652,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = TBNetworking/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Teambition.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -624,10 +664,7 @@
 			baseConfigurationReference = B614343AE7A800BCBA88FD18 /* Pods-TBNetworkingTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -645,10 +682,7 @@
 			baseConfigurationReference = 948FB1EEE914B1A7BE831E87 /* Pods-TBNetworkingTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = TBNetworkingTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Teambition.$(PRODUCT_NAME:rfc1034identifier)";

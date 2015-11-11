@@ -50,7 +50,7 @@
 }
 
 - (TBRequestSerializerType)requestSerializerType {
-    return TBRequestSerializerTypeHTTP;
+    return TBRequestSerializerTypeJSON;
 }
 
 - (TBResponseSerializerType)responseSerializerType {
