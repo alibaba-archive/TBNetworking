@@ -83,6 +83,8 @@ TBNetwork 被许可在 MIT 协议下使用。查阅 LICENSE 文件来获得更�
 
 ##change log
 
+##0.1.3
+add UserInfo
 
 ##0.1.0
 * deprecated batchManagerDidSuccess;
