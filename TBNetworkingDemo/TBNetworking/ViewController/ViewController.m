@@ -143,8 +143,8 @@
 - (void)batchManagerDidFinish:(TBAPIBatchManager *)manager {
 
     NSLog(@"all done");
-    NSLog(@"success %ld",manager.successCount);
-    NSLog(@"faild %ld",manager.faildCount);
+    NSLog(@"success %ld",(long)manager.successCount);
+    NSLog(@"faild %ld",(long)manager.faildCount);
 }
 
 - (void)didReceiveMemoryWarning {

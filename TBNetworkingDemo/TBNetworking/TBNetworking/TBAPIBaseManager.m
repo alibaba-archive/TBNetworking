@@ -61,6 +61,10 @@
     return TBLoggerTypeDefault;
 }
 
+- (AFSecurityPolicy* )customSecurityPolicy {
+    return [AFSecurityPolicy defaultPolicy];
+}
+
 - (void)start {
     [self startWithParameters:self.parameters];
 }

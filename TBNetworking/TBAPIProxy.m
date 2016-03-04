@@ -46,6 +46,7 @@
 
 - (void)addReachblityManager:(AFHTTPSessionManager *)manager {
     __block AFHTTPSessionManager *managerBlock = manager;
+    
     [manager.reachabilityManager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
         switch (status) {
             case AFNetworkReachabilityStatusReachableViaWiFi:
@@ -90,6 +91,8 @@
     } else {
         _sessionManager.responseSerializer = [AFJSONResponseSerializer serializer];
     }
+    
+    _sessionManager.securityPolicy = manager.customSecurityPolicy;
     
     // if api need add custom value to HTTPHeaderField
     NSDictionary *headerFieldValueDictionary = [manager requestHeaderFieldValueDictionary];
