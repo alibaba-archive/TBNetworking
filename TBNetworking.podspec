@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
 
 
   s.name         = "TBNetworking"
-  s.version      = "0.1.5"
+  s.version      = "0.1.6"
   s.summary      = "A easy APIManager by Teambition."
 
   s.description  = <<-DESC
@@ -37,7 +37,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/teambition/TBNetworking.git", :tag => "0.1.5" }
+  s.source       = { :git => "https://github.com/teambition/TBNetworking.git", :tag => "0.1.6" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -90,6 +90,6 @@ Pod::Spec.new do |s|
   # s.requires_arc = true
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  s.dependency "AFNetworking"
+  s.dependency "AFNetworking" ,'2.6.3'
 
 end

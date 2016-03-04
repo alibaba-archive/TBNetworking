@@ -4,7 +4,7 @@ platform :ios, '7.0'
 
 target 'TBNetworking' do
 
-pod 'AFNetworking'
+pod 'AFNetworking', '2.6.3'
 
 end
 

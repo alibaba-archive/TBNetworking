@@ -113,7 +113,6 @@
             manager.dataTask = [self.sessionManager
                                 GET:[self buildRequestUrl:manager]
                                 parameters:manager.parameters
-                                progress:nil
                                 success:^(NSURLSessionDataTask *task, id responseObject) {
                                 
                                     TBAPIResponse *response = [[TBAPIResponse alloc] initWithRequestID:task.taskIdentifier
@@ -139,7 +138,6 @@
             manager.dataTask = [self.sessionManager
                                 POST:[self buildRequestUrl:manager]
                                 parameters:manager.parameters
-                                progress:nil
                                 success:^(NSURLSessionDataTask *task, id responseObject) {
                                     TBAPIResponse *response = [[TBAPIResponse alloc] initWithRequestID:task.taskIdentifier
                                                                                       responseObject:[NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil]
@@ -207,17 +205,13 @@
             NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:[self buildRequestUrl:manager]]];
             
             if ([manager valueForKey:@"uploadData"]) {
-                manager.dataTask  = [self.sessionManager uploadTaskWithRequest:request fromData:[manager valueForKey:@"uploadData"] progress:^(NSProgress * _Nonnull uploadProgress) {
-                    
-                } completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
+                manager.dataTask  = [self.sessionManager uploadTaskWithRequest:request fromData:[manager valueForKey:@"uploadData"] progress:nil completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
                     
                 }];
             }
             
             if ([manager valueForKey:@"uploadURL"]) {
-                manager.dataTask  = [self.sessionManager uploadTaskWithRequest:request fromData:[manager valueForKey:@"uploadURL"] progress:^(NSProgress * _Nonnull uploadProgress) {
-                    
-                } completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
+                manager.dataTask  = [self.sessionManager uploadTaskWithRequest:request fromData:[manager valueForKey:@"uploadURL"] progress:nil completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
                     
                 }];
             }
