@@ -45,14 +45,6 @@
     
     AFHTTPSessionManager *mananger= [ AFHTTPSessionManager manager];
     mananger.requestSerializer = [AFJSONRequestSerializer serializer];
-    //mananger.responseSerializer = [JSONResponseSerializerWithData serializer];
-    [mananger POST:@"http://127.0.0.1:3000/" parameters:@{@"userId":@[]} success:^(NSURLSessionDataTask *task, id responseObject) {
-        
-    } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        
-    }];
-    
-    
 }
 
 - (void)apiRequestDidSuccess:(TBAPIBaseManager *)request {
@@ -143,8 +135,8 @@
 - (void)batchManagerDidFinish:(TBAPIBatchManager *)manager {
 
     NSLog(@"all done");
-    NSLog(@"success %ld",manager.successCount);
-    NSLog(@"faild %ld",manager.faildCount);
+    NSLog(@"success %ld",(long)manager.successCount);
+    NSLog(@"faild %ld",(long)manager.faildCount);
 }
 
 - (void)didReceiveMemoryWarning {

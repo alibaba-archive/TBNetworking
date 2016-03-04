@@ -98,6 +98,7 @@ typedef NS_ENUM(NSInteger , TBResponseSerializerType) {
 
 
 @class TBAPIResponse;
+@class AFSecurityPolicy;
 
 @interface TBAPIBaseManager : NSObject
 
@@ -142,6 +143,8 @@ typedef NS_ENUM(NSInteger , TBResponseSerializerType) {
  *  @return 
  */
 - (TBLoggerType)responseLoggerType;
+
+- (AFSecurityPolicy* )customSecurityPolicy;
 
 /**
  *  判断是否正在执行

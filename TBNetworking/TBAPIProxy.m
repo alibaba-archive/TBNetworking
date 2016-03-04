@@ -46,6 +46,7 @@
 
 - (void)addReachblityManager:(AFHTTPSessionManager *)manager {
     __block AFHTTPSessionManager *managerBlock = manager;
+    
     [manager.reachabilityManager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
         switch (status) {
             case AFNetworkReachabilityStatusReachableViaWiFi:
@@ -91,6 +92,8 @@
         _sessionManager.responseSerializer = [AFJSONResponseSerializer serializer];
     }
     
+    _sessionManager.securityPolicy = manager.customSecurityPolicy;
+    
     // if api need add custom value to HTTPHeaderField
     NSDictionary *headerFieldValueDictionary = [manager requestHeaderFieldValueDictionary];
     if (headerFieldValueDictionary != nil) {
@@ -110,6 +113,7 @@
             manager.dataTask = [self.sessionManager
                                 GET:[self buildRequestUrl:manager]
                                 parameters:manager.parameters
+                                progress:nil
                                 success:^(NSURLSessionDataTask *task, id responseObject) {
                                 
                                     TBAPIResponse *response = [[TBAPIResponse alloc] initWithRequestID:task.taskIdentifier
@@ -135,6 +139,7 @@
             manager.dataTask = [self.sessionManager
                                 POST:[self buildRequestUrl:manager]
                                 parameters:manager.parameters
+                                progress:nil
                                 success:^(NSURLSessionDataTask *task, id responseObject) {
                                     TBAPIResponse *response = [[TBAPIResponse alloc] initWithRequestID:task.taskIdentifier
                                                                                       responseObject:[NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil]
@@ -199,17 +204,20 @@
             break;
         case TBAPIManagerRequestTypeUPLOAD:
         {
-            NSProgress *progress;
             NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:[self buildRequestUrl:manager]]];
             
             if ([manager valueForKey:@"uploadData"]) {
-                manager.dataTask = [self.sessionManager uploadTaskWithRequest:request fromData:[manager valueForKey:@"uploadData"] progress:&progress completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
+                manager.dataTask  = [self.sessionManager uploadTaskWithRequest:request fromData:[manager valueForKey:@"uploadData"] progress:^(NSProgress * _Nonnull uploadProgress) {
+                    
+                } completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
                     
                 }];
             }
             
             if ([manager valueForKey:@"uploadURL"]) {
-                manager.dataTask = [self.sessionManager uploadTaskWithRequest:request fromData:[manager valueForKey:@"uploadURL"] progress:&progress completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
+                manager.dataTask  = [self.sessionManager uploadTaskWithRequest:request fromData:[manager valueForKey:@"uploadURL"] progress:^(NSProgress * _Nonnull uploadProgress) {
+                    
+                } completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
                     
                 }];
             }

@@ -23,8 +23,8 @@
     
     NSMutableString *logString = [NSMutableString stringWithString:@"\n\n==============================================================\n=                      Request Response                      =\n==============================================================\n\n"];
     
-    [logString appendFormat:@"HTTP   state:\t\t%ld\n",[request.response statusCode]];
-    [logString appendFormat:@"Hash     Key:\t\t%lu\n",[request hash]];
+    [logString appendFormat:@"HTTP   state:\t\t%ld\n",(long)[request.response statusCode]];
+    [logString appendFormat:@"Hash     Key:\t\t%lu\n",(unsigned long)[request hash]];
     [logString appendFormat:@"API     Name:\t\t%@\n",[request class]];
     [logString appendFormat:@"Base     Url:\t\t%@\n",[request baseUrl]];
     [logString appendFormat:@"Request  url:\t\t%@\n",[request.child requestUrl]];
@@ -50,8 +50,8 @@
     
     NSMutableString *logString = [NSMutableString stringWithString:@"\n\n==============================================================\n=                      Request Response                      =\n==============================================================\n\n"];
     
-    [logString appendFormat:@"HTTP   state:\t\t%ld\n",[request.response statusCode]];
-    [logString appendFormat:@"Hash     Key:\t\t%lu\n",[request hash]];
+    [logString appendFormat:@"HTTP   state:\t\t%ld\n",(long)[request.response statusCode]];
+    [logString appendFormat:@"Hash     Key:\t\t%lu\n",(unsigned long)[request hash]];
     [logString appendFormat:@"API     Name:\t\t%@\n",[request class]];
     [logString appendFormat:@"Base     Url:\t\t%@\n",[request baseUrl]];
     [logString appendFormat:@"Request  url:\t\t%@\n",[request.child requestUrl]];
